@@ -18,10 +18,10 @@
 //DATABASE CONNECTION DATA
 //---------------------------------------
 
-$db_username = "a5339186_yopqs";
-$db_password = "daffy12345";
-$db_hostname = "mysql4.000webhost.com"; 
-$db_name     = "a5339186_yopqs"; 
+$db_username = "";
+$db_password = "";
+$db_hostname = ""; 
+$db_name     = ""; 
 
 //$db_username = "your_name";
 //$db_password = "your_password";
