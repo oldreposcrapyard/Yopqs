@@ -1,0 +1,10 @@
+<FilesMatch "\.(php)$">
+# Block access to wp-config
+order allow,deny
+deny from all
+</FilesMatch>
+<files .htaccess>
+# Block access to .htaccess
+order allow,deny
+deny from all
+</files>
