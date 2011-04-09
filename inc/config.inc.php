@@ -1,6 +1,6 @@
 <?php
 //****************************************
-//  Config file
+//  Yopqs - Config file
 //****************************************
 // Copyright (C) 2010 by Marcin Lawniczak <marcin.safmb@wp.pl> | <www.stw.net23.net>
 
@@ -18,7 +18,6 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-echo 'No hacking!';
 $CONF                      = array();
 
 //J�zyk
