@@ -1,6 +1,7 @@
 ------------------------
 0.9 Beta
 ------------------------
+[SECURITY]Secured some files with .htaccess
 [FEATURE]BBcode parsing
 [REATURE]Measuring time
 [BUGFIX]Last level didn't work
