@@ -18,10 +18,12 @@
 //DATABASE CONNECTION DATA
 //---------------------------------------
 
-$db_username = 'user_0e401022';
-$db_password = ',uf16T)j$GDytz';
+
+//orchestra.io database
+$db_username = 'user_45b9cf5d';
+$db_password = '9bvP;cJjT)IJI^';
 $db_hostname = '10.194.111.8'; 
-$db_name       = 'db_0e401022'; 
+$db_name       = 'db_45b9cf5d'; 
 
 //$db_username = 'your_username';
 //$db_password = 'your_password';
