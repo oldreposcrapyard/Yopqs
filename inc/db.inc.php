@@ -18,10 +18,10 @@
 //DATABASE CONNECTION DATA
 //---------------------------------------
 
-$db_username = "";
-$db_password = "";
-$db_hostname = ""; 
-$db_name     = ""; 
+$db_username = "user_0e401022";
+$db_password = ",uf16T)j$GDytz";
+$db_hostname = "10.194.111.8"; 
+$db_name       = "db_0e401022"; 
 
 //$db_username = "your_name";
 //$db_password = "your_password";
