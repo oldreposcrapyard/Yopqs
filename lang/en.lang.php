@@ -30,6 +30,16 @@ $LANG['startquiz']         = 'Start Quiz!';
 $LANG['answerempty']       = 'You haven\'t answered!';
 $LANG['of']                = 'of';
 $LANG['level']             = 'Level';
+$LANG['bold']              = 'Bold';
+$LANG['italic']            = 'Italic';
+$LANG['underline']         = 'Underline';
+$LANG['inserturl']         = 'Insert URL';
+$LANG['insertimg']         = 'Insert image';
+$LANG['insertquote']       = 'Insert quote';
+$LANG['insertcode']        = 'Insert code';
+$LANG['insertyt']          = 'Insert YouTube video';
+$LANG['enterurl']          = 'Enter page url:';
+$LANG['enterimg']          = 'Rnter image url:';
 
 //Database
 $LANG['db_connect_error']  = 'Database connect error!';
