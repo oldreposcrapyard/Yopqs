@@ -14,9 +14,6 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-require_once 'config.inc.php';
-require_once "../lang/{$CONF['lang']}.lang.php";
-
 function getnamefile(){
 $currentFile = $_SERVER["SCRIPT_NAME"];
 $parts = Explode('/', $currentFile);
@@ -61,6 +58,7 @@ function getmaxlevel(){
 //------------------------------------------------------------
 
 function displaytime($timeinseconds, $timeformatted){
+require_once 'config.inc.php';
 echo <<<DISP
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
