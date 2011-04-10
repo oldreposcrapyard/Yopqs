@@ -131,7 +131,7 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
         $now_time         = time();
         $start_time       = $_SESSION['start_time'];
         $time_solved_quiz = $now_time - $start_time;
-        $normal_time      = na_czytelny_format($time_solved_quiz); 
+        $normal_time      = sec2hms($time_solved_quiz, true); 
         echo "$normal_time";
         exit();
     } else {
