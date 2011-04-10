@@ -41,6 +41,12 @@ $LANG['insertyt']          = 'Insert YouTube video';
 $LANG['enterurl']          = 'Enter page url:';
 $LANG['enterimg']          = 'Enter image url:';
 $LANG['youhavesolved']     = 'You have solved';
+$LANG['ittookyou']         = 'It took you:';
+$LANG['seconds']           = 'seconds';
+$LANG['thatis']            = 'that is';
+$LANG['hours']             = 'Hours';
+$LANG['minutes']           = 'Minutes';
+$LANG['seconds']           = 'Seconds';
 
 //Database
 $LANG['db_connect_error']  = 'Database connect error!';

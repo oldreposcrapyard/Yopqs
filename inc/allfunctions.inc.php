@@ -59,7 +59,7 @@ function getmaxlevel(){
 
 //------------------------------------------------------------
 
-function displaytime(){
+function displaytime($timeinseconds, $timeformatted){
 echo <<<DISP
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -121,10 +121,10 @@ require_once "../lang/{$CONF['lang']}.lang.php";
               <?php echo "$LANG[youhavesolved] $CONF[quiz_name]"; ?>
             </h2>
           </div><br />
-          <?php echo "$CONF[start_content]"; ?><br />
+          <?php echo "$LANG[ittookyou]"; ?><br />
           <div class="c3">
             <h1>
-              <a href="quiz.php"><?php echo "$LANG[startquiz]"; ?></a>
+              <?php echo "$timeinseconds $LANG[seconds], $LANG[thatis] $LANG[hours]:$LANG[minutes]:$LANG[seconds]"; ?>
             </h1>
           </div>
         </td>

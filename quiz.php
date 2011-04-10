@@ -132,7 +132,7 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
         $start_time       = $_SESSION['start_time'];
         $time_solved_quiz = $now_time - $start_time;
         $normal_time      = sec2hms($time_solved_quiz, true); 
-        echo "$normal_time";
+        displaytime($time_solved_quiz, $normal_time);
         exit();
     } else {
         echo "$CONF[won_page_content]";
