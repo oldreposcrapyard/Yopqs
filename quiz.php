@@ -132,9 +132,11 @@ while ($row = mysql_fetch_array($query1, MYSQL_ASSOC)) {
 //-----------------
 if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $max_level) {
     if ($CONF['measure_time']) {
-        $now_time         = time();
+        if(!IsSet($_SESSION['end_time'])){
+        $_SESSION['end_time'] = time();
+        }
         $start_time       = $_SESSION['start_time'];
-        $time_solved_quiz = $now_time - $start_time;
+        $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
         $normal_time      = sec2hms($time_solved_quiz, true); 
         echo <<<DISP
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
