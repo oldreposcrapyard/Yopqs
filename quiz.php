@@ -194,8 +194,7 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
             <h2>
               $LANG[youhavesolved] $CONF[quiz_name]
             </h2>
-          </div><br />
-          $LANG[ittookyou]<br />
+          </div>
           <div class="c3">
             <h1>
             $LANG[ittookyou]  
