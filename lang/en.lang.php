@@ -19,17 +19,19 @@
 //************************
 
 $LANG                      = array();
+//Quiz language
 $LANG['fail']              = 'Answer wrong, try again.';
 $LANG['ianswer']           = 'I answer';
 $LANG['togettonextlevel']  = 'Answer right.';
-$LANG['gobackhacker']      = 'Go back, hacker';//Not sure this is used anywhere...
 $LANG['youranswer']        = 'Answer';
-$LANG['mainpageuppercase'] = 'MAIN PAGE';
-$LANG['welcomequizpage']   = 'Welcome on quiz page';
-$LANG['startquiz']         = 'Start Quiz!';
 $LANG['answerempty']       = 'You haven\'t answered!';
 $LANG['of']                = 'of';
 $LANG['level']             = 'Level';
+//Main page language
+$LANG['mainpageuppercase'] = 'MAIN PAGE';
+$LANG['welcomequizpage']   = 'Welcome on quiz page';
+$LANG['startquiz']         = 'Start Quiz!';
+//BBcode editor language
 $LANG['bold']              = 'Bold';
 $LANG['italic']            = 'Italic';
 $LANG['underline']         = 'Underline';
@@ -40,6 +42,7 @@ $LANG['insertcode']        = 'Insert code';
 $LANG['insertyt']          = 'Insert YouTube video';
 $LANG['enterurl']          = 'Enter page url:';
 $LANG['enterimg']          = 'Enter image url:';
+//Final page language
 $LANG['youhavesolved']     = 'You have solved';
 $LANG['ittookyou']         = 'It took you:';
 $LANG['seconds']           = 'seconds';
@@ -48,12 +51,12 @@ $LANG['hours']             = 'Hours';
 $LANG['minutes']           = 'Minutes';
 $LANG['seconds']           = 'Seconds';
 
-//Database
+//Database language
 $LANG['db_connect_error']  = 'Database connect error!';
 $LANG['db_select_error']   = 'Can\'t choose database!';
 $LANG['db_query_success']  = 'Query executed succesfully.';
 $LANG['db_query_error']    = 'Query error!';
 
-//$LANG[example] = 'Oevhrryshjzcze raz.';
+//$LANG['example']         = 'Example message.';
 
 ?>

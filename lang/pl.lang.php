@@ -19,17 +19,19 @@
 //************************
 
 $LANG                      = array();
+//Quiz language
 $LANG['fail']              = 'Odpowied&#378; z&#322;a, spr&#243;buj jeszcze raz.';
 $LANG['ianswer']           = 'Odpowiadam';
 $LANG['togettonextlevel']  = 'Odpowied&#378; poprawna.';
-$LANG['gobackhacker']      = 'Wracaj na pocz&#261;tek, spryciarzu.';//Not sure this is used anywhere...
 $LANG['youranswer']        = 'Odpowiedz';
-$LANG['mainpageuppercase'] = 'STRONA G&#321;&#211;WNA';
-$LANG['welcomequizpage']   = 'Witaj na stronie quizu';
-$LANG['startquiz']         = 'Zacznij Quiz!';
 $LANG['answerempty']       = 'Nie poda&#322;e&#347; odpowiedzi!';
 $LANG['of']                = 'z';
 $LANG['level']             = 'Poziom';
+//Main page language
+$LANG['mainpageuppercase'] = 'STRONA G&#321;&#211;WNA';
+$LANG['welcomequizpage']   = 'Witaj na stronie quizu';
+$LANG['startquiz']         = 'Zacznij Quiz!';
+//BBcode editor language
 $LANG['bold']              = 'Pogrubienie';
 $LANG['italic']            = 'Kursywa';
 $LANG['underline']         = 'Podkre&#347;lenie';
@@ -40,6 +42,7 @@ $LANG['insertcode']        = 'Wstaw kod';
 $LANG['insertyt']          = 'Wstaw filmik z YouTube';
 $LANG['enterurl']          = 'Podaj adres strony:';
 $LANG['enterimg']          = 'Podaj adres obrazka:';
+//Final page language
 $LANG['youhavesolved']     = 'Rozwi&#261;za&#322;e&#347;';
 $LANG['ittookyou']         = 'Zaj&#281;&#322;o ci to';
 $LANG['seconds']           = 'sekund';
@@ -48,12 +51,11 @@ $LANG['hours']             = 'Godzin';
 $LANG['minutes']           = 'Minut';
 $LANG['seconds']           = 'Sekund';
 
-//Database
+//Database language
 $LANG['db_connect_error']  = 'Nie mo&#380;na po&#322;&#261;czy&#263; si&#281; z baz&#261; danych!';
 $LANG['db_select_error']   = 'Nie mo&#380;na wybra&#263; bazy danych!';
 $LANG['db_query_success']  = 'Zapytanie wykonane poprawnie.';
 $LANG['db_query_error']    = 'B&#322;&#261;d zapytania!';
 
-//$LANG[example] = 'Oevhrryshjzcze raz.';
-
+//$LANG['example']         = 'Example message.';
 ?>
