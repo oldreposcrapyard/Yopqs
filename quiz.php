@@ -198,7 +198,8 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
           $LANG[ittookyou]<br />
           <div class="c3">
             <h1>
-              $time_solved_quiz $LANG[seconds], $LANG[thatis] $LANG[hours]:$LANG[minutes]:$LANG[seconds]<br>$normal_time
+            $LANG[ittookyou]  
+            $time_solved_quiz $LANG[seconds], $LANG[thatis]<br>$LANG[hours]:$LANG[minutes]:$LANG[seconds]<br>$normal_time
             </h1>
           </div>
         </td>

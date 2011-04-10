@@ -57,14 +57,6 @@ function getmaxlevel(){
 
 //------------------------------------------------------------
 
-function displaytime($timeinseconds, $timeformatted){
-return <<<DISP
-
-DISP;
-}
-
-//------------------------------------------------------------
-
 //backup_tables('localhost','username','password','blog');
 function backup_tables($host,$user,$pass,$name,$tables = '*'){
 	
