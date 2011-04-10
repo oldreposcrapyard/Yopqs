@@ -1,6 +1,9 @@
 ------------------------
 0.9 Beta
 ------------------------
+[BUGFIX]Fixed the "solve time on refresh changes" bug
+[FEATURE] Displaying measure time nicely
+[SECURITY]Secured config file with ob_start and ob_end_flush 
 [SECURITY]Secured some files with .htaccess
 [FEATURE]BBcode parsing
 [REATURE]Measuring time
