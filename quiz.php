@@ -196,7 +196,7 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
           $LANG[ittookyou]<br />
           <div class="c3">
             <h1>
-              $timeinseconds $LANG[seconds], $LANG[thatis] $LANG[hours]:$LANG[minutes]:$LANG[seconds]<br> $timeformatted
+              $time_solved_quiz $LANG[seconds], $LANG[thatis] $LANG[hours]:$LANG[minutes]:$LANG[seconds]<br>$normal_time
             </h1>
           </div>
         </td>
