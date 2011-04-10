@@ -60,17 +60,15 @@ function getmaxlevel(){
 //------------------------------------------------------------
 
 function displaytime($timeinseconds, $timeformatted){
+require_once 'config.inc.php';
+require_once "../lang/{$CONF['lang']}.lang.php";
 echo <<<DISP
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php
-require_once 'config.inc.php';
-require_once "../lang/{$CONF['lang']}.lang.php";
-?>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>
-      <?php echo "$CONF[quiz_name]"; ?> - Marcinl's php quiz
+      $CONF[quiz_name] - Marcinl's php quiz
     </title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="inc/styl.css" />
@@ -99,10 +97,10 @@ require_once "../lang/{$CONF['lang']}.lang.php";
           <table border="0" width="660" align="center">
             <tr>
               <td>
-                <a href="index.php" class="dwa"><?php echo "$LANG[mainpageuppercase]"; ?></a> 
+                <a href="index.php" class="dwa">$LANG[mainpageuppercase]</a> 
                 | <a href="http://www.stw.net23.net/">Strona autora</a>
-                | <a href="<?php echo "$link1"; ?>"><?php echo "$link1_name"; ?></a>
-                | <a href="<?php echo "$link2"; ?>"><?php echo "$link2_name"; ?></a>
+                | <a href="$link1>$link1_name</a>
+                | <a href="$link2>$link2_name</a>
               </td>
             </tr>
           </table>
@@ -118,13 +116,13 @@ require_once "../lang/{$CONF['lang']}.lang.php";
         <td class="c4" width="607">
           <div class="c3">
             <h2>
-              <?php echo "$LANG[youhavesolved] $CONF[quiz_name]"; ?>
+              $LANG[youhavesolved] $CONF[quiz_name]
             </h2>
           </div><br />
-          <?php echo "$LANG[ittookyou]"; ?><br />
+          $LANG[ittookyou]<br />
           <div class="c3">
             <h1>
-              <?php echo "$timeinseconds $LANG[seconds], $LANG[thatis] $LANG[hours]:$LANG[minutes]:$LANG[seconds]"; ?>
+              $timeinseconds $LANG[seconds], $LANG[thatis] $LANG[hours]:$LANG[minutes]:$LANG[seconds]
             </h1>
           </div>
         </td>
