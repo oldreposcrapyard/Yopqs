@@ -118,7 +118,7 @@ echo <<<DISP
           $LANG[ittookyou]<br />
           <div class="c3">
             <h1>
-              $timeinseconds $LANG[seconds], $LANG[thatis] $LANG[hours]:$LANG[minutes]:$LANG[seconds]
+              $timeinseconds $LANG[seconds], $LANG[thatis] $LANG[hours]:$LANG[minutes]:$LANG[seconds]<br> $timeformatted
             </h1>
           </div>
         </td>
