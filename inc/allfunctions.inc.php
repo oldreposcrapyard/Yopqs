@@ -118,7 +118,7 @@ require_once "../lang/{$CONF['lang']}.lang.php";
         <td class="c4" width="607">
           <div class="c3">
             <h2>
-              <?php echo "$LANG[welcomequizpage] $CONF[quiz_name]"; ?>
+              <?php echo "$LANG[youhavesolved] $CONF[quiz_name]"; ?>
             </h2>
           </div><br />
           <?php echo "$CONF[start_content]"; ?><br />

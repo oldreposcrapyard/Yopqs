@@ -15,7 +15,7 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 //************************
-//English - EN Language file for YOPQS 0.8 Beta on www.sourceforge.net
+//English - EN Language file for YOPQS 0.9 Beta on github.com
 //************************
 
 $LANG                      = array();
@@ -39,7 +39,8 @@ $LANG['insertquote']       = 'Insert quote';
 $LANG['insertcode']        = 'Insert code';
 $LANG['insertyt']          = 'Insert YouTube video';
 $LANG['enterurl']          = 'Enter page url:';
-$LANG['enterimg']          = 'Rnter image url:';
+$LANG['enterimg']          = 'Enter image url:';
+$LANG['youhavesolved']     = 'You have solved';
 
 //Database
 $LANG['db_connect_error']  = 'Database connect error!';

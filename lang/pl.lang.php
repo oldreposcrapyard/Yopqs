@@ -40,6 +40,7 @@ $LANG['insertcode']        = 'Wstaw kod';
 $LANG['insertyt']          = 'Wstaw filmik z YouTube';
 $LANG['enterurl']          = 'Podaj adres strony:';
 $LANG['enterimg']          = 'Podaj adres obrazka:';
+$LANG['youhavesolved']     = 'Rozwi&#261;za&#322;e&#347;';
 
 //Database
 $LANG['db_connect_error']  = 'Nie mo&#380;na po&#322;&#261;czy&#263; si&#281; z baz&#261; danych!';
