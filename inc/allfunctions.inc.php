@@ -60,7 +60,7 @@ function getmaxlevel(){
 //------------------------------------------------------------
 
 function displaytime($timeinseconds, $timeformatted){
-require_once 'config.inc.php';
+require_once '/config.inc.php';
 require_once "../lang/{$CONF['lang']}.lang.php";
 echo <<<DISP
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
