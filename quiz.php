@@ -136,7 +136,8 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
         $start_time       = $_SESSION['start_time'];
         $time_solved_quiz = $now_time - $start_time;
         $normal_time      = sec2hms($time_solved_quiz, true); 
-        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        echo <<<DISP
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -209,6 +210,7 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
     </table>
   </body>
 </html>
+DISP;
         //displaytime($time_solved_quiz, $normal_time);
         exit();
     } else {
