@@ -226,13 +226,15 @@ If (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes' && IsSet($_POST['lvl_id
     $question = mysql_real_escape_string($_POST['question']);
     
     foreach ($_POST['answer'] as $value) {
-        $answer = mysql_real_escape_string($value);
-        $query1 = "INSERT INTO Answers (ID, ID_lvl, Answer) VALUES('NULL', '$lvl_id', '$answer');";
-        If (!($result = mysql_query($query1))) {
-            $error = mysql_error();
-            print("$error");
-            error_log("$error/n", 3, "../log/db.log");
-            exit;
+        if ($value != "") {
+            $answer = mysql_real_escape_string($value);
+            $query1 = "INSERT INTO Answers (ID, ID_lvl, Answer) VALUES('NULL', '$lvl_id', '$answer');";
+            If (!($result = mysql_query($query1))) {
+                $error = mysql_error();
+                print("$error");
+                error_log("$error/n", 3, "../log/db.log");
+                exit;
+            }
         }
     }
     
