@@ -114,35 +114,6 @@ function backup_tables($host,$user,$pass,$name,$tables = '*'){
 
 //------------------------------------------------------------
 
-//Duration is a function used to turn seconds into a readable format, measured in weeks, days, hours, minutes and seconds.
-function na_czytelny_format($secs){ 
-        $vals = array('tygodni' => (int) ($secs / 86400 / 7), 
-                      'dni' => $secs / 86400 % 7, 
-                      'godzin' => $secs / 3600 % 24, 
-                      'minut' => $secs / 60 % 60, 
-                      'sekund' => $secs % 60); 
- 
-        $ret = array(); 
- 
-        $added = false; 
-        foreach ($vals as $k => $v) { 
-            if ($v > 0 || $added) { 
-                $added = true; 
-                $ret[] = $v . $k; 
-            } 
-        } 
- 
-        return join(' ', $ret); 
-    } 
-
-
-//Sample usage
-//$dateOfBirth = $someTimestamp;
-//$ageInSeconds = time() - $dateOfBirth;
-//echo 'I am ' . duration($ageInSeconds) . ' old';
-
-//------------------------------------------------------------
-
 function sec2hms ($sec, $padHours = false){
 
     // start with a blank string
