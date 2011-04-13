@@ -48,7 +48,7 @@ class BbCodeFilterYoutube
 		// skoro nie jest urlem wiec ISTNIEJE prawdopodobienstwo, ze jest to id filmu
 		if($str==false)
 		{
-			$idMovie = htmlspecialchars($str);
+			$idMovie = htmlspecialchars($bodyStr);
 		}
 		elseif(preg_match('/watch\?v=([a-zA-Z0-9_\-]+)/i', $str, $matches))
 		{
