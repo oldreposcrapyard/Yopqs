@@ -14,27 +14,9 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-require_once '../if (!($conn = mysql_connect($db_hostname, $db_username, $db_password))) {
-    print("$LANG[db_connect_error]");
-    error_log("$LANG[db_connect_error]", 3, "../log/db.log");
-    exit;
-}if (!($conn = mysql_connect($db_hostname, $db_username, $db_password))) {
-    print("$LANG[db_connect_error]");
-    error_log("$LANG[db_connect_error]", 3, "../log/db.log");
-    exit;
-}
+error_reporting(E_ALL);
 
-if (!($db = mysql_select_db($db_name, $conn))) {
-    print("$LANG[db_select_error]");
-    error_log("$LANG[db_select_error]", 3, "../log/db.log");
-    exit;
-}
-
-if (!($db = mysql_select_db($db_name, $conn))) {
-    print("$LANG[db_select_error]");
-    error_log("$LANG[db_select_error]", 3, "../log/db.log");
-    exit;
-}inc/config.inc.php';
+require_once '../inc/config.inc.php';
 
 require_once "../lang/{$CONF['lang']}.lang.php";
 
@@ -240,16 +222,24 @@ Answers:<br><input type="text" name="answer[]" class="input"/>
 </form>
 </body>
 FORM;
+//----------------------------------
 
-If (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes' && IsSet($_POST['lvl_id']) && IsSet($_POST['answer']) && IsSet($_POST['question'])) {
+If ($_POST['IsSent'] == 'Yes' && $_POST['lvl_id'] !='' && $_POST['answer'] !='' && $_POST['question'] !='') {
+    $form_validated = 'TRUE';  
+} 
+else {
+    echo "$FORM";
+}
+If($form_validated){
     $lvl_id   = mysql_real_escape_string($_POST['lvl_id']);
     $question = mysql_real_escape_string($_POST['question']);
     
+    //processing answers
     foreach ($_POST['answer'] as $value) {
         if ($value != "") {
             $answer = mysql_real_escape_string($value);
-            $query1 = "INSERT INTO Answers (ID, ID_lvl, Answer) VALUES('NULL', '$lvl_id', '$answer');";
-            If (!($result = mysql_query($query1))) {
+            $query_answers = "INSERT INTO Answers (ID, ID_lvl, Answer) VALUES('NULL', '$lvl_id', '$answer');";
+            If (!($result = mysql_query($query_answers))) {
                 $error = mysql_error();
                 print("$error");
                 error_log("$error/n", 3, "../log/db.log");
@@ -258,24 +248,20 @@ If (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes' && IsSet($_POST['lvl_id
         }
     }
     
-    $query2 = "INSERT INTO Levels (ID, ID_lvl, Question) VALUES('NULL', '$lvl_id','$question')";
+    $query_question = "INSERT INTO Levels (ID, ID_lvl, Question) VALUES('NULL', '$lvl_id','$question')";
     
     
-    If (!($result = mysql_query($query2))) {
+    If (!($result = mysql_query($query_question))) {
         $error = mysql_error();
         print("$error");
         error_log("$error/n", 3, "../log/db.log");
         exit;
     } else {
         echo "$LANG[db_query_success]";
-        echo "
-<form action=\"$PHP_SELF\" method=\"post\">
-<button type=\"submit\">Z powrotem</button>
-</form>
-";
+        echo "<form action=\"$PHP_SELF\" method=\"post\">
+        <button type=\"submit\">Z powrotem</button>
+        </form>";
     }
-} else {
-    echo "$FORM";
 }
 mysql_close();
 ?>
