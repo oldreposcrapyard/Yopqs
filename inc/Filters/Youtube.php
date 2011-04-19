@@ -75,7 +75,7 @@ class BbCodeFilterYoutube
 //	<embed src="http://www.youtube.com/v/'.$idMovie.'" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="400" height="325"></embed>
 //</object>';
                 $openNode['text']='<iframe title="YouTube video player" width="560" height="349" 
-                src="http://www.youtube.com/embed/'.$idMovie.'?rel=0" frameborder="0" allowfullscreen>
+                src="http://www.youtube.com/embed/'.$idMovie.'?rel=0" frameborder="0">
                 </iframe>
                 ';
 
