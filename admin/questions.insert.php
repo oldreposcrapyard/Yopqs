@@ -86,19 +86,19 @@ input.input { display: block; }
 /******************************************/
 var textarea;$LANG[bold]
 var content;
-document.write("<link href=\"bbeditor/styles.css\" rel=\"stylesheet\" type=\"text/css\">");
+document.write("<link href=\"../inc/bbeditor/styles.css\" rel=\"stylesheet\" type=\"text/css\">");
 
 
 function edToolbar(obj) {
     document.write("<div class=\"toolbar\">");
-	document.write("<img class=\"button\" src=\"bbeditor/images/bold.gif\" name=\"btnBold\" title=\"$LANG[bold]\" onClick=\"doAddTags('[b]','[/b]','" + obj + "')\">");
-    document.write("<img class=\"button\" src=\"bbeditor/images/italic.gif\" name=\"btnItalic\" title=\"$LANG[italic]\" onClick=\"doAddTags('[i]','[/i]','" + obj + "')\">");
-	document.write("<img class=\"button\" src=\"bbeditor/images/underline.gif\" name=\"btnUnderline\" title=\"$LANG[underline]\" onClick=\"doAddTags('[u]','[/u]','" + obj + "')\">");
-	document.write("<img class=\"button\" src=\"bbeditor/images/link.gif\" name=\"btnLink\" title=\"$LANG[inserturl]\" onClick=\"doURL('" + obj + "')\">");
-	document.write("<img class=\"button\" src=\"bbeditor/images/picture.gif\" name=\"btnPicture\" title=\"$LANG[insertimg]\" onClick=\"doImage('" + obj + "')\">");
-	document.write("<img class=\"button\" src=\"bbeditor/images/quote.gif\" name=\"btnQuote\" title=\"$LANG[insertquote]\" onClick=\"doAddTags('[quote]','[/quote]','" + obj + "')\">"); 
-  	document.write("<img class=\"button\" src=\"bbeditor/images/code.gif\" name=\"btnCode\" title=\"$LANG[insertcode]\" onClick=\"doAddTags('[code]','[/code]','" + obj + "')\">");
-    document.write("<img class=\"button\" src=\"bbeditor/images/youtube.png\" name=\"btnYoutube\" title=\"$LANG[insertyt]\" onClick=\"doAddTags('[youtube]','[/youtube]','" + obj + "')\">");
+	document.write("<img class=\"button\" src=\"../inc/bbeditor/images/bold.gif\" name=\"btnBold\" title=\"$LANG[bold]\" onClick=\"doAddTags('[b]','[/b]','" + obj + "')\">");
+    document.write("<img class=\"button\" src=\"../inc/bbeditor/images/italic.gif\" name=\"btnItalic\" title=\"$LANG[italic]\" onClick=\"doAddTags('[i]','[/i]','" + obj + "')\">");
+	document.write("<img class=\"button\" src=\"../inc/bbeditor/images/underline.gif\" name=\"btnUnderline\" title=\"$LANG[underline]\" onClick=\"doAddTags('[u]','[/u]','" + obj + "')\">");
+	document.write("<img class=\"button\" src=\"../inc/bbeditor/images/link.gif\" name=\"btnLink\" title=\"$LANG[inserturl]\" onClick=\"doURL('" + obj + "')\">");
+	document.write("<img class=\"button\" src=\"../inc/bbeditor/images/picture.gif\" name=\"btnPicture\" title=\"$LANG[insertimg]\" onClick=\"doImage('" + obj + "')\">");
+	document.write("<img class=\"button\" src=\"../inc/bbeditor/images/quote.gif\" name=\"btnQuote\" title=\"$LANG[insertquote]\" onClick=\"doAddTags('[quote]','[/quote]','" + obj + "')\">"); 
+  	document.write("<img class=\"button\" src=\"../inc/bbeditor/images/code.gif\" name=\"btnCode\" title=\"$LANG[insertcode]\" onClick=\"doAddTags('[code]','[/code]','" + obj + "')\">");
+    document.write("<img class=\"button\" src=\"../inc/bbeditor/images/youtube.png\" name=\"btnYoutube\" title=\"$LANG[insertyt]\" onClick=\"doAddTags('[youtube]','[/youtube]','" + obj + "')\">");
 	document.write("</div>");
 	//document.write("<textarea id=\""+ obj +"\" name = \"" + obj + "\" cols=\"" + width + "\" rows=\"" + height + "\"></textarea>");
 				}
