@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
 require_once '../inc/config.inc.php';
 
-require_once "../lang/{$CONF['lang']}.lang.php";../inc/
+require_once "../lang/{$CONF['lang']}.lang.php";
 
 require_once '../inc/allfunctions.inc.php';
 
