@@ -230,7 +230,7 @@ If (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes' && $_POST['lvl_id'] !='
 else {
     echo "$FORM";
 }
-If($form_validated){
+If(IsSet($form_validated) && $form_validated == 'TRUE'){
     $lvl_id   = mysql_real_escape_string($_POST['lvl_id']);
     $question = mysql_real_escape_string($_POST['question']);
     
