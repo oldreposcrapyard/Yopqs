@@ -224,7 +224,7 @@ Answers:<br><input type="text" name="answer[]" class="input"/>
 FORM;
 //----------------------------------
 
-If ($_POST['IsSent'] == 'Yes' && $_POST['lvl_id'] !='' && $_POST['answer'] !='' && $_POST['question'] !='') {
+If (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes' && $_POST['lvl_id'] !='' && $_POST['answer'] !='' && $_POST['question'] !='') {
     $form_validated = 'TRUE';  
 } 
 else {
