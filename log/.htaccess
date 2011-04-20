@@ -1,5 +1,5 @@
 <FilesMatch "\.(log)$">
-# Block access to wp-config
+# Block access to db.log
 order allow,deny
 deny from all
 </FilesMatch>
