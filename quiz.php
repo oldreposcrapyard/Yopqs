@@ -44,7 +44,7 @@ require_once "lang/{$CONF['lang']}.lang.php";
 
 require_once 'inc/allfunctions.inc.php';
 
-include_once('inc/bbcode/BbCode.class.php');
+include_once('/inc/bbcode/BbCode.class.php');
 
 $PHP_SELF = getnamefile();
 //---------------------------
