@@ -31,3 +31,7 @@ just delete logo.jpg and replace it with
 logo you can make from file clearlogo.jpg.
 Copyright (C) 2010 - 2011 by Marcin Lawniczak <marcin.safmb@wp.pl> | <www.stw.net23.net>
 
+This software is using following scripts:
+- BBcode parser by wookieb: http://forum.php.pl/klasa_Zaawansowany_parser_bbcode_php5_t115269.html
+with my slight modifications that can be found here https://github.com/marcinlawnik/BBcode-modified
+
