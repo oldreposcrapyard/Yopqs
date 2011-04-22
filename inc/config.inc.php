@@ -50,13 +50,10 @@ $link2_name = 'example2';
 //co si� pojawi na stronie "wygra�e�"
 $CONF['won_page_content']  = 'you have won';
 
-
 //should the script measure solving time
 $CONF['measure_time']  = 'TRUE';
 
 //-----------------
 // Don't change anything below this line unless you know what you are doing.
 //-----------------
-//commented out in quiz.php
-$CONF['debug_mode'] = 'FALSE';
 ?>

@@ -253,7 +253,7 @@ $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
 
 echo "
-<!-- revision 1 -->
+<!-- revision 2 -->
 <p align=\"right\"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
 <p>$question_display</p>
 <p>$LANG[youranswer]:</p>
@@ -270,21 +270,7 @@ METHOD = \"POST\">
 // Footer
 //--------------------------
 include_once 'inc/foot.inc.php';
-//--------------------------
-// Debug mode
-//--------------------------
-//if ($CONF['debug_mode'] == TRUE) {   
-//    echo "<br><font color=\"red\">Debug mode</font><br>";
-//    echo "This file name: {$PHP_SELF}<br>";
-//    echo "Actual level: ";
-//    $debug_lvl =  print_r($_SESSION);
-//    echo '<br>DATABASE CONNECTION SUCCESSFUL<br>';
-//    echo "$max_level<br>";
-//    If (Is_Array($result)) {
-//        echo 'array it is<br>';
-//    }
-//    print_r($result);
-//}
+
 mysql_close();
 
 ?>							
