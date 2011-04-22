@@ -92,21 +92,21 @@ $max_level = getmaxlevel();
 If (!IsSet($FAIL) && !IsSet($ANSWEREMPTY) && !IsSet($WON)) {
     $FAIL = <<<FAIL
 <link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
-<div id="fail">
+<div id="redbox">
 <p> $LANG[fail] </p>
 </div>
 FAIL;
     
     $ANSWEREMPTY = <<<AE
 <link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
-<div id="fail">
+<div id="redbox">
 <p> $LANG[answerempty] </p>
 </div>
 AE;
     
     $WON = <<<WON
   <link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
-  <div id="text">
+  <div id="greenbox">
   <p>$LANG[togettonextlevel]</p>
   </div>
 WON;

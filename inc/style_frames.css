@@ -1,4 +1,4 @@
-#text {
+#greenbox {
 background: #99FF99;
 border: 1px solid #336600;
 -moz-border-radius: 5px;
@@ -13,7 +13,7 @@ height: 38px;
 width: 500px;
 }
 
-#text p {
+#greenbox p {
 font-size: 12px;
 color: #336600;
 font-family: "Trebuchet MS";
@@ -28,7 +28,7 @@ background: url(../img/accept.png) no-repeat;
 background-position: 10px;
 padding-left: 22px;
 }
-#fail {
+#redbox {
 background: #CC9999;
 border: 1px solid #A9343D;
 -moz-border-radius: 5px;
@@ -43,7 +43,7 @@ height: 38px;
 width: 500px;
 }
 
-#fail p {
+#redbox p {
 font-size: 12px;
 color: #A9343D;
 font-family: "Trebuchet MS";
