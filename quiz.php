@@ -1,5 +1,5 @@
 <?php
-// Copyright (C) 2010 by Marcin Lawniczak <marcin.safmb@wp.pl> |<www.stw.net23.net>
+// Copyright (C) 2010 - 2011 by Marcin Lawniczak <marcin.safmb@wp.pl> |<www.stw.net23.net>
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 3
@@ -213,7 +213,6 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
   </body>
 </html>
 DISP;
-        //displaytime($time_solved_quiz, $normal_time);
         exit();
     } else {
         echo "$CONF[won_page_content]";
@@ -246,14 +245,15 @@ if (!($query_question = mysql_fetch_assoc($query_question))) {
     exit;
 }
 
-//
-//Parsing BBcode should be here(is now)
-//
+//-----------------
+// Parsing BBcode
+//-----------------
 $bb = new BbCode();
 $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
 
 echo "
+<!-- revision 1 -->
 <p align=\"right\"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
 <p>$question_display</p>
 <p>$LANG[youranswer]:</p>
@@ -265,10 +265,6 @@ METHOD = \"POST\">
 <INPUT TYPE=\"submit\" VALUE=\"$LANG[ianswer]\">
 </FORM>
 ";
-
-//<img src=\"$img[$_SESSION'actual_lvl]]\" alt=\"Image\" /> 
-//move to database and when uploading to server just remember it's name
-//Or maybe the bbcode solves it?
 
 //--------------------------
 // Footer

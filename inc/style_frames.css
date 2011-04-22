@@ -1,3 +1,12 @@
+/*  File displaying green and
+ *  red boxes in quiz.php
+ *  
+ *  This is a part of 
+ *  YOPQS 0.9 Beta
+ *  quiz system that
+ *  can be found on github.com
+ */
+
 #greenbox {
 background: #99FF99;
 border: 1px solid #336600;
