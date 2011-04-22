@@ -20,11 +20,11 @@
 
 $LANG                      = array();
 //Quiz language
-$LANG['fail']              = 'Answer wrong, try again.';
+$LANG['badanswer']         = 'Answer wrong, try again.';
 $LANG['ianswer']           = 'I answer';
-$LANG['togettonextlevel']  = 'Answer right.';
+$LANG['goodanswer']        = 'Answer right.';
 $LANG['youranswer']        = 'Answer';
-$LANG['answerempty']       = 'You haven\'t answered!';
+$LANG['emptyanswer']       = 'You haven\'t answered!';
 $LANG['of']                = 'of';
 $LANG['level']             = 'Level';
 //Main page language

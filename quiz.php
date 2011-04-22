@@ -93,21 +93,21 @@ If (!IsSet($FAIL) && !IsSet($ANSWEREMPTY) && !IsSet($WON)) {
     $FAIL = <<<FAIL
 <link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
 <div id="redbox">
-<p> $LANG[fail] </p>
+<p> $LANG[badanswer] </p>
 </div>
 FAIL;
     
     $ANSWEREMPTY = <<<AE
 <link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
 <div id="redbox">
-<p> $LANG[answerempty] </p>
+<p> $LANG[emptyanswer] </p>
 </div>
 AE;
     
     $WON = <<<WON
   <link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
   <div id="greenbox">
-  <p>$LANG[togettonextlevel]</p>
+  <p>$LANG[goodanswer]</p>
   </div>
 WON;
 }
