@@ -4,3 +4,4 @@ Penalty time for wrong answer
 Questions managment system
 Text 'Answer right' disappearing after 15 seconds
 Parse template against BBcode
+IE6 Blocker (Default template has weird stripes in IE6) http://css-tricks.com/ie-6-blocker-script/
