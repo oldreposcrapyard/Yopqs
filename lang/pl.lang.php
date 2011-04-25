@@ -28,7 +28,7 @@ $LANG['emptyanswer']       = 'Nie poda&#322;e&#347; odpowiedzi!';
 $LANG['of']                = 'z';
 $LANG['level']             = 'Poziom';
 //Main page language
-$LANG['mainpageuppercase'] = 'STRONA G&#321;&#211;WNA';
+$LANG['mainpageuppercase'] = 'STRONA GŁÓWNA';
 $LANG['welcomequizpage']   = 'Witaj na stronie quizu';
 $LANG['startquiz']         = 'Zacznij Quiz!';
 //BBcode editor language
