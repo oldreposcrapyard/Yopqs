@@ -1942,7 +1942,7 @@ function meth_Merge_BlockSections(&$Txt,&$LocR,&$Src,&$RecSpe) {
 						if ($brk_i) {
 							$brk_any = true;
 							$ok = true;
-							if ($piOMG) {$ArgLst2[0]=&$Src->PrevRec; $ArgLst2[1]=&$GrpDef; $ok = $this->meth_PlugIn_RunAll($this->_piOnMergeGroup,$ArgLst2);}
+							if ($piOMG) {$ArgLst2[0]=$Src->PrevRec; $ArgLst2[1]=$GrpDef; $ok = $this->meth_PlugIn_RunAll($this->_piOnMergeGroup,$ArgLst2);}
 							if ($ok!==false) $brk_src = $this->meth_Merge_SectionNormal($GrpDef,$Src->PrevRec).$brk_src;
 							$GrpDef->PrevValue = $x;
 						}
@@ -1960,7 +1960,7 @@ function meth_Merge_BlockSections(&$Txt,&$LocR,&$Src,&$RecSpe) {
 					if (!$brk) $brk = !($GrpDef->PrevValue===$x);
 					if ($brk) {
 						$ok = true;
-						if ($piOMG) {$ArgLst2[0]=&$Src; $ArgLst2[1]=&$GrpDef; $ok = $this->meth_PlugIn_RunAll($this->_piOnMergeGroup,$ArgLst2);}
+						if ($piOMG) {$ArgLst2[0]=$Src; $ArgLst2[1]=$GrpDef; $ok = $this->meth_PlugIn_RunAll($this->_piOnMergeGroup,$ArgLst2);}
 						if ($ok!==false) $brk_src .= $this->meth_Merge_SectionNormal($GrpDef,$Src);
 						$GrpDef->PrevValue = $x;
 					}
@@ -2047,7 +2047,7 @@ function meth_Merge_BlockSections(&$Txt,&$LocR,&$Src,&$RecSpe) {
 				$GrpDef = &$LocR->FooterDef[$i];
 				if ($GrpDef->AddLastGrp) {
 					$ok = true;
-					if ($piOMG) {$ArgLst2[0]=&$Src->PrevRec; $ArgLst2[1]=&$GrpDef; $ok = $this->meth_PlugIn_RunAll($this->_piOnMergeGroup,$ArgLst2);}
+					if ($piOMG) {$ArgLst2[0]=$Src->PrevRec; $ArgLst2[1]=$GrpDef; $ok = $this->meth_PlugIn_RunAll($this->_piOnMergeGroup,$ArgLst2);}
 					if ($ok!==false) $SecSrc .= $this->meth_Merge_SectionNormal($GrpDef,$Src->PrevRec);
 				}
 			}
