@@ -2,7 +2,7 @@
 require_once 'inc/config.inc.php';
 require_once "lang/{$CONF['lang']}.lang.php";
 require_once('inc/template_tbs.php');
-$TBS =& new clsTinyButStrong;
+$TBS = new clsTinyButStrong;
 $TBS->LoadTemplate('templates/standard/index.tpl');
 $quiz_name     = "$CONF[quiz_name]";
 $main_page     = "$LANG[mainpageuppercase]";
