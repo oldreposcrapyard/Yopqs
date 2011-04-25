@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>
-      [quiz_name] - Marcinl's php quiz
+      [onshow.quiz_name] - Marcinl's php quiz
     </title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="inc/styl.css" />
@@ -30,10 +30,10 @@
           <table border="0" width="660" align="center">
             <tr>
               <td>
-                <a href="index.php" class="dwa">[main_page]</a> 
+                <a href="index.php" class="dwa">[onshow.main_page]</a> 
                 | <a href="http://www.stw.net23.net/">Strona autora</a>
-                | <a href="[link1]">[link1_name]</a>
-                | <a href="[link2]">[link2_name]</a>
+                | <a href="[link1]">[onshow.link1_name]</a>
+                | <a href="[link2]">[onshow.link2_name]</a>
               </td>
             </tr>
           </table>
@@ -49,13 +49,13 @@
         <td class="c4" width="607">
           <div class="c3">
             <h2>
-              [welcome_text] [quiz_name]
+              [onshow.welcome_text] [onshow.quiz_name]
             </h2>
           </div><br />
-          [start_content]<br />
+          [onshow.start_content]<br />
           <div class="c3">
             <h1>
-              <a href="quiz.php">[start_quiz]</a>
+              <a href="quiz.php">[onshow.start_quiz]</a>
             </h1>
           </div>
         </td>
