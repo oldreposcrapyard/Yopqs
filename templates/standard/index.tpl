@@ -6,7 +6,7 @@
       [onshow.quiz_name] - Marcinl's php quiz
     </title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="inc/styl.css" />
+    <link rel="stylesheet" type="text/css" href="inc/styl.css">
     <style type="text/css">
 /*<![CDATA[*/
     body {
@@ -28,7 +28,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="3" class="c1" width="750" height="38" valign="center">
+        <td colspan="3" class="c1" width="750" height="38" valign="middle">
           <table border="0" width="660" align="center">
             <tr>
               <td>
