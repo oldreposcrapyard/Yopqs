@@ -41,7 +41,7 @@ $CONF['template']      = 'standard';
 $CONF['start_content'] = '
 Zasady są proste
 1. Jest 15 pytań
-2. Odpowiedź na każde pytanie można znaleźć w Wikipedii, wolnej encyklopedii i jej projektach siostrzanych lub szukając w Google.
+2. Odpowiedź na każde pytanie można znaleźć w [b]Wikipedii[/b], wolnej encyklopedii i jej projektach siostrzanych lub szukając w [b]Google[/b].
 3. Staraj się pisać poprawnie. Jeżeli jesteś pewien odpowiedzi a skrypt podaje że jest błędna, spróbuj napisać ją inaczej (z ogonkami, z dużej litery).';
 
 //linki na stronie głównej (muszą być z http)
