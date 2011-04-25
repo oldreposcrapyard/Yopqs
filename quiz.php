@@ -221,7 +221,7 @@ DISP;
 } elseif (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo'])) {
     echo $WON;
     $_SESSION['actual_lvl']++;
-} elseif (isSet($_POST["haslo"]) && $_POST["haslo"] == "") {
+} elseif (isSet($_POST["haslo"]) && $_POST["haslo"] == "" || preg_match('/^\s*$/', "$_POST[haslo]")) {
     echo $ANSWEREMPTY;
 } elseif (!isSet($_POST["haslo"])) {
     echo '';
