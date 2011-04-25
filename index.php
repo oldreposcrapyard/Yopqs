@@ -12,6 +12,6 @@ $link1         = "$CONF[link1]";
 $link1_name    = "$CONF[link1_name]";
 $link2         = "$CONF[link2]";
 $link2_name    = "$CONF[link2_name]";
-$TBS->LoadTemplate('templates/standard/index.tpl');
+$TBS->LoadTemplate("templates/{$CONF[template]}/index.tpl");
 $TBS->Show();
 ?>

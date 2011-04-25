@@ -1,4 +1,9 @@
 ------------------------
+1.0 Beta
+------------------------
+[ENHANCEMENT]Index.php is now using template system
+
+------------------------
 0.9 Beta
 ------------------------
 [BUGFIX]Fixed the "solve time on refresh changes" bug
@@ -6,7 +11,7 @@
 [SECURITY]Secured config file with ob_start and ob_end_flush 
 [SECURITY]Secured some files with .htaccess
 [FEATURE]BBcode parsing
-[REATURE]Measuring time
+[FEATURE]Measuring time
 [BUGFIX]Last level didn't work
 ------------------------
 0.8 Beta

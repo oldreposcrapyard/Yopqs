@@ -30,14 +30,19 @@ $CONF['lang']          = 'pl';
 
 $CONF['quiz_name']     = 'example';
 
+//Skórka
+//Template
+
+$CONF['template']      = 'standard';
+
 //What will appear on start page
 //Co się wyświetli na stronie głównej
 
 $CONF['start_content'] = '
 Zasady są proste
 1. Jest 15 pytań
-2. Odpowied&#378; na ka&#380;de pytanie mo&#380;na znale&#378;&#263; w <a href="http://www.pl.wikipedia.org/">Wikipedii, wolnej encyklopedii i <a href="http://pl.wikipedia.org/wiki/Szablon:Siostrzane">jej projektach siostrzanych</a> lub szukaj&#261;c w Google.
-3. Staraj si&#281; pisa&#263; poprawnie. Je&#380;eli jeste&#347; pewien odpowiedzi a skrypt podaje &#380;e jest b&#322;&#281;dna, spr&#243;buj napisa&#263; odpowied&#378; inaczej (z ogonkami, z du&#380;ej litery).';
+2. Odpowiedź na każde pytanie można znaleźć w Wikipedii, wolnej encyklopedii i jej projektach siostrzanych lub szukając w Google.
+3. Staraj się pisać poprawnie. Jeżeli jesteś pewien odpowiedzi a skrypt podaje że jest błędna, spróbuj napisać ją inaczej (z ogonkami, z dużej litery).';
 
 //linki na stronie głównej (muszą być z http)
 //links on start page (must be with http!!)
