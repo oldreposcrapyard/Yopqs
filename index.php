@@ -14,9 +14,9 @@ $link1_name    = "$CONF[link1_name]";
 $link2         = "$CONF[link2]";
 $link2_name    = "$CONF[link2_name]";
 
-$bb            = new BbCode();
-$bb->parse($start_content, false);
-$start_content = $bb->getHtml();
+//$bb            = new BbCode();
+//$bb->parse($start_content, false);
+//$start_content = $bb->getHtml();
 
 $template      = "$CONF[template]";
 $TBS->LoadTemplate("templates/$template/index.tpl");
