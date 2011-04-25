@@ -1,5 +1,5 @@
 <?php
-// Copyright (C) 2010 by Marcin Lawniczak <marcin.safmb@wp.pl> |<www.stw.net23.net>
+// Copyright (C) 2010 - 2011 by Marcin Lawniczak <marcin.safmb@wp.pl> |<www.stw.net23.net>
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 3
@@ -47,12 +47,12 @@ function getmaxlevel(){
         exit;
     } 
     
-    if (!($query_id2 = mysql_result($query_id, 0))) {
+    if (!($query_result = mysql_result($query_id, 0))) {
         return("$LANG[db_query_error]");
         error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
         exit;
     } 
-    return $query_id2;
+    return $query_result;
 } 
 
 //------------------------------------------------------------
