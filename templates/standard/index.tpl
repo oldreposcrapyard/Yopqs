@@ -5,7 +5,7 @@
     <title>
       [onshow.quiz_name] - Marcinl's php quiz
     </title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="inc/styl.css">
     <style type="text/css">
 /*<![CDATA[*/
