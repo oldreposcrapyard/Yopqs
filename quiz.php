@@ -175,8 +175,8 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
               <td>
                 <a href="index.php" class="dwa">$LANG[mainpageuppercase]</a> 
                 | <a href="http://www.stw.net23.net/">Strona autora</a>
-                | <a href="$link1">$link1_name</a>
-                | <a href="$link2">$link2_name</a>
+                | <a href="$CONF[link1]">$CONF[link1_name]</a>
+                | <a href="$CONF[link2]">$CONF[link2_name]</a>
               </td>
             </tr>
           </table>
