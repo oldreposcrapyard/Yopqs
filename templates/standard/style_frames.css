@@ -36,12 +36,6 @@
     background-position: 10px;
     padding-left: 22px;
 }
-#greenbox img {
-    position:absolute;
-    left:490px;
-    top:38px;
-    z-index:20;
-}
 #redbox {
     background: #CC9999;
     border: 1px solid #A9343D;
@@ -70,10 +64,4 @@
     background: url(../img/delete.png) no-repeat;
     background-position: 10px;
     padding-left: 22px;
-}
-#redbox img {
-    position:absolute;
-    left:490px;
-    top:38px;
-    z-index:20;
 }

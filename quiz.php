@@ -93,81 +93,24 @@ $max_level = getmaxlevel();
 
 If (!IsSet($FAIL) && !IsSet($ANSWEREMPTY) && !IsSet($WON)) {
     $FAIL = <<<FAIL
-<script language= "JavaScript" type="text/javascript">
-obrazek1_on = new Image(12, 12);
-obrazek1_on.src = "templates/$template/img/button_clicked.png";
-obrazek1_off = new Image(12, 12);
-obrazek1_off.src = "templates/$template/img/button_unclicked.png";
-      
-function img_act(pic)
-{
-document[pic].src = eval(pic + "_on.src");
-}
-   
-function img_deact(pic)
-{
-document[pic].src = eval(pic + "_off.src");
-}
-</script>
 <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="redbox">
 <p> $LANG[badanswer] </p>
-    <img name="obrazek1" src="templates/$template/img/button_unclicked.png" alt="obrazek" onClick="var disappear =
-    document.getElementById('redbox');
-    disappear.style.display='none';" onMouseOver="img_act('obrazek1')" onMouseOut="img_deact('obrazek1')" >
 </div>
 FAIL;
     
     $ANSWEREMPTY = <<<AE
-<script language= "JavaScript" type="text/javascript">
-obrazek1_on = new Image(12, 12);
-obrazek1_on.src = "templates/$template/img/button_clicked.png";
-obrazek1_off = new Image(12, 12);
-obrazek1_off.src = "templates/$template/img/button_unclicked.png";
-      
-function img_act(pic)
-{
-document[pic].src = eval(pic + "_on.src");
-}
-   
-function img_deact(pic)
-{
-document[pic].src = eval(pic + "_off.src");
-}
-</script>
 <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="redbox">
 <p> $LANG[emptyanswer] </p>
-    <img name="obrazek1" src="templates/$template/img/button_unclicked.png" alt="obrazek" onClick="var disappear =
-    document.getElementById('redbox');
-    disappear.style.display='none';" onMouseOver="img_act('obrazek1')" onMouseOut="img_deact('obrazek1')" >
 </div>
 AE;
     
     $WON = <<<WON
-<script language= "JavaScript" type="text/javascript">
-obrazek1_on = new Image(12, 12);
-obrazek1_on.src = "templates/$template/img/button_clicked.png";
-obrazek1_off = new Image(12, 12);
-obrazek1_off.src = "templates/$template/img/button_unclicked.png";
-      
-function img_act(pic)
-{
-document[pic].src = eval(pic + "_on.src");
-}
-   
-function img_deact(pic)
-{
-document[pic].src = eval(pic + "_off.src");
-}
-</script>
-  <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
-  <div id="greenbox">
-  <p>$LANG[goodanswer]</p>
-    <img name="obrazek1" src="templates/$template/img/button_unclicked.png" alt="obrazek" onClick="var disappear =
-    document.getElementById('greenbox');
-    disappear.style.display='none';" onMouseOver="img_act('obrazek1')" onMouseOut="img_deact('obrazek1')" >
-  </div>
+<link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
+<div id="greenbox">
+<p>$LANG[goodanswer]</p>
+</div>
 WON;
 }
 
