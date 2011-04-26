@@ -38,8 +38,8 @@
 }
 #greenbox img {
     position:absolute;
-    right:10px;
-    top:13px;
+    left:490px;
+    top:38px;
     z-index:20;
 }
 #redbox {
@@ -73,7 +73,7 @@
 }
 #redbox img {
     position:absolute;
-    right:10px;
-    top:13px;
+    left:490px;
+    top:38px;
     z-index:20;
 }
