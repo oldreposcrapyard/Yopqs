@@ -46,7 +46,7 @@ require_once 'inc/allfunctions.inc.php';
 
 require_once 'inc/bbcode/BbCode.class.php';
 
-$template = $CONF[template];
+$template = $CONF['template'];
 
 $PHP_SELF = getnamefile();
 //---------------------------
