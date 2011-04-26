@@ -18,7 +18,7 @@ $link2_name    = $CONF['link2_name'];
 //$bb->parse($start_content, false);
 //$start_content = $bb->getHtml();
 
-$template      = $CONF[template];
+$template      = $CONF['template'];
 $TBS->LoadTemplate("templates/$template/index.tpl");
 $TBS->Show();
 ?>
