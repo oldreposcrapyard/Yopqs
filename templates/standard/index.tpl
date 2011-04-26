@@ -34,8 +34,8 @@
               <td>
                 <a href="index.php" class="dwa">[onshow.main_page]</a> 
                 | <a href="http://www.stw.net23.net/">Strona autora</a>
-                | <a href="[link1]">[onshow.link1_name]</a>
-                | <a href="[link2]">[onshow.link2_name]</a>
+                | <a href="[onshow.link1]">[onshow.link1_name]</a>
+                | <a href="[onshow.link2]">[onshow.link2_name]</a>
               </td>
             </tr>
           </table>
