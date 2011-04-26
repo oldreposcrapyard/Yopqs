@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `Answers` (
   `ID_lvl` smallint(6) NOT NULL,
   `Answer` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=41 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
 
 --
 -- Dumping data for table `Answers`
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `Levels` (
   `ID_lvl` smallint(6) NOT NULL,
   `Question` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
 
 --
 -- Dumping data for table `Levels`
