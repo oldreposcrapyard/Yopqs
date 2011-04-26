@@ -46,13 +46,15 @@ require_once 'inc/allfunctions.inc.php';
 
 require_once 'inc/bbcode/BbCode.class.php';
 
+$template = $CONF[template];
+
 $PHP_SELF = getnamefile();
 //---------------------------
 // Database connection
 //---------------------------
 if (!($conn = mysql_connect($db_hostname, $db_username, $db_password))) {
     print("$LANG[db_connect_error]");
-    error_log("$LANG[db_connect_error]\r\n", 3, "../log/db.log");
+    error_log("$LANG[db_connect_error]\r\n", 3, '../log/db.log');
     exit;
 }
 //---------------------------
@@ -65,7 +67,7 @@ mysql_set_charset('utf8', $conn);
 //---------------------------
 if (!($db = mysql_select_db($db_name, $conn))) {
     print("$LANG[db_select_error]");
-    error_log("$LANG[db_select_error]\r\n", 3, "../log/db.log");
+    error_log("$LANG[db_select_error]\r\n", 3, '../log/db.log');
     exit;
 }
 //---------------------------
@@ -91,23 +93,80 @@ $max_level = getmaxlevel();
 
 If (!IsSet($FAIL) && !IsSet($ANSWEREMPTY) && !IsSet($WON)) {
     $FAIL = <<<FAIL
-<link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
+<script language= "JavaScript" type="text/javascript">
+obrazek1_on = new Image(12, 12);
+obrazek1_on.src = "templates/$template/img/button_clicked.png";
+obrazek1_off = new Image(12, 12);
+obrazek1_off.src = "templates/$template/img/button_unclicked.png";
+      
+function img_act(pic)
+{
+document[pic].src = eval(pic + "_on.src");
+}
+   
+function img_deact(pic)
+{
+document[pic].src = eval(pic + "_off.src");
+}
+</script>
+<link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="redbox">
 <p> $LANG[badanswer] </p>
+    <img name="obrazek1" src="templates/$template/img/button_unclicked.png" alt="obrazek" onClick="var disappear =
+    document.getElementById('redbox');
+    disappear.style.display='none';" onMouseOver="img_act('obrazek1')" onMouseOut="img_deact('obrazek1')" >
 </div>
 FAIL;
     
     $ANSWEREMPTY = <<<AE
-<link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
+<script language= "JavaScript" type="text/javascript">
+obrazek1_on = new Image(12, 12);
+obrazek1_on.src = "templates/$template/img/button_clicked.png";
+obrazek1_off = new Image(12, 12);
+obrazek1_off.src = "templates/$template/img/button_unclicked.png";
+      
+function img_act(pic)
+{
+document[pic].src = eval(pic + "_on.src");
+}
+   
+function img_deact(pic)
+{
+document[pic].src = eval(pic + "_off.src");
+}
+</script>
+<link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="redbox">
 <p> $LANG[emptyanswer] </p>
+    <img name="obrazek1" src="templates/$template/img/button_unclicked.png" alt="obrazek" onClick="var disappear =
+    document.getElementById('redbox');
+    disappear.style.display='none';" onMouseOver="img_act('obrazek1')" onMouseOut="img_deact('obrazek1')" >
 </div>
 AE;
     
     $WON = <<<WON
-  <link rel="Stylesheet" type="text/css" href="inc/style_frames.css" />
+<script language= "JavaScript" type="text/javascript">
+obrazek1_on = new Image(12, 12);
+obrazek1_on.src = "templates/$template/img/button_clicked.png";
+obrazek1_off = new Image(12, 12);
+obrazek1_off.src = "templates/$template/img/button_unclicked.png";
+      
+function img_act(pic)
+{
+document[pic].src = eval(pic + "_on.src");
+}
+   
+function img_deact(pic)
+{
+document[pic].src = eval(pic + "_off.src");
+}
+</script>
+  <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
   <div id="greenbox">
   <p>$LANG[goodanswer]</p>
+    <img name="obrazek1" src="templates/$template/img/button_unclicked.png" alt="obrazek" onClick="var disappear =
+    document.getElementById('greenbox');
+    disappear.style.display='none';" onMouseOver="img_act('obrazek1')" onMouseOut="img_deact('obrazek1')" >
   </div>
 WON;
 }
@@ -119,7 +178,7 @@ WON;
 
 if (!($query1 = mysql_query("SELECT Answer FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
     print("$LANG[db_query_error]");
-    error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
+    error_log("$LANG[db_query_error]\r\n", 3, 'log/db.log');
     exit;
 }
 
@@ -132,12 +191,12 @@ while ($row = mysql_fetch_array($query1, MYSQL_ASSOC)) {
 //-----------------
 if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $max_level) {
     if ($CONF['measure_time']) {
-        if(!IsSet($_SESSION['end_time'])){
-        $_SESSION['end_time'] = time();
+        if (!IsSet($_SESSION['end_time'])) {
+            $_SESSION['end_time'] = time();
         }
         $start_time       = $_SESSION['start_time'];
         $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
-        $normal_time      = sec2hms($time_solved_quiz, true); 
+        $normal_time      = sec2hms($time_solved_quiz, true);
         echo <<<DISP
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -236,14 +295,16 @@ DISP;
 
 if (!($query_question = mysql_query("SELECT question FROM `Levels` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
     print("$LANG[db_query_error]");
-    error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
+    error_log("$LANG[db_query_error]", 3, 'log/db.log');
     exit;
 }
 if (!($query_question = mysql_fetch_assoc($query_question))) {
     print("$LANG[db_query_error]");
-    error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
+    error_log("$LANG[db_query_error]", 3, 'log/db.log');
     exit;
 }
+
+mysql_close();
 
 //-----------------
 // Parsing BBcode
@@ -252,25 +313,22 @@ $bb = new BbCode();
 $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
 
-echo "
-<!-- revision 2 -->
-<p align=\"right\"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
+echo <<<FORM
+<!-- revision 3 -->
+<p align="right"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
 <p>$question_display</p>
 <p>$LANG[youranswer]:</p>
-<FORM NAME = \"formularz1\"
-ACTION = \"$PHP_SELF\"
-METHOD = \"POST\">
-<INPUT TYPE=\"text\" NAME=\"haslo\">
+<FORM NAME = "formularz1"
+ACTION = "$PHP_SELF"
+METHOD = "POST">
+<INPUT TYPE="text" NAME="haslo">
 <BR><BR>
-<INPUT TYPE=\"submit\" VALUE=\"$LANG[ianswer]\">
+<INPUT TYPE="submit" VALUE="$LANG[ianswer]">
 </FORM>
-";
+FORM;
 
 //--------------------------
 // Footer
 //--------------------------
 include_once 'inc/foot.inc.php';
-
-mysql_close();
-
 ?>							
