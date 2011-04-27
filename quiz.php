@@ -91,28 +91,26 @@ $max_level = getmaxlevel();
 //-------------
 //shall be moved to config or sth nothing but form uses it
 
-If (!IsSet($FAIL) && !IsSet($ANSWEREMPTY) && !IsSet($WON)) {
-    $FAIL = <<<FAIL
+$FAIL = <<<FAIL
 <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="redbox">
-<p> $LANG[badanswer] </p>
+<p>$LANG[badanswer]</p>
 </div>
 FAIL;
     
-    $ANSWEREMPTY = <<<AE
+$ANSWEREMPTY = <<<AE
 <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="redbox">
-<p> $LANG[emptyanswer] </p>
+<p>$LANG[emptyanswer]</p>
 </div>
 AE;
     
-    $WON = <<<WON
+$WON = <<<WON
 <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="greenbox">
 <p>$LANG[goodanswer]</p>
 </div>
 WON;
-}
 
 
 //-------------
@@ -223,13 +221,13 @@ DISP;
 } elseif (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo'])) {
     echo $WON;
     $_SESSION['actual_lvl']++;
-} elseif (isSet($_POST["haslo"]) && $_POST["haslo"] == "" || isSet($_POST["haslo"]) && preg_match('/^\s*$/', $_POST['haslo'])) {
+} elseif (isSet($_POST['haslo']) && $_POST['haslo'] == '' || isSet($_POST['haslo']) && preg_match('/^\s*$/', $_POST['haslo'])) {
     echo $ANSWEREMPTY;
-} elseif (!isSet($_POST["haslo"])) {
+} elseif (!isSet($_POST['haslo'])) {
     echo '';
 } else {
     echo "$FAIL";
-    include_once("$PHP_SELF");
+    include_once "$PHP_SELF";
 }
 
 //-----------------
@@ -257,7 +255,7 @@ $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
 
 echo <<<FORM
-<!-- revision 3 -->
+<!-- revision 4 -->
 <p align="right"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
 <p>$question_display</p>
 <p>$LANG[youranswer]:</p>
@@ -273,5 +271,5 @@ FORM;
 //--------------------------
 // Footer
 //--------------------------
-include_once 'inc/foot.inc.php';
+require_once 'inc/foot.inc.php';
 ?>							
