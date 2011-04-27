@@ -54,7 +54,7 @@
               [onshow.welcome_text] [onshow.quiz_name]
             </h2>
           </div><br />
-          [onshow.start_content]<br />
+          [onshow.start_content;ope=html;look]<br />
           <div class="c3">
             <h1>
               <a href="quiz.php">[onshow.start_quiz]</a>
