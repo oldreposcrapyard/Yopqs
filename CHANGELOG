@@ -1,6 +1,7 @@
 ------------------------
 1.0 Beta
 ------------------------
+[FEATURE]Start content in index.php is now parsed against BBcode
 [ENHANCEMENT]Index.php is now using template system
 [FIX]When user inserts spaces in the answer field in quiz.php,
 a "no answer" error is returned instead of "answer wrong"
