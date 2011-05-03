@@ -48,6 +48,12 @@ require_once 'inc/bbcode/BbCode.class.php';
 
 $template = $CONF['template'];
 
+//template files
+
+require_once 'inc/template_tbs.php';
+
+require_once 'inc/tbs_plugin_html.php';
+
 $PHP_SELF = getnamefile();
 //---------------------------
 // Database connection
@@ -97,14 +103,14 @@ $FAIL = <<<FAIL
 <p>$LANG[badanswer]</p>
 </div>
 FAIL;
-    
+
 $ANSWEREMPTY = <<<AE
 <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="redbox">
 <p>$LANG[emptyanswer]</p>
 </div>
 AE;
-    
+
 $WON = <<<WON
 <link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
 <div id="greenbox">
@@ -138,81 +144,22 @@ if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION
         $start_time       = $_SESSION['start_time'];
         $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
         $normal_time      = sec2hms($time_solved_quiz, true);
-        echo <<<DISP
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>
-      $CONF[quiz_name] - Marcinl's php quiz
-    </title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="inc/styl.css" />
-    <style type="text/css">
-/*<![CDATA[*/
-    body {
-    background-color: #434242;
-    }
-    td.c5 {background:URL('img/index_06.gif');}
-    td.c4 {background-color: white}
-    div.c3 {text-align: center}
-    td.c2 {background:URL('img/index_04.gif');}
-    td.c1 {background:URL('img/index_02.jpg');}
-    /*]]>*/
-    </style>
-  </head>
-  <body>
-    <table width="750" border="0" cellpadding="0" cellspacing="0" align="center">
-      <tr>
-        <td colspan="3">
-          <img src="img/logo.jpg" width="750" height="176" alt="" />
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" class="c1" width="750" height="38" valign="center">
-          <table border="0" width="660" align="center">
-            <tr>
-              <td>
-                <a href="index.php" class="dwa">$LANG[mainpageuppercase]</a> 
-                | <a href="http://www.stw.net23.net/">Strona autora</a>
-                | <a href="$CONF[link1]">$CONF[link1_name]</a>
-                | <a href="$CONF[link2]">$CONF[link2_name]</a>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3">
-          <img src="img/index_03.gif" width="750" height="23" alt="" />
-        </td>
-      </tr>
-      <tr>
-        <td class="c2" width="71"></td>
-        <td class="c4" width="607">
-          <div class="c3">
-            <h2>
-              $LANG[youhavesolved] $CONF[quiz_name]
-            </h2>
-          </div>
-          <div class="c3">
-            <h1>
-            $LANG[ittookyou]  
-            $time_solved_quiz $LANG[seconds], $LANG[thatis]<br>$LANG[hours]:$LANG[minutes]:$LANG[seconds]<br>$normal_time
-            </h1>
-          </div>
-        </td>
-        <td class="c5" width="72"></td>
-      </tr>
-      <tr>
-        <td colspan="3">
-          <img src="img/index_07.gif" width="750" height="80" alt="" />
-        </td>
-      </tr>
-    </table>
-  </body>
-</html>
-DISP;
+        $quiz_name        = $CONF['quiz_name'];
+        $main_page        = $LANG['mainpageuppercase'];
+        $link1            = $CONF['link1'];
+        $link1_name       = $CONF['link1_name'];
+        $link2            = $CONF['link2'];
+        $link2_name       = $CONF['link2_name'];
+        $youhavesolved    = $LANG['youhavesolved'];
+        $ittookyou        = $LANG['ittookyou'];
+        $seconds          = $LANG['seconds'];
+        $thatis           = $LANG['thatis'];
+        $hours            = $LANG['hours'];
+        $minutes          = $LANG['minutes'];
+        //template display
+        $TBS              = new clsTinyButStrong;
+        $TBS->LoadTemplate("templates/$template/quiz_time.tpl");
+        $TBS->Show();
         exit();
     } else {
         echo "$CONF[won_page_content]";
