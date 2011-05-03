@@ -43,9 +43,8 @@ $LANG['insertyt']          = 'Wstaw filmik z YouTube';
 $LANG['enterurl']          = 'Podaj adres strony:';
 $LANG['enterimg']          = 'Podaj adres obrazka:';
 //Final page language
-$LANG['youhavesolved']     = 'Rozwi&#261;za&#322;e&#347;';
-$LANG['ittookyou']         = 'Zaj&#281;&#322;o ci to';
-$LANG['seconds']           = 'sekund';
+$LANG['youhavesolved']     = 'Rozwiązałeś';
+$LANG['ittookyou']         = 'Zajęło ci to';
 $LANG['thatis']            = 'czyli';
 $LANG['hours']             = 'Godzin';
 $LANG['minutes']           = 'Minut';
