@@ -106,6 +106,7 @@ $result[] = $row['Answer'];
 //-----------------
 if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
     if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $max_level) { //jezeli dobra odpowiedz na ostatni level
+        $_SESSION['last_level_passed'] = 'TRUE';
         if ($CONF['measure_time']) { //jezeli mierzyc czas
             if (!IsSet($_SESSION['end_time'])) {
                 $_SESSION['end_time'] = time();
@@ -149,6 +150,36 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
     }
 } elseif (!isSet($_POST['haslo'])) { //jezeli nie wysłana odpowiedz
     echo '';
+} elseif ($_SESSION['last_level_passed']) { //jezeli passed last level
+    if ($CONF['measure_time']) { //jezeli mierzyc czas
+            if (!IsSet($_SESSION['end_time'])) {
+                $_SESSION['end_time'] = time();
+            }
+            $start_time       = $_SESSION['start_time'];
+            $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
+            $normal_time      = sec2hms($time_solved_quiz, true);
+            $quiz_name        = $CONF['quiz_name'];
+            $main_page        = $LANG['mainpageuppercase'];
+            $link1            = $CONF['link1'];
+            $link1_name       = $CONF['link1_name'];
+            $link2            = $CONF['link2'];
+            $link2_name       = $CONF['link2_name'];
+            $youhavesolved    = $LANG['youhavesolved'];
+            $ittookyou        = $LANG['ittookyou'];
+            $seconds          = $LANG['seconds'];
+            $thatis           = $LANG['thatis'];
+            $hours            = $LANG['hours'];
+            $minutes          = $LANG['minutes'];
+            //template display
+            $TBS              = new clsTinyButStrong;
+            $TBS->LoadTemplate("templates/$template/quiz_time.tpl");
+            $TBS->Show();
+            exit();
+        } else { //jezeli nie mierzyc czasu
+            echo "$CONF[won_page_content]";
+            include_once 'inc/foot.inc.php';
+            exit;
+        }
 }
 //-----------------
 // Form data
