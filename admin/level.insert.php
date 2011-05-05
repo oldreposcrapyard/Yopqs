@@ -22,8 +22,6 @@ require_once "../lang/{$CONF['lang']}.lang.php";
 
 require_once '../inc/allfunctions.inc.php';
 
-require_once '../inc/db.inc.php';
-
 $PHP_SELF = getnamefile();
 
 if (!($conn = mysql_connect($db_hostname, $db_username, $db_password))) {

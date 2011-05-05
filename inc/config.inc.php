@@ -30,7 +30,7 @@ $CONF['lang']          = 'pl';
 
 $CONF['quiz_name']     = 'example';
 
-//Skórka
+//Szablon
 //Template
 
 $CONF['template']      = 'standard';
@@ -61,4 +61,20 @@ $CONF['won_page_content'] = 'you have won';
 
 //should the script measure solving time
 $CONF['measure_time'] = 'TRUE';
+
+//---------------------------------------
+//DATABASE CONNECTION DATA
+//---------------------------------------
+
+//change the data below with your DB access data
+//orchestra.io database
+$db_username = 'user_45b9cf5d';
+$db_password = '9bvP;cJjT)IJI^';
+$db_hostname = '10.194.111.8'; 
+$db_name       = 'db_45b9cf5d'; 
+
+//$db_username = 'your_username';
+//$db_password = 'your_password';
+//$db_hostname = 'localhost'; 
+//$db_name     = 'database_name'; 
 ?>

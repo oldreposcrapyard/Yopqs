@@ -26,7 +26,6 @@ ini_set('display_errors', '1');
 session_start();
 ob_start();
 require_once 'inc/config.inc.php';
-require_once 'inc/db.inc.php';
 ob_end_flush();
 require_once "lang/{$CONF['lang']}.lang.php";
 require_once 'inc/allfunctions.inc.php';
