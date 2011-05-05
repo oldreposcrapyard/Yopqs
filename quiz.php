@@ -136,45 +136,69 @@ while ($row = mysql_fetch_array($query1, MYSQL_ASSOC)) {
 //-----------------
 // Checking answer
 //-----------------
-if (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $max_level) {
-    if ($CONF['measure_time']) {
-        if (!IsSet($_SESSION['end_time'])) {
-            $_SESSION['end_time'] = time();
-        }
-        $start_time       = $_SESSION['start_time'];
-        $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
-        $normal_time      = sec2hms($time_solved_quiz, true);
-        $quiz_name        = $CONF['quiz_name'];
-        $main_page        = $LANG['mainpageuppercase'];
-        $link1            = $CONF['link1'];
-        $link1_name       = $CONF['link1_name'];
-        $link2            = $CONF['link2'];
-        $link2_name       = $CONF['link2_name'];
-        $youhavesolved    = $LANG['youhavesolved'];
-        $ittookyou        = $LANG['ittookyou'];
-        $seconds          = $LANG['seconds'];
-        $thatis           = $LANG['thatis'];
-        $hours            = $LANG['hours'];
-        $minutes          = $LANG['minutes'];
-        //template display
-        $TBS              = new clsTinyButStrong;
-        $TBS->LoadTemplate("templates/$template/quiz_time.tpl");
-        $TBS->Show();
-        exit();
-    } else {
-        echo "$CONF[won_page_content]";
-        include_once 'inc/foot.inc.php';
-    }
-} elseif (isSet($_POST['haslo']) && checkanswer($result, $_POST['haslo'])) {
-    echo $WON;
-    $_SESSION['actual_lvl']++;
-} elseif (isSet($_POST['haslo']) && $_POST['haslo'] == '' || isSet($_POST['haslo']) && preg_match('/^\s*$/', $_POST['haslo'])) {
-    echo $ANSWEREMPTY;
-} elseif (!isSet($_POST['haslo'])) {
-    echo '';
-} else {
-    echo "$FAIL";
-    include_once "$PHP_SELF";
+if (isSet($_POST['haslo']))
+{//jezeli odpowiedz ustawiona
+
+if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $max_level)
+{//jezeli dobra odpowiedz na ostatni level
+
+if ($CONF['measure_time'])
+{//jezeli mierzyc czas
+
+if (!IsSet($_SESSION['end_time']))
+{
+$_SESSION['end_time'] = time();
+}
+$start_time       = $_SESSION['start_time'];
+$time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
+$normal_time      = sec2hms($time_solved_quiz, true);
+$quiz_name        = $CONF['quiz_name'];
+$main_page        = $LANG['mainpageuppercase'];
+$link1            = $CONF['link1'];
+$link1_name       = $CONF['link1_name'];
+$link2            = $CONF['link2'];
+$link2_name       = $CONF['link2_name'];
+$youhavesolved    = $LANG['youhavesolved'];
+$ittookyou        = $LANG['ittookyou'];
+$seconds          = $LANG['seconds'];
+$thatis           = $LANG['thatis'];
+$hours            = $LANG['hours'];
+$minutes          = $LANG['minutes'];
+//template display
+$TBS              = new clsTinyButStrong;
+$TBS->LoadTemplate("templates/$template/quiz_time.tpl");
+$TBS->Show();
+exit();
+}
+else
+{
+echo "$CONF[won_page_content]";
+include_once 'inc/foot.inc.php';
+}
+
+}
+
+if(checkanswer($result, $_POST['haslo']))
+{//jezeli dobra odpowiedz na level inny niz ostatni
+echo $WON;
+$_SESSION['actual_lvl']++;
+}
+if($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo']))
+{//jezeli odpowiedz pusta
+echo $ANSWEREMPTY;
+}
+
+}
+
+elseif (!isSet($_POST['haslo']))
+{//jezeli nie wysłana odpowiedz
+echo '';
+}
+
+else
+{//w innym przypadku zła odpowiedz
+echo "$FAIL";
+include_once "$PHP_SELF";
 }
 
 //-----------------
@@ -202,7 +226,7 @@ $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
 
 echo <<<FORM
-<!-- revision 4 -->
+<!-- revision 5 -->
 <p align="right"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
 <p>$question_display</p>
 <p>$LANG[youranswer]:</p>
