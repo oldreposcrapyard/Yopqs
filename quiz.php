@@ -171,7 +171,7 @@ $bb = new BbCode();
 $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
 echo <<<FORM
-<!-- revision 5 -->
+<!-- revision 6 -->
 <p align="right"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
 <p>$question_display</p>
 <p>$LANG[youranswer]:</p>
