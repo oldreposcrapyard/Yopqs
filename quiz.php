@@ -140,10 +140,10 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
         echo $WON;
         $_SESSION['actual_lvl']++;
     }
-    if ($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo'])) { //jezeli odpowiedz pusta
+    elseif ($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo'])) { //jezeli odpowiedz pusta
         echo $ANSWEREMPTY;
     }
-    if (!checkanswer($result, $_POST['haslo']) && !$_POST['haslo'] == '' || !preg_match('/^\s*$/', $_POST['haslo'])) { //odpowiedz zla
+    elseif (!checkanswer($result, $_POST['haslo'])) { //odpowiedz zla
         echo "$FAIL";
         include_once "$PHP_SELF";
     }
