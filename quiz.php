@@ -151,7 +151,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
 } elseif (!isSet($_POST['haslo'])) { //jezeli nie wysłana odpowiedz
     echo '';
 } 
-}
+
 //-----------------
 // Form data
 //-----------------
