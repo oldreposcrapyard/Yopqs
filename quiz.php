@@ -90,21 +90,22 @@ $WON         = <<<WON
 <p>$LANG[goodanswer]</p>
 </div>
 WON;
-//-------------
-// Getting answers from database
-//-------------
-if (!($query1 = mysql_query("SELECT Answer FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
-    print("$LANG[db_query_error]");
-    error_log("$LANG[db_query_error]\r\n", 3, 'log/db.log');
-    exit;
-}
-while ($row = mysql_fetch_array($query1, MYSQL_ASSOC)) {
-    $result[] = $row['Answer'];
-}
+
 //-----------------
 // Checking answer
 //-----------------
 if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
+    //-------------
+    // Getting answers from database
+    //-------------
+    if (!($query1 = mysql_query("SELECT Answer FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
+    print("$LANG[db_query_error]");
+    error_log("$LANG[db_query_error]\r\n", 3, 'log/db.log');
+    exit;
+    }
+    while ($row = mysql_fetch_array($query1, MYSQL_ASSOC)) {
+    $result[] = $row['Answer'];
+    }
     if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] > $max_level) { //jezeli dobra odpowiedz na ostatni level
         $_SESSION['actual_lvl']++;
         if ($CONF['measure_time']) { //jezeli mierzyc czas
@@ -134,6 +135,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
         } else { //jezeli nie mierzyc czasu
             echo "$CONF[won_page_content]";
             include_once 'inc/foot.inc.php';
+            exit;
         }
     }
     if (checkanswer($result, $_POST['haslo'])) { //jezeli dobra odpowiedz na level inny niz ostatni
