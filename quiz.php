@@ -105,7 +105,7 @@ $result[] = $row['Answer'];
 // Checking answer
 //-----------------
 if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
-    if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] > $max_level) { //jezeli dobra odpowiedz na ostatni level
+    if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $max_level) { //jezeli dobra odpowiedz na ostatni level
         $_SESSION['actual_lvl']++;
         if ($CONF['measure_time']) { //jezeli mierzyc czas
             if (!IsSet($_SESSION['end_time'])) {
