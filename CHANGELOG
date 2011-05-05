@@ -5,6 +5,8 @@
 [ENHANCEMENT]Index.php is now using template system
 [FIX]When user inserts spaces in the answer field in quiz.php,
 a "no answer" error is returned instead of "answer wrong"
+[FIX]When user opens the quiz page again after solving it and seeing the result
+the resut page is displayed again instead of last level
 ------------------------
 0.9 Beta
 ------------------------
