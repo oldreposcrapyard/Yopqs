@@ -160,7 +160,7 @@ if (!($query_question = mysql_query("SELECT question FROM `Levels` WHERE ID_lvl=
     exit;
 }
 
-if (!($query_question = mysql_fetch_array($query_question, MYSQL_ASSOC);)) {
+if (!($query_question = mysql_fetch_array($query_question, MYSQL_ASSOC))) {
     print("$LANG[db_query_error]");
     error_log("$LANG[db_query_error]", 3, 'log/db.log');
     exit;
