@@ -187,18 +187,17 @@ if($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo']))
 {//jezeli odpowiedz pusta
 echo $ANSWEREMPTY;
 }
+if(!checkanswer($result, $_POST['haslo']))
+{//odpowiedz zla
+echo "$FAIL";
+include_once "$PHP_SELF";
+}
 
 }
 
 elseif (!isSet($_POST['haslo']))
 {//jezeli nie wysłana odpowiedz
 echo '';
-}
-
-else
-{//w innym przypadku zła odpowiedz
-echo "$FAIL";
-include_once "$PHP_SELF";
 }
 
 //-----------------
