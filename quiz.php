@@ -127,6 +127,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             $hours            = $LANG['hours'];
             $minutes          = $LANG['minutes'];
             //template display
+            echo $_SESSION[last_level_passed];
             $TBS              = new clsTinyButStrong;
             $TBS->LoadTemplate("templates/$template/quiz_time.tpl");
             $TBS->Show();
