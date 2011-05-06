@@ -12,11 +12,11 @@
     body {
     background-color: #434242;
     }
-    td.c5 {background:URL('img/index_06.gif');}
+    td.c5 {background:URL('templates/standard/img/index_06.gif');}
     td.c4 {background-color: white}
     div.c3 {text-align: center}
-    td.c2 {background:URL('img/index_04.gif');}
-    td.c1 {background:URL('img/index_02.jpg');}
+    td.c2 {background:URL('templates/standard/img/index_04.gif');}
+    td.c1 {background:URL('templates/standard/img/index_02.jpg');}
     /*]]>*/
     </style>
   </head>
