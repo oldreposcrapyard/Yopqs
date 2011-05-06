@@ -24,7 +24,7 @@
     <table width="750" border="0" cellpadding="0" cellspacing="0" align="center">
       <tr>
         <td colspan="3">
-          <img src="img/logo.jpg" width="750" height="176" alt="" />
+          <img src="templates/standard/img/logo.jpg" width="750" height="176" alt="" />
         </td>
       </tr>
       <tr>
@@ -43,7 +43,7 @@
       </tr>
       <tr>
         <td colspan="3">
-          <img src="img/index_03.gif" width="750" height="23" alt="" />
+          <img src="templates/standard/img/index_03.gif" width="750" height="23" alt="" />
         </td>
       </tr>
       <tr>
@@ -65,7 +65,7 @@
       </tr>
       <tr>
         <td colspan="3">
-          <img src="img/index_07.gif" width="750" height="80" alt="" />
+          <img src="templates/standard/img/index_07.gif" width="750" height="80" alt="" />
         </td>
       </tr>
     </table>
