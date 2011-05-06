@@ -32,7 +32,7 @@
     margin-top: 10px;
     text-indent: 8px;
     height: 16px;
-    background: url(../img/accept.png) no-repeat;
+    background: url(img/accept.png) no-repeat;
     background-position: 10px;
     padding-left: 22px;
 }
@@ -61,7 +61,7 @@
     margin-top: 10px;
     text-indent: 8px;
     height: 16px;
-    background: url(../img/delete.png) no-repeat;
+    background: url(img/delete.png) no-repeat;
     background-position: 10px;
     padding-left: 22px;
 }
