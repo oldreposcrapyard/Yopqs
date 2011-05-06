@@ -99,7 +99,7 @@ error_log("$LANG[db_query_error]\r\n", 3, 'log/db.log');
 exit;
 }
 while ($row = mysql_fetch_array($query1, MYSQL_BOTH)) {
-$result[] = $row[];
+$result[] = $row[2];
 }
 //-----------------
 // Checking answer
