@@ -29,7 +29,7 @@ function checkanswer($array,$passwd_given){
   }
   else{
   foreach($array as $pass){
-    if($passwd_given == $pass){
+    if(mb_strtolower($passwd_given,'UTF-8') == $pass){
       return true;
     }
   }
