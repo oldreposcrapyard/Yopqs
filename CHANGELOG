@@ -8,6 +8,7 @@ a "no answer" error is returned instead of "answer wrong"
 [BUGFIX]When user opens the quiz page again after solving it and seeing the result
 the resut page is displayed again instead of last level
 [MINOR][FIX]Icons are now displaying properly in quiz.php
+[FEATURE]Script now doesn't care about case of the answer input, answer JoHNNy is now equal to johnny
 ------------------------
 0.9 Beta
 ------------------------
