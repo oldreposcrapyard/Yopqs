@@ -93,7 +93,7 @@ WON;
 //-------------
 // Getting answers from database
 //-------------
-if (!($query1 = mysql_query("SELECT LOWER (Answer) FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
+if (!($query1 = mysql_query("SELECT LOWER (Answer) AS Answer FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
 print("$LANG[db_query_error]");
 error_log("$LANG[db_query_error]\r\n", 3, 'log/db.log');
 exit;
