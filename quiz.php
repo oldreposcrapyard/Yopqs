@@ -98,8 +98,8 @@ print("$LANG[db_query_error]");
 error_log("$LANG[db_query_error]\r\n", 3, 'log/db.log');
 exit;
 }
-while ($row = mysql_fetch_array($query1, MYSQL_ASSOC)) {
-$result[] = $row['Answer'];
+while ($row = mysql_fetch_array($query1, MYSQL_BOTH)) {
+$result[] = $row[3];
 }
 //-----------------
 // Checking answer
