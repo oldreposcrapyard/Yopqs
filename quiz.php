@@ -23,6 +23,7 @@ ini_set('display_errors', '1');
 //---------------------------
 // Includes and functions
 //---------------------------
+define('is_included', true); //protection from direct display override
 session_start();
 ob_start();
 require_once 'inc/config.inc.php';
