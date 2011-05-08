@@ -17,7 +17,7 @@
 if(!is_included) die('No direct file display!');// protection from direct display
 
 //************************
-//Polish - PL Language file for Yopqs 0.9 Beta on github.com
+//Polish - PL Language file for Yopqs 1.0 Beta on github.com
 //************************
 
 $LANG                      = array();

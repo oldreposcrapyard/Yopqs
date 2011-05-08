@@ -17,7 +17,7 @@
 if(!is_included) die('No direct file display!');// protection from direct display
 
 //************************
-//English - EN Language file for YOPQS 0.9 Beta on github.com
+//English - EN Language file for YOPQS 1.0 Beta on github.com
 //************************
 
 $LANG                      = array();
