@@ -1,4 +1,5 @@
 <?php
+define('is_included', true); //protection from direct display override
 require_once 'inc/config.inc.php';
 require_once "lang/{$CONF['lang']}.lang.php";
 require_once 'inc/bbcode/BbCode.class.php';
