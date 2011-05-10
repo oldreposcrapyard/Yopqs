@@ -12,6 +12,11 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 ob_start();
+   $mtime = microtime(); 
+   $mtime = explode(" ",$mtime); 
+   $mtime = $mtime[1] + $mtime[0]; 
+   $starttime = $mtime;
+
 //---------------------------
 // Page encoding
 //---------------------------
@@ -222,4 +227,10 @@ FORM;
 // Footer
 //--------------------------
 require_once 'inc/foot.inc.php';
+   $mtime = microtime(); 
+   $mtime = explode(" ",$mtime); 
+   $mtime = $mtime[1] + $mtime[0]; 
+   $endtime = $mtime; 
+   $totaltime = ($endtime - $starttime); 
+   echo "<br>Strona została wygenerowana w ".$totaltime." sekund.";
 ?>							
