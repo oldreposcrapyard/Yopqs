@@ -38,7 +38,6 @@ $template = $CONF['template'];
 //template files
 require_once 'inc/template_tbs.php';
 require_once 'inc/tbs_plugin_html.php';
-ob_end_flush();
 $PHP_SELF = getNameFile();
 //---------------------------
 // Database connection
@@ -233,4 +232,5 @@ require_once 'inc/foot.inc.php';
    $endtime = $mtime; 
    $totaltime = ($endtime - $starttime); 
    echo "<br>Strona została wygenerowana w ".$totaltime." sekund.";
+ob_end_flush();
 ?>							
