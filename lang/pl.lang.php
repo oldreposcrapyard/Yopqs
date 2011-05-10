@@ -22,7 +22,7 @@ $LANG                      = array();
 //Quiz language
 $LANG['badanswer']         = 'Odpowiedź zła, spróbuj jeszcze raz.';
 $LANG['ianswer']           = 'Odpowiadam';
-$LANG['goodanswer']        = 'Odpowiedż poprawna.';
+$LANG['goodanswer']        = 'Odpowiedź poprawna.';
 $LANG['youranswer']        = 'Odpowiedz';
 $LANG['emptyanswer']       = 'Nie podałeś odpowiedzi!';
 $LANG['of']                = 'z';
