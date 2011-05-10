@@ -23,16 +23,18 @@ return $PHP_SELF;
 
 //------------------------------------------------------------
 
-function checkanswer($array, $passwd_given) {
-    if (!IsSet($passwd_given)) {
-        return false;
-    } else {
-        $passwd_given = mb_strtolower($passwd_given, 'UTF-8');
-        if(isset($array[$passwd_given])){
-        return true;
-        }
+function checkanswer($array,$passwd_given){
+  if (!IsSet($passwd_given)){
+  return false;
+  }
+  else{
+  foreach($array as $pass){
+    if(mb_strtolower($passwd_given,'UTF-8') == $pass){
+      return true;
     }
-    return false;
+  }
+  return false;
+}
 }
 
 //------------------------------------------------------------
