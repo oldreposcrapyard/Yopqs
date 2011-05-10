@@ -40,14 +40,14 @@ function checkanswer($array, $passwd_given) {
 function getmaxlevel(){
 
     if (!($query_id = mysql_query("SELECT MAX(ID_lvl) FROM `Levels`"))) {
-        return("$LANG[db_query_error]");
         error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
+        return $LANG['db_query_error'];
         exit;
     } 
     
     if (!($query_result = mysql_result($query_id, 0))) {
-        return("$LANG[db_query_error]");
         error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
+        return $LANG['db_query_error'];
         exit;
     } 
     return $query_result;

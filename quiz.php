@@ -51,7 +51,7 @@ mysql_set_charset('utf8', $conn);
 // Database selecting
 //---------------------------
 if (!($db = mysql_select_db($db_name, $conn))) {
-    print("$LANG[db_select_error]");
+    print $LANG['db_select_error'];
     error_log("$LANG[db_select_error]\r\n", 3, '../log/db.log');
     exit;
 }
@@ -94,7 +94,7 @@ WON;
 // Getting answers from database
 //-------------
 if (!($query1 = mysql_query("SELECT Answer FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
-print("$LANG[db_query_error]");
+print $LANG['db_query_error'];
 error_log("$LANG[db_query_error]\r\n", 3, 'log/db.log');
 exit;
 }
@@ -132,7 +132,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             $TBS->Show();
             exit();
         } else { //jezeli nie mierzyc czasu
-            echo "$CONF[won_page_content]";
+            echo $CONF['won_page_content'];
             include_once 'inc/foot.inc.php';
             exit;
         }
@@ -175,7 +175,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             $TBS->Show();
             exit();
         } else { //jezeli nie mierzyc czasu
-            echo "$CONF[won_page_content]";
+            echo $CONF['won_page_content'];
             include_once 'inc/foot.inc.php';
             exit;
         }
@@ -187,13 +187,13 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
 // Form data
 //-----------------
 if (!($query_question = mysql_query("SELECT question FROM `Levels` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
-    print("$LANG[db_query_error]");
+    print $LANG['db_query_error'];
     error_log("$LANG[db_query_error]", 3, 'log/db.log');
     exit;
 }
 
 if (!($query_question = mysql_fetch_array($query_question, MYSQL_ASSOC))) {
-    print("$LANG[db_query_error]");
+    print $LANG['db_query_error'];
     error_log("$LANG[db_query_error]", 3, 'log/db.log');
     exit;
 }
@@ -206,7 +206,7 @@ $bb = new BbCode();
 $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
 echo <<<FORM
-<!-- revision 6 -->
+<!-- revision 7 -->
 <p align="right"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
 <p>$question_display</p>
 <p>$LANG[youranswer]:</p>

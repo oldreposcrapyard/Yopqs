@@ -1,11 +1,5 @@
---dump of tables and example data in polish for YOPQS 1.0
+--dump of example data in polish for YOPQS 1.0
 --hosted on github.com
-
-DROP TABLE IF EXISTS `Answers`;
-CREATE TABLE IF NOT EXISTS `Answers` (
-  `ID_lvl` smallint(6) NOT NULL,
-  `Answer` text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `Answers` (`ID_lvl`, `Answer`) VALUES
 (1, '6'),
@@ -17,12 +11,6 @@ INSERT INTO `Answers` (`ID_lvl`, `Answer`) VALUES
 (7, 'ple'),
 (8, 'sun zi'),
 (9, 'e');
-
-DROP TABLE IF EXISTS `Levels`;
-CREATE TABLE IF NOT EXISTS `Levels` (
-  `ID_lvl` smallint(6) NOT NULL,
-  `Question` text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `Levels` (`ID_lvl`, `Question`) VALUES
 (1, 'Najpierw sprawdzimy czy nie jesteś idiotą. \nPytanie brzmi: 2+2*2 jest?'),
