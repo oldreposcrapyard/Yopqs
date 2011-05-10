@@ -14,8 +14,6 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-if(!is_included) die('No direct file display!');// protection from direct display
-
 //************************
 //English - EN Language file for YOPQS 1.0 Beta on github.com
 //************************

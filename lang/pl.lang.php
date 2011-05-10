@@ -14,19 +14,17 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-if(!is_included) die('No direct file display!');// protection from direct display
-
 //************************
 //Polish - PL Language file for Yopqs 1.0 Beta on github.com
 //************************
 
 $LANG                      = array();
 //Quiz language
-$LANG['badanswer']         = 'Odpowied&#378; z&#322;a, spr&#243;buj jeszcze raz.';
+$LANG['badanswer']         = 'Odpowiedź zła, spróbuj jeszcze raz.';
 $LANG['ianswer']           = 'Odpowiadam';
-$LANG['goodanswer']        = 'Odpowied&#378; poprawna.';
+$LANG['goodanswer']        = 'Odpowiedż poprawna.';
 $LANG['youranswer']        = 'Odpowiedz';
-$LANG['emptyanswer']       = 'Nie poda&#322;e&#347; odpowiedzi!';
+$LANG['emptyanswer']       = 'Nie podałeś odpowiedzi!';
 $LANG['of']                = 'z';
 $LANG['level']             = 'Poziom';
 //Main page language
@@ -36,7 +34,7 @@ $LANG['startquiz']         = 'Zacznij Quiz!';
 //BBcode editor language
 $LANG['bold']              = 'Pogrubienie';
 $LANG['italic']            = 'Kursywa';
-$LANG['underline']         = 'Podkre&#347;lenie';
+$LANG['underline']         = 'Podkreślenie';
 $LANG['inserturl']         = 'Wstaw URL';
 $LANG['insertimg']         = 'Wstaw obrazek';
 $LANG['insertquote']       = 'Wstaw cytat';
@@ -53,10 +51,10 @@ $LANG['minutes']           = 'Minut';
 $LANG['seconds']           = 'Sekund';
 
 //Database language
-$LANG['db_connect_error']  = 'Nie mo&#380;na po&#322;&#261;czy&#263; si&#281; z baz&#261; danych!';
-$LANG['db_select_error']   = 'Nie mo&#380;na wybra&#263; bazy danych!';
+$LANG['db_connect_error']  = 'Nie można połączyć się z bazą danych!';
+$LANG['db_select_error']   = 'Nie można wybrać bazy danych!';
 $LANG['db_query_success']  = 'Zapytanie wykonane poprawnie.';
-$LANG['db_query_error']    = 'B&#322;&#261;d zapytania!';
+$LANG['db_query_error']    = 'Błąd zapytania!';
 
 //$LANG['example']         = 'Example message.';
 ?>

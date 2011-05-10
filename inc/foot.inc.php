@@ -1,5 +1,4 @@
 <?php
-if(!is_included) die('No direct file display!');// protection from direct display
 echo <<<'FOOT'
 <html>
 <head>

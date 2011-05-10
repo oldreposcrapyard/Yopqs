@@ -14,29 +14,25 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-if(!is_included) die('No direct file display!');// protection from direct display
-
-function getnamefile(){
+function getNameFile(){
 $currentFile = $_SERVER["SCRIPT_NAME"];
 $parts = Explode('/', $currentFile);
 $PHP_SELF = $parts[count($parts) - 1]; 
-return "$PHP_SELF";
+return $PHP_SELF;
 }
 
 //------------------------------------------------------------
 
-function checkanswer($array,$passwd_given){
-  if (!IsSet($passwd_given)){
-  return false;
-  }
-  else{
-  foreach($array as $pass){
-    if(mb_strtolower($passwd_given,'UTF-8') == $pass){
-      return true;
+function checkanswer($array, $passwd_given) {
+    if (!IsSet($passwd_given)) {
+        return false;
+    } else {
+        $passwd_given = mb_strtolower($passwd_given, 'UTF-8');
+        if(isset($array[$passwd_given])){
+        return true;
+        }
     }
-  }
-  return false;
-}
+    return false;
 }
 
 //------------------------------------------------------------

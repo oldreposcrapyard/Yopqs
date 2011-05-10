@@ -11,6 +11,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ob_start();
 //---------------------------
 // Page encoding
 //---------------------------
@@ -23,11 +24,8 @@ ini_set('display_errors', '1');
 //---------------------------
 // Includes and functions
 //---------------------------
-define('is_included', true); //protection from direct display override
 session_start();
-ob_start();
 require_once 'inc/config.inc.php';
-ob_end_flush();
 require_once "lang/{$CONF['lang']}.lang.php";
 require_once 'inc/allfunctions.inc.php';
 require_once 'inc/bbcode/BbCode.class.php';
@@ -35,7 +33,8 @@ $template = $CONF['template'];
 //template files
 require_once 'inc/template_tbs.php';
 require_once 'inc/tbs_plugin_html.php';
-$PHP_SELF = getnamefile();
+ob_end_flush();
+$PHP_SELF = getNameFile();
 //---------------------------
 // Database connection
 //---------------------------
