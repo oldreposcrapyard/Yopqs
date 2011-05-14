@@ -225,12 +225,19 @@ FORM;
 //--------------------------
 // Footer
 //--------------------------
-require_once 'inc/foot.inc.php';
-   $mtime = microtime(); 
-   $mtime = explode(" ",$mtime); 
-   $mtime = $mtime[1] + $mtime[0]; 
-   $endtime = $mtime; 
-   $totaltime = ($endtime - $starttime); 
-   echo "<br>Strona została wygenerowana w ".$totaltime." sekund.";
+echo <<<'FOOTER'
+<hr />
+<a href="http://www.google.pl">Google</a> |
+<a href="http://www.pl.wikipedia.org">Wikipedia</a> |
+<a href="http://pl.wikipedia.org/wiki/Szablon:Siostrzane">Projekty siostrzane wikipedii</a> |
+<a href="http://www.ttg.webuda.com/mail.php"> Marcinl </a> 2010 - 2011
+FOOTER;
+
+$mtime = microtime(); 
+$mtime = explode(" ",$mtime); 
+$mtime = $mtime[1] + $mtime[0]; 
+$endtime = $mtime; 
+$totaltime = ($endtime - $starttime); 
+echo "<br>Strona została wygenerowana w ".$totaltime." sekund.";
 ob_end_flush();
 ?>							
