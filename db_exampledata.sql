@@ -1,11 +1,8 @@
---dump of example data in polish for YOPQS 1.0
---hosted on github.com
-
 INSERT INTO `Answers` (`ID_lvl`, `Answer`) VALUES
 (1, '6'),
 (2, 'kałasznikow'),
 (3, 'avatar'),
-(4, 'gogol'),
+(4, 'googol'),
 (5, 'samochodzik'),
 (6, '16'),
 (7, 'ple'),

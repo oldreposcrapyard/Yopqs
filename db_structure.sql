@@ -1,6 +1,3 @@
---dump of tables and example data in polish for YOPQS 1.0
---hosted on github.com
-
 DROP TABLE IF EXISTS `Answers`;
 CREATE TABLE IF NOT EXISTS `Answers` (
   `ID_lvl` smallint(6) NOT NULL,
