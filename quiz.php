@@ -225,7 +225,7 @@ FORM;
 //--------------------------
 // Footer
 //--------------------------
-echo <<<'FOOTER'
+echo <<<FOOTER
 <hr />
 <a href="http://www.google.pl">Google</a> |
 <a href="http://www.pl.wikipedia.org">Wikipedia</a> |
