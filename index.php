@@ -6,7 +6,7 @@ require_once 'inc/template_tbs.php';
 require_once 'inc/tbs_plugin_html.php';
 
 $bb = new BbCode();
-$bb->parse($start_content, false);
+$bb->parse($CONF['start_content'], false);
 $start_content = $bb->getHtml();
 
 $TBS           = new clsTinyButStrong;
