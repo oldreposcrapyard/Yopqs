@@ -192,7 +192,7 @@ mysql_close();
 $bb = new BbCode();
 $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
-if (isSet($message)){
+if (!isSet($message)){
 $message = '';
 }
 //echo <<<FORM
