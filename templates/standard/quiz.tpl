@@ -5,9 +5,9 @@
 <title>[onshow.CONF.quiz_name] - Marcinl's php quiz</title>
 </head>
 <body>
-[onshow.message]
-<p align="right"> [onshow.LANG.level] [onshow.SESSION.actual_lvl] [onshow.LANG.of] [onshow.max_level] </p>
-<p>[onshow.question_display]</p>
+[onshow.message;ope=html;look]
+<p align="right"> [onshow.LANG.level] [onshow._SESSION.actual_lvl] [onshow.LANG.of] [onshow.max_level] </p>
+<p>[onshow.question_display;ope=html;look]</p>
 <p>[onshow.LANG.youranswer]:</p>
 <FORM NAME = "formularz1"
 ACTION = "[onshow.PHP_SELF]"

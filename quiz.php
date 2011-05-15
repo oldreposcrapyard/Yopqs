@@ -192,6 +192,9 @@ mysql_close();
 $bb = new BbCode();
 $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
+if (isSet($message)){
+$message = '';
+}
 //echo <<<FORM
 //<!-- revision 7 -->
 //<p align="right"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
