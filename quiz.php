@@ -195,30 +195,12 @@ $question_display = $bb->getHtml();
 if (!isSet($message)){
 $message = '';
 }
-//echo <<<FORM
-//<!-- revision 7 -->
-//<p align="right"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
-//<p>$question_display</p>
-//<p>$LANG[youranswer]:</p>
-//<FORM NAME = "formularz1"
-//ACTION = "$PHP_SELF"
-//METHOD = "POST">
-//<INPUT TYPE="text" NAME="haslo">
-//<BR><BR>
-//<INPUT TYPE="submit" VALUE="$LANG[ianswer]">
-//</FORM>
-//FORM;
-//--------------------------
-// Footer
-//--------------------------
-//echo $FOOT; 
 
 $mtime = microtime(); 
 $mtime = explode(" ",$mtime); 
 $mtime = $mtime[1] + $mtime[0]; 
 $endtime = $mtime; 
 $totaltime = ($endtime - $starttime); 
-//echo "<br>Strona została wygenerowana w ".$totaltime." sekund.";
 //template display
 $TBS              = new clsTinyButStrong;
 $TBS->LoadTemplate("templates/$CONF[template]/quiz.tpl");
