@@ -11,11 +11,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
 ob_start();
-   $mtime = microtime(); 
-   $mtime = explode(" ",$mtime); 
-   $mtime = $mtime[1] + $mtime[0]; 
-   $starttime = $mtime;
+//start measuring time
+$mtime = microtime(); 
+$mtime = explode(" ",$mtime); 
+$mtime = $mtime[1] + $mtime[0]; 
+$starttime = $mtime;
 
 //---------------------------
 // Page encoding
@@ -34,7 +36,6 @@ require_once 'inc/config.inc.php';
 require_once "lang/{$CONF['lang']}.lang.php";
 require_once 'inc/allfunctions.inc.php';
 require_once 'inc/bbcode/BbCode.class.php';
-$template = $CONF['template'];
 //template files
 require_once 'inc/template_tbs.php';
 require_once 'inc/tbs_plugin_html.php';
@@ -77,23 +78,30 @@ $max_level   = getmaxlevel();
 //-------------
 //shall be moved to config or sth nothing but form uses it
 $FAIL        = <<<FAIL
-<link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
+<link rel="Stylesheet" type="text/css" href="templates/$CONF[template]/style_frames.css" />
 <div id="redbox">
 <p>$LANG[badanswer]</p>
 </div>
 FAIL;
 $ANSWEREMPTY = <<<AE
-<link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
+<link rel="Stylesheet" type="text/css" href="templates/$CONF[template]/style_frames.css" />
 <div id="redbox">
 <p>$LANG[emptyanswer]</p>
 </div>
 AE;
 $WON         = <<<WON
-<link rel="Stylesheet" type="text/css" href="templates/$template/style_frames.css" />
+<link rel="Stylesheet" type="text/css" href="templates/$CONF[template]/style_frames.css" />
 <div id="greenbox">
 <p>$LANG[goodanswer]</p>
 </div>
 WON;
+$FOOT        = <<<FOOTER
+<hr />
+<a href="http://www.google.pl">Google</a> |
+<a href="http://www.pl.wikipedia.org">Wikipedia</a> |
+<a href="http://pl.wikipedia.org/wiki/Szablon:Siostrzane">Projekty siostrzane wikipedii</a> |
+<a href="http://www.ttg.webuda.com/mail.php"> Marcinl </a> 2010 - 2011
+FOOTER;
 //-------------
 // Getting answers from database
 //-------------
@@ -132,7 +140,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             $minutes          = $LANG['minutes'];
             //template display
             $TBS              = new clsTinyButStrong;
-            $TBS->LoadTemplate("templates/$template/quiz_time.tpl");
+            $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
             $TBS->Show();
             exit();
         } else { //jezeli nie mierzyc czasu
@@ -143,7 +151,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
     }
     if (checkanswer($result, $_POST['haslo'])) { //jezeli dobra odpowiedz na level inny niz ostatni
         echo $WON;
-        $_SESSION['actual_lvl']++;
+        ++$_SESSION['actual_lvl'];
     }
     elseif ($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo'])) { //jezeli odpowiedz pusta
         echo $ANSWEREMPTY;
@@ -175,12 +183,12 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             $minutes          = $LANG['minutes'];
             //template display
             $TBS              = new clsTinyButStrong;
-            $TBS->LoadTemplate("templates/$template/quiz_time.tpl");
+            $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
             $TBS->Show();
-            exit();
+            exit;
         } else { //jezeli nie mierzyc czasu
             echo $CONF['won_page_content'];
-            include_once 'inc/foot.inc.php';
+            echo $FOOT;
             exit;
         }
     }
@@ -225,13 +233,7 @@ FORM;
 //--------------------------
 // Footer
 //--------------------------
-echo <<<FOOTER
-<hr />
-<a href="http://www.google.pl">Google</a> |
-<a href="http://www.pl.wikipedia.org">Wikipedia</a> |
-<a href="http://pl.wikipedia.org/wiki/Szablon:Siostrzane">Projekty siostrzane wikipedii</a> |
-<a href="http://www.ttg.webuda.com/mail.php"> Marcinl </a> 2010 - 2011
-FOOTER;
+echo $FOOT; 
 
 $mtime = microtime(); 
 $mtime = explode(" ",$mtime); 
