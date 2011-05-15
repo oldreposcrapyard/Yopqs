@@ -32,13 +32,13 @@ ini_set('display_errors', '1');
 // Includes and functions
 //---------------------------
 session_start();
-require 'inc/config.inc.php' or die 'Cannot include configuration file!';
-require "lang/{$CONF['lang']}.lang.php" or die 'Cannot include language file!';
-require 'inc/allfunctions.inc.php' or die 'Cannot include functions file!';
-require 'inc/bbcode/BbCode.class.php' or die 'Cannot include BbCode class!';
+require 'inc/config.inc.php';
+require "lang/{$CONF['lang']}.lang.php";
+require 'inc/allfunctions.inc.php';
+require 'inc/bbcode/BbCode.class.php';
 //template files
-require 'inc/template_tbs.php' or die 'Cannot include template engine!';
-require 'inc/tbs_plugin_html.php' or die 'Cannot include template engine plugin!';
+require 'inc/template_tbs.php';
+require 'inc/tbs_plugin_html.php';
 $PHP_SELF = getNameFile();
 //---------------------------
 // Database connection
