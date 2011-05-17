@@ -21,6 +21,7 @@ return $PHP_SELF;
 $PHP_SELF = getNameFile();
 
 echo <<<LOGINFORM
+<center>
 <form name='Login' action='$PHP_SELF' method='POST' enctype='application/x-www-form-urlencoded'>
 <table class='table_form_1' id='table_form_1' cellspacing='0'>
 	<tr>
@@ -41,6 +42,7 @@ echo <<<LOGINFORM
 	</tr>
 </table>
 </form>
+</center>
 LOGINFORM;
 
 ?>
