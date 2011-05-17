@@ -6,7 +6,7 @@
 </head>
 <body>
 [onshow.message;ope=html;look]
-<p align="right"> [onshow.LANG.level] [onshow._SESSION.actual_lvl] [onshow.LANG.of] [onshow.max_level] </p>
+<p align="right"> [onshow.LANG.level] [onshow._SESSION.actual_lvl] [onshow.LANG.of] [onshow._SESSION.max_lvl] </p>
 <p>[onshow.question_display;ope=html;look]</p>
 <p>[onshow.LANG.youranswer]:</p>
 <FORM NAME = "formularz1"

@@ -72,7 +72,9 @@ If (!IsSet($_SESSION['actual_lvl'])) {
 //------------------
 // Maximum level
 //------------------
-$max_level   = getmaxlevel();
+If (!IsSet($_SESSION['max_lvl'])) {
+    $_SESSION['max_lvl'] = getmaxlevel();
+}
 //------------------
 // Variables for Game...
 //-------------
@@ -117,7 +119,7 @@ $result[] = $row['Answer'];
 // Checking answer
 //-----------------
 if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
-    if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $max_level) { //jezeli dobra odpowiedz na ostatni level
+    if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $_SESSION['max_lvl']) { //jezeli dobra odpowiedz na ostatni level
         $_SESSION['last_level_passed'] = 'TRUE';
         if ($CONF['measure_time']) { //jezeli mierzyc czas
             if (!IsSet($_SESSION['end_time'])) {
