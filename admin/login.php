@@ -1,8 +1,8 @@
 <?php
 require '../inc/alibaba.class.php';
-require "lang/{$CONF['lang']}.lang.php";
-require 'inc/template_tbs.php';
-require 'inc/tbs_plugin_html.php';
+require "../lang/{$CONF['lang']}.lang.php";
+require '../inc/template_tbs.php';
+require '../inc/tbs_plugin_html.php';
 
 
 if(isSet($_POST["username"]) 
