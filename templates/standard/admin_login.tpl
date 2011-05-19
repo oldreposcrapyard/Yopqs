@@ -1,6 +1,6 @@
 <center>
-<p>[onshow._GET.message]</p>
-<form name='Login' action='[onshoe.PHP_SELF]' method='POST' enctype='application/x-www-form-urlencoded'>
+<p>[onshow._GET.message;noerr]</p>
+<form name='Login' action='[onshow.PHP_SELF]' method='POST' enctype='application/x-www-form-urlencoded'>
 <table class='table_form_1' id='table_form_1' cellspacing='0'>
 	<tr>
 		<td class='ftbl_row_1' ><LABEL for='username'>Username:
