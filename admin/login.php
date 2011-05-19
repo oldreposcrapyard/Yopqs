@@ -26,7 +26,7 @@ else {
 $PHP_SELF = getNameFile();
 
 $TBS              = new clsTinyButStrong;
-$TBS->LoadTemplate("templates/$CONF[template]/admin_login.tpl");
+$TBS->LoadTemplate("../templates/$CONF[template]/admin_login.tpl");
 $TBS->Show();
 
 ?>
