@@ -1,48 +1,31 @@
 <?php
 require '../inc/alibaba.class.php';
+require "lang/{$CONF['lang']}.lang.php";
+require 'inc/template_tbs.php';
+require 'inc/tbs_plugin_html.php';
 
-if(isSet($_POST["username"]) && isSet($_POST["password"])){
+
+if(isSet($_POST["username"]) 
+&& strlen($_POST["username"]) <= 20 
+&& isSet($_POST["password"])
+&& strlen($_POST["password"]) <= 30
+){
 $username = $_POST["username"];
 $password = $_POST["password"];
 
 if (Alibaba::login($username, $password)) {
     header("Location: index.php");
-} else {
-    Alibaba::redirectToLogin("Login failed");
+}
+else {
+    Alibaba::redirectToLogin("$LANG[loginfailed]");
 }
 
 }
-function getNameFile(){
-$currentFile = $_SERVER["SCRIPT_NAME"];
-$parts = Explode('/', $currentFile);
-$PHP_SELF = $parts[count($parts) - 1]; 
-return $PHP_SELF;
-}
+
 $PHP_SELF = getNameFile();
 
-echo <<<LOGINFORM
-<center>
-<form name='Login' action='$PHP_SELF' method='POST' enctype='application/x-www-form-urlencoded'>
-<table class='table_form_1' id='table_form_1' cellspacing='0'>
-	<tr>
-		<td class='ftbl_row_1' ><LABEL for='username'>Username:
-		</td>
-		<td class='ftbl_row_1a' ><input type='text' name='username' id='username' size='30' maxlength='20'>
-		</td>
-	</tr>
-	<tr>
-		<td class='ftbl_row_2' ><LABEL for='password'>Password:
-		</td>
-		<td class='ftbl_row_2a' ><input type='password' name='password' id='password' size='30' maxlength='30'  value=''>
-		</td>
-	</tr>
-	<tr>
-		<td colspan='2' align='right'><input type='submit' name='submit' value='Submit'>&nbsp;<br />
-		</td>
-	</tr>
-</table>
-</form>
-</center>
-LOGINFORM;
+$TBS              = new clsTinyButStrong;
+$TBS->LoadTemplate("templates/$CONF[template]/admin_login.tpl");
+$TBS->Show();
 
 ?>

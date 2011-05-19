@@ -49,12 +49,13 @@ $LANG['thatis']            = 'czyli';
 $LANG['hours']             = 'Godzin';
 $LANG['minutes']           = 'Minut';
 $LANG['seconds']           = 'Sekund';
-
 //Database language
 $LANG['db_connect_error']  = 'Nie można połączyć się z bazą danych!';
 $LANG['db_select_error']   = 'Nie można wybrać bazy danych!';
 $LANG['db_query_success']  = 'Zapytanie wykonane poprawnie.';
 $LANG['db_query_error']    = 'Błąd zapytania!';
+//Admin panel language
+$LANG['loginfailed']       = 'Zalogowanie nie powiodło się!';
 
 //$LANG['example']         = 'Example message.';
 ?>

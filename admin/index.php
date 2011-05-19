@@ -6,5 +6,4 @@ echo <<<PAGE
 zalogowany jako $username
 <a href="logout.php">Wyloguj</a>
 PAGE;
-
 ?>
