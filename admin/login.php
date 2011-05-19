@@ -1,6 +1,6 @@
 <?php
 require '../inc/alibaba.class.php';
-require '../inc/config.inc.php';
+require '../inc/allfunctions.inc.php';
 require "../lang/{$CONF['lang']}.lang.php";
 require '../inc/template_tbs.php';
 require '../inc/tbs_plugin_html.php';
