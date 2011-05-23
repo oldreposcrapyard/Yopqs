@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+<body>
 <center>
 <p>[onshow._GET.message;noerr]</p>
 <form name='Login' action='[onshow.PHP_SELF]' method='POST' enctype='application/x-www-form-urlencoded'>
@@ -21,3 +25,5 @@
 </table>
 </form>
 </center>
+</body>
+</html>
