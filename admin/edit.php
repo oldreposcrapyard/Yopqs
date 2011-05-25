@@ -43,7 +43,7 @@ for($i=0; $i<$fields_num; $i++)
     $field = mysql_fetch_field($result);
     $table_display .= "<td>{$field->name}</td>";
 }
-$table_display .= '</tr>\n';
+$table_display .= "</tr>\n";
 // printing table rows
 while($row = mysql_fetch_row($result))
 {
@@ -54,7 +54,7 @@ while($row = mysql_fetch_row($result))
     foreach($row as $cell)
         $table_display .= "<td>$cell</td>";
 
-    $table_display .= '</tr>\n';
+    $table_display .= "</tr>\n";
 }
 
 $TBS              = new clsTinyButStrong;
