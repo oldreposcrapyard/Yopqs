@@ -35,13 +35,13 @@ if (!$result) {
 
 $fields_num = mysql_num_fields($result);
 
-$table_display = '<table border='1'><tr>';
+$table_display = "<table border='1'><tr>";
 
 // printing table headers
 for($i=0; $i<$fields_num; $i++)
 {
     $field = mysql_fetch_field($result);
-    $table_display .= '<td>{$field->name}</td>';
+    $table_display .= "<td>{$field->name}</td>";
 }
 $table_display .= '</tr>\n';
 // printing table rows
@@ -52,7 +52,7 @@ while($row = mysql_fetch_row($result))
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
-        $table_display .= '<td>$cell</td>';
+        $table_display .= "<td>$cell</td>";
 
     $table_display .= '</tr>\n';
 }
