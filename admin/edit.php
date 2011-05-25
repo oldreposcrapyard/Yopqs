@@ -4,6 +4,7 @@ require '../inc/allfunctions.inc.php';
 require "../lang/{$CONF['lang']}.lang.php";
 require '../inc/template_tbs.php';
 require '../inc/tbs_plugin_html.php';
+require '../inc/bbcode/BbCode.class.php';
 
 header('Content-Type: text/html; charset=utf-8');
 
@@ -56,6 +57,12 @@ while($row = mysql_fetch_row($result))
 
     $table_display .= "</tr>\n";
 }
+
+//parse and cut questions
+//$bb = new BbCode();
+//$bb->parse($table_display, false);
+//$table_display = $bb->getHtml();
+
 
 $TBS              = new clsTinyButStrong;
 $TBS->LoadTemplate("../templates/$CONF[template]/admin_edit.tpl");
