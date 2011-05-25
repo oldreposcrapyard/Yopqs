@@ -56,6 +56,8 @@ $LANG['db_query_success']  = 'Zapytanie wykonane poprawnie.';
 $LANG['db_query_error']    = 'Błąd zapytania!';
 //Admin panel language
 $LANG['loginfailed']       = 'Zalogowanie nie powiodło się!';
+$LANG['loggedinas']        = 'Zalogowany jako:';
+$LANG['logout']            = 'Wyloguj';
 
 //$LANG['example']         = 'Example message.';
 ?>

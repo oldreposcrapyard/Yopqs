@@ -57,6 +57,8 @@ $LANG['db_query_success']  = 'Query executed succesfully.';
 $LANG['db_query_error']    = 'Query error!';
 //Admin panel language
 $LANG['loginfailed']       = 'Login failed!';
+$LANG['loggedinas']        = 'Logged in as:';
+$LANG['logout']            = 'Logout';
 
 //$LANG['example']         = 'Example message.';
 ?>

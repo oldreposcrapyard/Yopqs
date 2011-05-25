@@ -30,32 +30,34 @@ if (!($db = mysql_select_db($db_name, $conn))) {
 //display db table
 $result = mysql_query("SELECT * FROM Levels");
 if (!$result) {
-    die("Query to show fields from table failed");
+    die("$LANG[db_query_error]");
 }
 
 $fields_num = mysql_num_fields($result);
 
-echo "<h1>Table: Levels</h1>";
-echo "<table border='1'><tr>";
+$table_display = '<table border='1'><tr>';
+
 // printing table headers
 for($i=0; $i<$fields_num; $i++)
 {
     $field = mysql_fetch_field($result);
-    echo "<td>{$field->name}</td>";
+    $table_display .= '<td>{$field->name}</td>';
 }
-echo "</tr>\n";
+$table_display .= '</tr>\n';
 // printing table rows
 while($row = mysql_fetch_row($result))
 {
-    echo "<tr>";
+    $table_display .= '<tr>';
 
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
-        echo "<td>$cell</td>";
+        $table_display .= '<td>$cell</td>';
 
-    echo "</tr>\n";
+    $table_display .= '</tr>\n';
 }
 
-echo '<a href="index.php">strona głowna</a>';
+$TBS              = new clsTinyButStrong;
+$TBS->LoadTemplate("../templates/$CONF[template]/admin_edit.tpl");
+$TBS->Show();
 ?>
