@@ -33,10 +33,11 @@ just delete logo.jpg and replace it with
 logo you can make from file clearlogo.jpg.
 Copyright (C) 2010 - 2011 by Marcin Lawniczak <marcin.safmb@wp.pl> | <www.stw.net23.net>
 
-This software is using following scripts:
-- BBcode parser by wookieb: forum.php.pl/klasa_Zaawansowany_parser_bbcode_php5_t115269.html
-with my slight modifications that can be found here github.com/marcinlawnik/BBcode-modified
-- Some scripts from book "505 praktycznych skryptów dla webmastera" by Marcin Lis (marcinlis.com)
+This software is using following scripts and graphics:
+- BBcode parser by wookieb: http://forum.php.pl/klasa_Zaawansowany_parser_bbcode_php5_t115269.html
+with my slight modifications that can be found here https://github.com/marcinlawnik/BBcode-modified
+- Some scripts from book "505 praktycznych skryptów dla webmastera" by Marcin Lis http://marcinlis.com
 - TinyButStrong template system with plugin HTML (tinybutstrong.com) made by http://tinybutstrong.com/onlyyou.html
-- standard template comes from szablony.maniak.pl
+- standard template comes from http://szablony.maniak.pl
 - Login to admin system is using Alibaba class from Ben Crowder https://github.com/bencrowder/alibaba
+- Silk icons set from http://famfamfam.com
