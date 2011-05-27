@@ -58,6 +58,8 @@ $LANG['db_query_error']    = 'Błąd zapytania!';
 $LANG['loginfailed']       = 'Zalogowanie nie powiodło się!';
 $LANG['loggedinas']        = 'Zalogowany jako:';
 $LANG['logout']            = 'Wyloguj';
+$LANG['question']          = 'Pytanie';
+$LANG['edit']              = 'Edytuj';
 
 //$LANG['example']         = 'Example message.';
 ?>

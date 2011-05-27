@@ -34,16 +34,10 @@ if (!$result) {
     die("$LANG[db_query_error]");
 }
 
-$fields_num = mysql_num_fields($result);
+$table_display = '<table border=\'1\'><tr>';
 
-$table_display = "<table border='1'><tr>";
+$table_display .= "<td>$LANG[level]</td><td>$LANG[question]</td><td>$LANG[edit]</td>";
 
-// printing table headers
-for($i=0; $i<$fields_num; $i++)
-{
-    $field = mysql_fetch_field($result);
-    $table_display .= "<td>{$field->name}</td>";
-}
 $table_display .= "</tr>\n";
 // printing table rows
 while($row = mysql_fetch_row($result))

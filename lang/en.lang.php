@@ -59,6 +59,8 @@ $LANG['db_query_error']    = 'Query error!';
 $LANG['loginfailed']       = 'Login failed!';
 $LANG['loggedinas']        = 'Logged in as:';
 $LANG['logout']            = 'Logout';
+$LANG['question']          = 'Question';
+$LANG['edit']              = 'Edit';
 
 //$LANG['example']         = 'Example message.';
 ?>
