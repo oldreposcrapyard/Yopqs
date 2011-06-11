@@ -53,7 +53,7 @@ $bb = new BbCode();
 $cut_cell = $bb->cutText(30);        
 $table_display .= "<td>$cut_cell</td>";
 }
-else(){
+else{
 $table_display .= "<td>$cell</td>";
 }
     $table_display .= "<td><img src=\"../templates/$CONF[template]/img/page_edit.png\">
