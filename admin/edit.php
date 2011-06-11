@@ -11,6 +11,8 @@ header('Content-Type: text/html; charset=utf-8');
 Alibaba::forceAuthentication();
 $username = Alibaba::getUsername();
 
+error_reporting(E_ALL);
+
 //connection
 if (!($conn = mysql_connect($db_hostname, $db_username, $db_password))) {
     print("$LANG[db_connect_error]");
@@ -47,15 +49,16 @@ while($row = mysql_fetch_row($result))
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
-//if(mb_strlen($cell) >= 3){
+if(mb_strlen($cell) >= 3){
 
-//$bb = new BbCode();
-//$cut_cell = $bb->cutText(30);        
-//$table_display .= "<td>$cut_cell</td>";
-//}
-//else{
+$bb = new BbCode();
+$bb->parse($cell, false);
+$cut_cell = $bb->cutText(30);        
+$table_display .= "<td>$cut_cell</td>";
+}
+else{
 $table_display .= "<td>$cell</td>";
-//}
+}
     $table_display .= "<td><img src=\"../templates/$CONF[template]/img/page_edit.png\">
 </td>";
     $table_display .= "</tr>\n";
