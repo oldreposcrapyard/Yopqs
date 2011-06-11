@@ -47,7 +47,7 @@ while($row = mysql_fetch_row($result))
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
-if(mb_strlen($cell) > 3){
+if(mb_strlen($cell) >= 3){
 
 $bb = new BbCode();
 $cut_cell = $bb->cutText(30);        
