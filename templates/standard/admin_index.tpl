@@ -25,7 +25,7 @@
     </head>
     <body>
         <div id="logintext">
-            <p>Zalogowany jako [onshow.username] <a href="logout.php">Wyloguj</a></p>
+            <p>[onshow.LANG.loggedinas]  [onshow.username] <a href="logout.php">[onshow.LANG.logout]</a></p>
         </div>
         <div id="menu">
             <a id="menuitem" href="edit.php">edycja pytań i odpowiedzi</a>
