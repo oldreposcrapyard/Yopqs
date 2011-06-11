@@ -47,7 +47,9 @@ while($row = mysql_fetch_row($result))
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
-        $table_display .= "<td>$cell</td>";
+$bb = new BbCode();
+$cut_cell = $bb->cutText(30);        
+$table_display .= "<td>$cut_cell</td>";
     $table_display .= "<td><img src=\"../templates/$CONF[template]/img/page_edit.png\">
 </td>";
     $table_display .= "</tr>\n";
