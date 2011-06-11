@@ -1,8 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<title>[onshow.CONF.quiz_name] - Marcinl's php quiz</title>
+<style type="text/css">
+/*
+Here will be styles for this page
+I am currently in process of learning CSS
+*/
+</style>
+
 </head>
 <body>
-<center>
+
+<div id="loginform">
 <p>[onshow._GET.message;noerr]</p>
 <form name='Login' action='[onshow.PHP_SELF]' method='POST' enctype='application/x-www-form-urlencoded'>
 <table class='table_form_1' id='table_form_1' cellspacing='0'>
@@ -24,6 +36,7 @@
 	</tr>
 </table>
 </form>
-</center>
+</div>
+
 </body>
 </html>
