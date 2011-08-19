@@ -1,7 +1,7 @@
 <?php
 require_once 'inc/config.inc.php';
 require_once "lang/{$CONF['lang']}.lang.php";
-require_once 'inc/bbcode/BbCode.class.php';
+require_once 'inc/bbcode/BbCode.php';
 require_once 'inc/template_tbs.php';
 require_once 'inc/tbs_plugin_html.php';
 

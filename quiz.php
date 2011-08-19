@@ -35,7 +35,7 @@ session_start();
 require 'inc/config.inc.php';
 require "lang/{$CONF['lang']}.lang.php";
 require 'inc/allfunctions.inc.php';
-require 'inc/bbcode/BbCode.class.php';
+require 'inc/bbcode/BbCode.php';
 //template files
 require 'inc/template_tbs.php';
 require 'inc/tbs_plugin_html.php';

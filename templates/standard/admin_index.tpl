@@ -28,7 +28,12 @@
             <p>[onshow.LANG.loggedinas]  [onshow.username] <a href="logout.php">[onshow.LANG.logout]</a></p>
         </div>
         <div id="menu">
-            <a id="menuitem" href="edit.php">edycja pytaÅ„ i odpowiedzi</a>
+            <a id="menuitem" href="#">edycja pytañ i odpowiedzi</a>
         </div>
+        <div id="fulltext">
+        <h1>
+            There's nothing here, but something will be here shortly.
+        </h1>
+        </div
     </body>
 </html>
