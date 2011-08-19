@@ -1,4 +1,14 @@
 ------------------------
+1.2 Beta
+------------------------
+[FEATURE]Admin panel with login (Just login without functionality yet)
+[FEATURE]More I18N in all files (Almost no polish out there)
+[FIX]Updated BBcode parser (commit "0792554b0ac6f1490919" at github.com/wookieb/bbcode)
+------------------------
+1.1 Beta
+------------------------
+[FIX]Code optimization THANKS TO: @fifi209
+------------------------
 1.0 Beta
 ------------------------
 [FEATURE]Start content in index.php is now parsed against BBcode

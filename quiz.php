@@ -32,13 +32,13 @@ ini_set('display_errors', '1');
 // Includes and functions
 //---------------------------
 session_start();
-require_once 'inc/config.inc.php';
-require_once "lang/{$CONF['lang']}.lang.php";
-require_once 'inc/allfunctions.inc.php';
-require_once 'inc/bbcode/BbCode.class.php';
+require 'inc/config.inc.php';
+require "lang/{$CONF['lang']}.lang.php";
+require 'inc/allfunctions.inc.php';
+require 'inc/bbcode/BbCode.php';
 //template files
-require_once 'inc/template_tbs.php';
-require_once 'inc/tbs_plugin_html.php';
+require 'inc/template_tbs.php';
+require 'inc/tbs_plugin_html.php';
 $PHP_SELF = getNameFile();
 //---------------------------
 // Database connection
@@ -72,7 +72,9 @@ If (!IsSet($_SESSION['actual_lvl'])) {
 //------------------
 // Maximum level
 //------------------
-$max_level   = getmaxlevel();
+If (!IsSet($_SESSION['max_lvl'])) {
+    $_SESSION['max_lvl'] = getmaxlevel();
+}
 //------------------
 // Variables for Game...
 //-------------
@@ -117,7 +119,7 @@ $result[] = $row['Answer'];
 // Checking answer
 //-----------------
 if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
-    if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $max_level) { //jezeli dobra odpowiedz na ostatni level
+    if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $_SESSION['max_lvl']) { //jezeli dobra odpowiedz na ostatni level
         $_SESSION['last_level_passed'] = 'TRUE';
         if ($CONF['measure_time']) { //jezeli mierzyc czas
             if (!IsSet($_SESSION['end_time'])) {
@@ -126,18 +128,6 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             $start_time       = $_SESSION['start_time'];
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             $normal_time      = sec2hms($time_solved_quiz, true);
-            $quiz_name        = $CONF['quiz_name'];
-            $main_page        = $LANG['mainpageuppercase'];
-            $link1            = $CONF['link1'];
-            $link1_name       = $CONF['link1_name'];
-            $link2            = $CONF['link2'];
-            $link2_name       = $CONF['link2_name'];
-            $youhavesolved    = $LANG['youhavesolved'];
-            $ittookyou        = $LANG['ittookyou'];
-            $seconds          = $LANG['seconds'];
-            $thatis           = $LANG['thatis'];
-            $hours            = $LANG['hours'];
-            $minutes          = $LANG['minutes'];
             //template display
             $TBS              = new clsTinyButStrong;
             $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
@@ -150,15 +140,15 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
         }
     }
     if (checkanswer($result, $_POST['haslo'])) { //jezeli dobra odpowiedz na level inny niz ostatni
-        echo $WON;
+        $message = $WON;
         ++$_SESSION['actual_lvl'];
     }
     elseif ($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo'])) { //jezeli odpowiedz pusta
-        echo $ANSWEREMPTY;
+        $message = $ANSWEREMPTY;
     }
     elseif (!checkanswer($result, $_POST['haslo'])) { //odpowiedz zla
-        echo "$FAIL";
-        include_once "$PHP_SELF";
+        $message = $FAIL;
+        //include_once "$PHP_SELF";
     }
 } elseif (!isSet($_POST['haslo'])) { //jezeli nie wysłana odpowiedz
     if(isSet($_SESSION['last_level_passed'])){
@@ -169,18 +159,6 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             $start_time       = $_SESSION['start_time'];
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             $normal_time      = sec2hms($time_solved_quiz, true);
-            $quiz_name        = $CONF['quiz_name'];
-            $main_page        = $LANG['mainpageuppercase'];
-            $link1            = $CONF['link1'];
-            $link1_name       = $CONF['link1_name'];
-            $link2            = $CONF['link2'];
-            $link2_name       = $CONF['link2_name'];
-            $youhavesolved    = $LANG['youhavesolved'];
-            $ittookyou        = $LANG['ittookyou'];
-            $seconds          = $LANG['seconds'];
-            $thatis           = $LANG['thatis'];
-            $hours            = $LANG['hours'];
-            $minutes          = $LANG['minutes'];
             //template display
             $TBS              = new clsTinyButStrong;
             $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
@@ -192,7 +170,6 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             exit;
         }
     }
-    echo '';
 } 
 
 //-----------------
@@ -217,29 +194,18 @@ mysql_close();
 $bb = new BbCode();
 $bb->parse($query_question['question'], false);
 $question_display = $bb->getHtml();
-echo <<<FORM
-<!-- revision 7 -->
-<p align="right"> $LANG[level] $_SESSION[actual_lvl] $LANG[of] $max_level </p>
-<p>$question_display</p>
-<p>$LANG[youranswer]:</p>
-<FORM NAME = "formularz1"
-ACTION = "$PHP_SELF"
-METHOD = "POST">
-<INPUT TYPE="text" NAME="haslo">
-<BR><BR>
-<INPUT TYPE="submit" VALUE="$LANG[ianswer]">
-</FORM>
-FORM;
-//--------------------------
-// Footer
-//--------------------------
-echo $FOOT; 
+if (!isSet($message)){
+$message = '';
+}
 
 $mtime = microtime(); 
 $mtime = explode(" ",$mtime); 
 $mtime = $mtime[1] + $mtime[0]; 
 $endtime = $mtime; 
 $totaltime = ($endtime - $starttime); 
-echo "<br>Strona została wygenerowana w ".$totaltime." sekund.";
+//template display
+$TBS              = new clsTinyButStrong;
+$TBS->LoadTemplate("templates/$CONF[template]/quiz.tpl");
+$TBS->Show();
 ob_end_flush();
 ?>							

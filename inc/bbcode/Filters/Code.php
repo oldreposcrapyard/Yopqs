@@ -7,16 +7,15 @@
  * @author wookieb
  * @version 1.1
  */
-class BbCodeFilterCode
-{
-	public $tags=array(
-		'code'=>array(
-			'open'=>'div class="code_wrapper"',
-			'close'=>'div',
-			'notallowed_child'=>'all',
-			'leave_notallowed_child'=>1,
-			'leave_notallowed_parent'=>1,
-			'parse_body'=>'parseCode'
+class BbCodeFilterCode {
+	public $tags = array(
+		'code' => array(
+			'open' => 'div class="code_wrapper"',
+			'close' => 'div',
+			'notallowed_child' => 'all',
+			'leave_notallowed_child' => 1,
+			'leave_notallowed_parent' => 1,
+			'parse_body' => 'parseCode'
 		)
 	);
 
@@ -27,49 +26,44 @@ class BbCodeFilterCode
 	 * @param array $body
 	 * @param array $closeNode
 	 */
-	public function parseCode($tag, &$openNode, &$body, &$closeNode)
-	{
+	public function parseCode($tag, &$openNode, &$body, &$closeNode) {
 		// tutaj mozemy dodać geshi czy to tez sie podoba
 		$openNode['text'].='<div class="code_title">Kod</div><div class="code_area">';
-		$closeNode['text']='</div>'.$closeNode['text'];
-
+		$closeNode['text'] = '</div>'.$closeNode['text'];
 	}
-
-	
 	/**
-	* Parsuje tag CODE używając GESHI
-	* @param array $tag
-	* @param array $openNode
-	* @param array $body
-	* @param array $closeNode
-	*/
+	 * Parsuje tag CODE używając GESHI
+	 * @param array $tag
+	 * @param array $openNode
+	 * @param array $body
+	 * @param array $closeNode
+	 */
 	/*
-	public function parseCode($tag, &$openNode, &$body, &$closeNode)
-	{
-		// laczymy tresc w całość
+	  public function parseCode($tag, &$openNode, &$body, &$closeNode)
+	  {
+	  // laczymy tresc w całość
 
-		$content = '';
-		foreach($body as $key => &$node)
-		{
-			$content.= $node['text'];
-			$node['text'] = '';
+	  $content = '';
+	  foreach($body as $key => &$node)
+	  {
+	  $content.= $node['text'];
+	  $node['text'] = '';
 
-			// usuwamy zbedne elementy
-			if($key!=0) unset($body[$key]);
-		}
+	  // usuwamy zbedne elementy
+	  if($key!=0) unset($body[$key]);
+	  }
 
-		require_once 'class.geshi.php';
+	  require_once 'class.geshi.php';
 
 
-		$geshi = new GeSHi($content, 'php');
-		$body[0]['tagText'] = $content;
-		$body[0]['text'] = $geshi->parseCode();
-		$body[0]['nohtmlspecialchars'] = 1;
+	  $geshi = new GeSHi($content, 'php');
+	  $body[0]['tagText'] = $content;
+	  $body[0]['text'] = $geshi->parseCode();
+	  $body[0]['nohtmlspecialchars'] = 1;
 
-		$openNode['text'].='<div class="code_title">Kod</div><div class="code_area">';
-		$closeNode['text']='</div>'.$closeNode['text'];
-	}
-	*/
+	  $openNode['text'].='<div class="code_title">Kod</div><div class="code_area">';
+	  $closeNode['text']='</div>'.$closeNode['text'];
+	  }
+	 */
 }
-
 

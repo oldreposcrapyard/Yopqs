@@ -50,12 +50,17 @@ $LANG['thatis']            = 'that is';
 $LANG['hours']             = 'Hours';
 $LANG['minutes']           = 'Minutes';
 $LANG['seconds']           = 'Seconds';
-
 //Database language
 $LANG['db_connect_error']  = 'Database connect error!';
 $LANG['db_select_error']   = 'Can\'t choose database!';
 $LANG['db_query_success']  = 'Query executed succesfully.';
 $LANG['db_query_error']    = 'Query error!';
+//Admin panel language
+$LANG['loginfailed']       = 'Login failed!';
+$LANG['loggedinas']        = 'Logged in as:';
+$LANG['logout']            = 'Logout';
+$LANG['question']          = 'Question';
+$LANG['edit']              = 'Edit';
 
 //$LANG['example']         = 'Example message.';
 ?>
