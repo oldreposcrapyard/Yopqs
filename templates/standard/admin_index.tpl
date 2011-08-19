@@ -28,7 +28,7 @@
             <p>[onshow.LANG.loggedinas]  [onshow.username] <a href="logout.php">[onshow.LANG.logout]</a></p>
         </div>
         <div id="menu">
-            <a id="menuitem" href="#">edycja pytañ i odpowiedzi</a>
+            <a id="menuitem" href="#">edycja pytaÅ„ i odpowiedzi</a>
         </div>
         <div id="fulltext">
         <h1>
