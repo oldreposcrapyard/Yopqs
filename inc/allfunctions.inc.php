@@ -94,7 +94,15 @@ function sec2hms ($sec, $padHours = false){
 
 //------------------------------------------------------------
 
-//function retrieveConfFromDb($conf_name){
+function retrieveConfFromDb($conf_name){
 
-//}
+    if (!($query_conf = mysql_query("SELECT Value FROM Config WHERE Name='$conf_name'"))) {
+        exit;
+    } 
+    
+    if (!($query_result = mysql_result($query_conf, 0))) {
+        exit;
+    } 
+    return $query_result;
+}
 ?>
