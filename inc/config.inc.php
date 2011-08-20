@@ -82,9 +82,9 @@ $db_name       = 'db_45b9cf5d';
 //
 // Included by alibaba.class.php
 
-$USER_TABLE_NAME = "Users";
-$USERNAME_FIELD = "Username";
-$PASSWORD_FIELD = "Password";
+//$USER_TABLE_NAME = "Users";
+//$USERNAME_FIELD = "Username";
+//$PASSWORD_FIELD = "Password";
 
 $COOKIE_EXPIRATION = "2";           // in days
 $HASH_FUNCTION = "md5sha1";         // "sha1" or "md5sha1" or "sha1md5" or "md5"

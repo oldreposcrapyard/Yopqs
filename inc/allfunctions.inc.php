@@ -91,4 +91,10 @@ function sec2hms ($sec, $padHours = false){
     return $hms;
     
 }
+
+//------------------------------------------------------------
+
+//function retrieveConfFromDb($conf_name){
+
+//}
 ?>

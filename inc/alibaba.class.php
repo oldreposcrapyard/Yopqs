@@ -121,6 +121,6 @@ class Alibaba {
 	private static function db_close($conn) {
 		mysql_close($conn);
 	}
-} Alibaba::AlibabaInit($db_name, $db_hostname, $db_username, $db_password, $USER_TABLE_NAME, $USERNAME_FIELD, $PASSWORD_FIELD, $COOKIE_EXPIRATION, $HASH_FUNCTION, $LOGIN_PAGE_URL);
+} Alibaba::AlibabaInit($db_name, $db_hostname, $db_username, $db_password, 'Users', 'Username', 'Password', $COOKIE_EXPIRATION, $HASH_FUNCTION, $LOGIN_PAGE_URL);
 
 ?>
