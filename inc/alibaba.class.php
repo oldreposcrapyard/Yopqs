@@ -4,7 +4,8 @@
 //
 // by Ben Crowder
 
-include_once("config.inc.php");
+include_once('config.inc.php');
+include_once('allfunctions.inc.php');
 
 class Alibaba {
 	private static $app_name = 'YOPQS_admin_panel';
@@ -121,6 +122,11 @@ class Alibaba {
 	private static function db_close($conn) {
 		mysql_close($conn);
 	}
-} Alibaba::AlibabaInit($db_name, $db_hostname, $db_username, $db_password, 'Users', 'Username', 'Password', $COOKIE_EXPIRATION, $HASH_FUNCTION, $LOGIN_PAGE_URL);
+} 
+//Config
+//$COOKIE_EXPIRATION
+//$HASH_FUNCTION
+//$LOGIN_PAGE_URL
+Alibaba::AlibabaInit($db_name, $db_hostname, $db_username, $db_password, 'Users', 'Username', 'Password', $COOKIE_EXPIRATION, $HASH_FUNCTION, $LOGIN_PAGE_URL);
 
 ?>
