@@ -41,16 +41,6 @@ require 'inc/template_tbs.php';
 require 'inc/tbs_plugin_html.php';
 $PHP_SELF = getNameFile();
 //---------------------------
-// Database connection
-//---------------------------
-try {
-    $conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=UTF-8", $db_username, $db_password);
-    }
-catch(PDOException $e)
-    {
-    echo $e->getMessage();
-    }
-//---------------------------
 // New player
 //---------------------------
 If (!IsSet($_SESSION['start_time']) && $CONF['measure_time']) {
@@ -99,11 +89,12 @@ FOOTER;
 //-------------
 try {
     $sql = "SELECT Answer FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]";
-    foreach ($conn->query($sql) as $row)
+    $conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=UTF-8", $db_username, $db_password);
+	foreach ($conn->query($sql) as $row)
         {
         $result[] = $row['Answer'];
         }
-
+$conn = null;
 }
 catch(PDOException $e)
     {
@@ -168,17 +159,17 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
 // Form data
 //-----------------
 try {
-    $sql = "SELECT question FROM `Levels` WHERE ID_lvl=$_SESSION[actual_lvl]";
+    $conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=UTF-8", $db_username, $db_password);
+	$sql = "SELECT question FROM `Levels` WHERE ID_lvl=$_SESSION[actual_lvl]";
 	$fetch = $conn->query($sql);
 	$query_question = $fetch->fetch(PDO::FETCH_ASSOC);
+	$conn = null;
 }
 catch(PDOException $e)
     {
     echo $e->getMessage();
     }
 	
-/*** close the database connection ***/
-$conn = null;
 //-----------------
 // Parsing BBcode
 //-----------------
