@@ -42,18 +42,17 @@ function checkanswer($array,$passwd_given){
 
 function getmaxlevel(){
 
-    if (!($query_id = mysql_query("SELECT MAX(ID_lvl) FROM `Levels`"))) {
-        error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
-        return $LANG['db_query_error'];
-        exit;
-    } 
-    
-    if (!($query_result = mysql_result($query_id, 0))) {
-        error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
-        return $LANG['db_query_error'];
-        exit;
-    } 
+    try {
+    $sql = "SELECT MAX(ID_lvl) FROM `Levels`";
+	$query_result = $conn->query($sql);
     return $query_result;
+	}
+catch(PDOException $e)
+    {
+    echo $e->getMessage();
+    }
+
+
 } 
 
 //------------------------------------------------------------
