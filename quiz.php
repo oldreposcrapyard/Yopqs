@@ -39,6 +39,7 @@ require 'inc/bbcode/BbCode.php';
 //template files
 require 'inc/template_tbs.php';
 require 'inc/tbs_plugin_html.php';
+$PHP_SELF = getNameFile();
 //---------------------------
 // Database connection
 //---------------------------

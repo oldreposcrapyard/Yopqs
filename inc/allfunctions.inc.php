@@ -14,6 +14,14 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+
+function getNameFile(){
+$currentFile = $_SERVER["SCRIPT_NAME"];
+$parts = Explode('/', $currentFile);
+$PHP_SELF = $parts[count($parts) - 1];
+return $PHP_SELF;
+}
+
 //------------------------------------------------------------
 
 function checkanswer($array,$passwd_given){
