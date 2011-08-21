@@ -14,8 +14,6 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-include_once('config.inc.php');
-
 function getNameFile(){
 $currentFile = $_SERVER["SCRIPT_NAME"];
 $parts = Explode('/', $currentFile);
@@ -44,7 +42,8 @@ function checkanswer($array,$passwd_given){
 function getmaxlevel(){
 
     try {
-    $conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=UTF-8", $db_username, $db_password);
+    include_once('config.inc.php');
+	$conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=UTF-8", $db_username, $db_password);
 	$sql = "SELECT MAX(ID_lvl) FROM `Levels`";
 	$query_result = $conn->query($sql);
     return $query_result;
