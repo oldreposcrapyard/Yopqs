@@ -39,7 +39,6 @@ require 'inc/bbcode/BbCode.php';
 //template files
 require 'inc/template_tbs.php';
 require 'inc/tbs_plugin_html.php';
-$PHP_SELF = getNameFile();
 //---------------------------
 // Database connection
 //---------------------------
@@ -125,7 +124,6 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             if (!IsSet($_SESSION['end_time'])) {
                 $_SESSION['end_time'] = time();
             }
-            $start_time       = $_SESSION['start_time'];
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             $normal_time      = sec2hms($time_solved_quiz, true);
             //template display
@@ -148,7 +146,6 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
     }
     elseif (!checkanswer($result, $_POST['haslo'])) { //odpowiedz zla
         $message = $FAIL;
-        //include_once "$PHP_SELF";
     }
 } elseif (!isSet($_POST['haslo'])) { //jezeli nie wysłana odpowiedz
     if(isSet($_SESSION['last_level_passed'])){
@@ -156,7 +153,6 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             if (!IsSet($_SESSION['end_time'])) {
                 $_SESSION['end_time'] = time();
             }
-            $start_time       = $_SESSION['start_time'];
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             $normal_time      = sec2hms($time_solved_quiz, true);
             //template display
