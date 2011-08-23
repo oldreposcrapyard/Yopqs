@@ -89,7 +89,7 @@ FOOTER;
 //-------------
 try {
     $sql = "SELECT Answer FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]";
-    $conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=UTF-8", $db_username, $db_password);
+    $conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password);
 	foreach ($conn->query($sql) as $row)
         {
         $result[] = $row['Answer'];
@@ -159,7 +159,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
 // Form data
 //-----------------
 try {
-    $conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=UTF-8", $db_username, $db_password);
+    $conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password);
 	$sql = "SELECT question FROM `Levels` WHERE ID_lvl=$_SESSION[actual_lvl]";
 	$fetch = $conn->query($sql);
 	$query_question = $fetch->fetch(PDO::FETCH_ASSOC);

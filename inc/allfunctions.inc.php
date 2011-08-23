@@ -46,7 +46,7 @@ $db_username = 'user_45b9cf5d';
 $db_password = '9bvP;cJjT)IJI^';
 $db_hostname = '10.194.111.8'; 
 $db_name       = 'db_45b9cf5d'; 
-	$conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=UTF-8", $db_username, $db_password);
+	$conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password);
 	$sql = "SELECT MAX(ID_lvl) FROM `Levels`";
 	$query_result = $conn->query($sql);
     return $query_result;
