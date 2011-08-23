@@ -14,6 +14,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+
 function getNameFile(){
 $currentFile = $_SERVER["SCRIPT_NAME"];
 $parts = Explode('/', $currentFile);
@@ -41,22 +42,18 @@ function checkanswer($array,$passwd_given){
 
 function getmaxlevel(){
 
-    try {
-$db_username = 'user_45b9cf5d';
-$db_password = '9bvP;cJjT)IJI^';
-$db_hostname = '10.194.111.8'; 
-$db_name       = 'db_45b9cf5d'; 
-	$conn = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password);
-	$sql = "SELECT MAX(ID_lvl) FROM `Levels`";
-	$query_result = $conn->query($sql);
+    if (!($query_id = mysql_query("SELECT MAX(ID_lvl) FROM `Levels`"))) {
+        error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
+        return $LANG['db_query_error'];
+        exit;
+    } 
+    
+    if (!($query_result = mysql_result($query_id, 0))) {
+        error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
+        return $LANG['db_query_error'];
+        exit;
+    } 
     return $query_result;
-	}
-catch(PDOException $e)
-    {
-    echo $e->getMessage();
-    }
-
-
 } 
 
 //------------------------------------------------------------
