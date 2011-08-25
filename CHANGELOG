@@ -2,6 +2,7 @@
 1.3 Beta
 ------------------------
 [ENHANCEMENT]Now using PDO instead of mysql_* functions
+[ENHANCEMENT]Used CSS minify and code cleaner
 ------------------------
 1.2 Beta
 ------------------------
