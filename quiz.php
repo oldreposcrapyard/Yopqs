@@ -65,14 +65,14 @@ If (!IsSet($_SESSION['actual_lvl'])) {
 //------------------
 // Maximum level
 //------------------
-function getmaxlevel(){
+If (!IsSet($_SESSION['max_lvl'])) {
 try
    {
    $stmt = $pdo->query('SELECT MAX(ID_lvl) FROM `Levels`');
 
           foreach($stmt as $row)
       {
-          return $row[0];
+          $_SESSION['max_lvl'] = $row[0];
       }
 
    $stmt -> closeCursor();
@@ -82,10 +82,6 @@ try
    {
       return $e->getMessage();
    }
-}
-
-If (!IsSet($_SESSION['max_lvl'])) {
-    $_SESSION['max_lvl'] = getmaxlevel();
 }
 //------------------
 // Variables for Game...
