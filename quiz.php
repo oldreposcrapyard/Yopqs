@@ -76,7 +76,6 @@ try
       }
 
    $stmt -> closeCursor();
-   
    }
    catch(PDOException $e)
    {
@@ -125,7 +124,7 @@ FOOTER;
           $result[] = $row['Answer'];
       }
 
-   $stmt -> closeCursor();
+   $stmt_answers -> closeCursor();
 
    }
    catch(PDOException $e)
@@ -196,10 +195,10 @@ try
    $stmt_question ->execute(array(':actual_lvl'=>$_SESSION['actual_lvl']));
           foreach($stmt_question as $row)
       {
-          $query_question[] = $row['question'];
+          $query_question = $row['question'];
       }
 
-   $stmt -> closeCursor();
+   $stmt_question -> closeCursor();
 
    }
    catch(PDOException $e)
@@ -211,7 +210,7 @@ try
 // Parsing BBcode
 //-----------------
 $bb = new BbCode();
-$bb->parse($query_question['question'], false);
+$bb->parse($query_question, false);
 $question_display = $bb->getHtml();
 if (!isSet($message)){
 $message = '';
