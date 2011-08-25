@@ -6,7 +6,7 @@ require_once 'inc/template_tbs.php';
 require_once 'inc/tbs_plugin_html.php';
 
 if ($_GET['action'] == "reset") {
-session_unset();
+$_SESSION = array();
 }
 
 $bb = new BbCode();
