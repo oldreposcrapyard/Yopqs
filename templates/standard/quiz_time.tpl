@@ -6,7 +6,191 @@
       [onshow.CONF.quiz_name] - Marcinl's php quiz
     </title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="inc/styl.css" />
+<style type="text/css">
+	BODY {
+color:#7F7F7F;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+text-align:justify;
+margin:0;
+padding:0;
+}
+
+.szukaj {
+border-right:0 solid gray;
+border-top:0 solid gray;
+padding-left:4px;
+font-size:8pt;
+border-left:0 solid gray;
+color:#cecece;
+border-bottom:0 solid gray;
+font-family:Tahoma, Verdana, Helvetica, sans-serif;
+height:20px;
+background-color:#4e4e4e;
+}
+
+.przycisk {
+border-right:1px solid gray;
+border-top:1px solid gray;
+font-size:8pt;
+border-left:1px solid gray;
+width:120px;
+color:#000;
+border-bottom:1px solid gray;
+font-family:Arial ,Verdana, Helvetica, sans-serif;
+height:20px;
+background-color:#EFEFEF;
+}
+
+TD {
+color:#7F7F7F;
+font-family:Arial, Verdana, Helvetica, sans-serif;
+font-size:11px;
+}
+
+.cop {
+color:#4C4C4C;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+}
+
+.rek {
+color:#999;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+
+A {
+color:#0E0E0E;
+text-decoration:none;
+}
+
+A:hover {
+color:#B4B4B4;
+text-decoration:underline;
+}
+
+A.dwa {
+color:#181818;
+text-decoration:none;
+font-size:9px;
+}
+
+A.menu {
+color:#EEE;
+text-decoration:none;
+font-size:11px;
+}
+
+A.trzy:hover {
+color:#000;
+text-decoration:none;
+font-size:11px;
+}
+
+A.me {
+color:#7A7A7A;
+text-decoration:none;
+font-size:10px;
+}
+
+A.me:hover {
+color:#FF8000;
+text-decoration:none;
+font-size:10px;
+}
+
+A.maly {
+color:gray;
+text-decoration:none;
+font-size:9px;
+}
+
+.maly2 {
+font-size:7.5pt;
+color:#595959;
+font-family:Arial, Verdana;
+}
+
+P {
+line-height:14px;
+padding-bottom:2px;
+padding-top:2px;
+margin:2px 7px;
+}
+
+.topbar {
+color:#909090;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+}
+
+.tytmen {
+color:#fff;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+}
+
+.stopka {
+color:#EFEFEF;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+}
+
+.stopka2 {
+color:#696969;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+}
+
+.tytul {
+color:#2d2d2d;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+
+.reg {
+color:#3F3F3F;
+font-family:Arial, Verdana, Helvetica, sans-serif;
+font-size:12px;
+}
+
+.tytul2 {
+color:#2d2d2d;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:15px;
+}
+
+.tab {
+color:#669;
+font-family:Arial, Helvetica, sans-serif;
+font-size:10px;
+margin-bottom:3px;
+margin-top:0;
+padding-bottom:3px;
+padding-top:0;
+text-align:center;
+text-transform:uppercase;
+}
+
+A.dwa:hover,A.maly:hover {
+color:#000;
+text-decoration:none;
+font-size:9px;
+}
+
+A.menu:hover,A.trzy {
+color:#FFF;
+text-decoration:none;
+font-size:11px;
+}
+
+.tekst,.tekst2 {
+color:#2d2d2d;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+	</style>
     <style type="text/css">
 /*<![CDATA[*/
     body {
