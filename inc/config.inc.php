@@ -23,7 +23,7 @@ $CONF = array();
 //Język
 //Language
 
-$CONF['lang']          = 'pl';
+$CONF['lang']          = 'en';
 
 //Name of the quiz
 //Nazwa quizu
