@@ -50,7 +50,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 }
 catch (PDOException $e) {
-    echo $LANG[db_connect_error] . $e->getMessage();
+    echo $LANG['db_connect_error'] . $e->getMessage();
 }
 //---------------------------
 // New player
@@ -64,6 +64,25 @@ If (!IsSet($_SESSION['actual_lvl'])) {
 //------------------
 // Maximum level
 //------------------
+function getmaxlevel(){
+try
+   {
+   $stmt = $pdo -> query('SELECT MAX(ID_lvl) FROM `Levels`');
+
+          foreach($stmt as $row)
+      {
+          return $row[0];
+      }
+
+   $stmt -> closeCursor();
+   
+   }
+   catch(PDOException $e)
+   {
+      return $e->getMessage();
+   }
+}
+
 If (!IsSet($_SESSION['max_lvl'])) {
     $_SESSION['max_lvl'] = getmaxlevel();
 }

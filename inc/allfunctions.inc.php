@@ -40,27 +40,6 @@ function checkanswer($array,$passwd_given){
 
 //------------------------------------------------------------
 
-function getmaxlevel(){
-try
-   {
-   $stmt = $pdo -> query('SELECT MAX(ID_lvl) FROM `Levels`');
-
-          foreach($stmt as $row)
-      {
-          return $row[0];
-      }
-
-   $stmt -> closeCursor();
-   
-   }
-   catch(PDOException $e)
-   {
-      return $e->getMessage();
-   }
-} 
-
-//------------------------------------------------------------
-
 function sec2hms ($sec, $padHours = false){
 
     // start with a blank string
