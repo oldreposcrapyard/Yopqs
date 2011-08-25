@@ -5,8 +5,9 @@ require_once 'inc/bbcode/BbCode.php';
 require_once 'inc/template_tbs.php';
 require_once 'inc/tbs_plugin_html.php';
 
-if ($_GET['action'] == "reset") {
-$_SESSION = array();
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == "reset") {
+session_unset(); 
+session_destroy();
 }
 
 $bb = new BbCode();
