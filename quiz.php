@@ -40,6 +40,14 @@ require 'inc/template_tbs.php';
 require 'inc/tbs_plugin_html.php';
 $PHP_SELF = getNameFile();
 //---------------------------
+// Reset button
+//---------------------------
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == "reset") {
+session_unset(); 
+session_destroy();
+header('Location: index.php');
+}
+//---------------------------
 // Database connection
 //---------------------------
 try {

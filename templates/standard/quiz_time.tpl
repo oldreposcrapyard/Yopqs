@@ -87,7 +87,7 @@ A.menu:hover,A.trzy{color:#FFF;text-decoration:none;font-size:11px;}
             [onshow.LANG.ittookyou]  
             [onshow.time_solved_quiz] [onshow.LANG.seconds], [onshow.LANG.thatis]<br>[onshow.LANG.hours]:[onshow.LANG.minutes]:[onshow.LANG.seconds]<br>[onshow.normal_time]
             </h1>
-            <a href="index.php?action=reset">Reset</a>
+            <a href="quiz.php?action=reset">Reset</a>
 		  </div>
         </td>
         <td class="c5" width="72"></td>
