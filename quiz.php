@@ -18,7 +18,6 @@ $mtime = microtime();
 $mtime = explode(" ",$mtime); 
 $mtime = $mtime[1] + $mtime[0]; 
 $starttime = $mtime;
-
 //---------------------------
 // Page encoding
 //---------------------------
@@ -114,28 +113,25 @@ FOOTER;
 //-------------
 // Getting answers from database
 //-------------
- try
-   {
-   $sql = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl';
-   $stmt_answers = $pdo -> prepare($sql);
-   $stmt_answers ->execute(array(':actual_lvl'=>$_SESSION['actual_lvl']));
-          foreach($stmt_answers as $row)
-      {
-          $result[] = $row['Answer'];
-      }
-
-   $stmt_answers -> closeCursor();
-
-   }
-   catch(PDOException $e)
-   {
-      echo $LANG['db_query_error'] . $e->getMessage();
-   }
+try {
+    $sql          = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl';
+    $stmt_answers = $pdo->prepare($sql);
+    $stmt_answers->execute(array(
+        ':actual_lvl' => $_SESSION['actual_lvl']
+    ));
+    foreach ($stmt_answers as $row) {
+        $result[] = $row['Answer'];
+    }
+    $stmt_answers->closeCursor();
+}
+catch (PDOException $e) {
+    echo $LANG['db_query_error'] . $e->getMessage();
+}
 //-----------------
 // Checking answer
 //-----------------
 if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
-    if (checkanswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $_SESSION['max_lvl']) { //jezeli dobra odpowiedz na ostatni level
+    if (checkAnswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $_SESSION['max_lvl']) { //jezeli dobra odpowiedz na ostatni level
         $_SESSION['last_level_passed'] = 'TRUE';
         if ($CONF['measure_time']) { //jezeli mierzyc czas
             if (!IsSet($_SESSION['end_time'])) {
@@ -154,19 +150,17 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             exit;
         }
     }
-    if (checkanswer($result, $_POST['haslo'])) { //jezeli dobra odpowiedz na level inny niz ostatni
+    if (checkAnswer($result, $_POST['haslo'])) { //jezeli dobra odpowiedz na level inny niz ostatni
         $message = $WON;
         ++$_SESSION['actual_lvl'];
-    }
-    elseif ($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo'])) { //jezeli odpowiedz pusta
+    } elseif ($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo'])) { //jezeli odpowiedz pusta
         $message = $ANSWEREMPTY;
-    }
-    elseif (!checkanswer($result, $_POST['haslo'])) { //odpowiedz zla
+    } elseif (!checkAnswer($result, $_POST['haslo'])) { //odpowiedz zla
         $message = $FAIL;
     }
 } elseif (!isSet($_POST['haslo'])) { //jezeli nie wysłana odpowiedz
-    if(isSet($_SESSION['last_level_passed'])){
-    if ($CONF['measure_time']) { //jezeli mierzyc czas
+    if (isSet($_SESSION['last_level_passed'])) {
+        if ($CONF['measure_time']) { //jezeli mierzyc czas
             if (!IsSet($_SESSION['end_time'])) {
                 $_SESSION['end_time'] = time();
             }
@@ -183,7 +177,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             exit;
         }
     }
-} 
+}
 
 //-----------------
 // Form data
@@ -220,7 +214,7 @@ $mtime = microtime();
 $mtime = explode(" ",$mtime); 
 $mtime = $mtime[1] + $mtime[0]; 
 $endtime = $mtime; 
-$totaltime = ($endtime - $starttime); 
+$totaltime = $endtime - $starttime; 
 //template display
 $TBS              = new clsTinyButStrong;
 $TBS->LoadTemplate("templates/$CONF[template]/quiz.tpl");
