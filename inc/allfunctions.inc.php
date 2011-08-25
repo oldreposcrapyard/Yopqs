@@ -41,19 +41,22 @@ function checkanswer($array,$passwd_given){
 //------------------------------------------------------------
 
 function getmaxlevel(){
+try
+   {
+   $stmt = $pdo -> query('SELECT MAX(ID_lvl) FROM `Levels`');
 
-    if (!($query_id = mysql_query("SELECT MAX(ID_lvl) FROM `Levels`"))) {
-        error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
-        return $LANG['db_query_error'];
-        exit;
-    } 
-    
-    if (!($query_result = mysql_result($query_id, 0))) {
-        error_log("$LANG[db_query_error]\r\n", 3, "log/db.log");
-        return $LANG['db_query_error'];
-        exit;
-    } 
-    return $query_result;
+          foreach($stmt as $row)
+      {
+          return $row[0];
+      }
+
+   $stmt -> closeCursor();
+   
+   }
+   catch(PDOException $e)
+   {
+      return $e->getMessage();
+   }
 } 
 
 //------------------------------------------------------------
@@ -94,7 +97,7 @@ function sec2hms ($sec, $padHours = false){
 }
 
 //------------------------------------------------------------
-
+/*
 function retrieveConfFromDb($conf_name){
 
     if (!($query_conf = mysql_query("SELECT Value FROM Config WHERE Name='$conf_name'"))) {
@@ -106,4 +109,5 @@ function retrieveConfFromDb($conf_name){
     } 
     return $query_result;
 }
+*/
 ?>

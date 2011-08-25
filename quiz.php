@@ -43,22 +43,14 @@ $PHP_SELF = getNameFile();
 //---------------------------
 // Database connection
 //---------------------------
-if (!($conn = mysql_connect($db_hostname, $db_username, $db_password))) {
-    print("$LANG[db_connect_error]");
-    error_log("$LANG[db_connect_error]\r\n", 3, '../log/db.log');
-    exit;
+try {
+    $pdo = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password, array(
+        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+    ));
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 }
-//---------------------------
-// Database encoding
-//---------------------------
-mysql_set_charset('utf8', $conn);
-//---------------------------
-// Database selecting
-//---------------------------
-if (!($db = mysql_select_db($db_name, $conn))) {
-    print $LANG['db_select_error'];
-    error_log("$LANG[db_select_error]\r\n", 3, '../log/db.log');
-    exit;
+catch (PDOException $e) {
+    echo $LANG[db_connect_error] . $e->getMessage();
 }
 //---------------------------
 // New player
@@ -107,14 +99,23 @@ FOOTER;
 //-------------
 // Getting answers from database
 //-------------
-if (!($query1 = mysql_query("SELECT Answer FROM `Answers` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
-print $LANG['db_query_error'];
-error_log("$LANG[db_query_error]\r\n", 3, 'log/db.log');
-exit;
-}
-while ($row = mysql_fetch_array($query1, MYSQL_BOTH)) {
-$result[] = $row['Answer'];
-}
+ try
+   {
+   $sql = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl';
+   $stmt_answers = $pdo -> prepare($sql);
+   $stmt_answers ->execute(array(':actual_lvl'=>$_SESSION['actual_lvl']));
+          foreach($stmt_answers as $row)
+      {
+          $result[] = $row['Answer'];
+      }
+
+   $stmt -> closeCursor();
+
+   }
+   catch(PDOException $e)
+   {
+      echo $LANG['db_query_error'] . $e->getMessage();
+   }
 //-----------------
 // Checking answer
 //-----------------
@@ -172,19 +173,24 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
 //-----------------
 // Form data
 //-----------------
-if (!($query_question = mysql_query("SELECT question FROM `Levels` WHERE ID_lvl=$_SESSION[actual_lvl]"))) {
-    print $LANG['db_query_error'];
-    error_log("$LANG[db_query_error]", 3, 'log/db.log');
-    exit;
-}
+try
+   {
+   $sql = 'SELECT question FROM `Levels` WHERE ID_lvl=:actual_lvl';
+   $stmt_question = $pdo -> prepare($sql);
+   $stmt_question ->execute(array(':actual_lvl'=>$_SESSION['actual_lvl']));
+          foreach($stmt_question as $row)
+      {
+          $query_question[] = $row['question'];
+      }
 
-if (!($query_question = mysql_fetch_array($query_question, MYSQL_ASSOC))) {
-    print $LANG['db_query_error'];
-    error_log("$LANG[db_query_error]", 3, 'log/db.log');
-    exit;
-}
+   $stmt -> closeCursor();
 
-mysql_close();
+   }
+   catch(PDOException $e)
+   {
+      echo $LANG['db_query_error'] . $e->getMessage();
+   }
+
 //-----------------
 // Parsing BBcode
 //-----------------
