@@ -20,7 +20,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 ***************************************
 Author E-mail: marcin.safmb@wp.pl
 Github: https://github.com/marcinlawnik/Yopqs
-Version: 1.2 Beta
+Version: 1.3 Beta
 Live demo of latest "master" branch is available at: --No live demo now--
 
 
@@ -32,6 +32,15 @@ You can use your own logo,
 just delete logo.jpg and replace it with
 logo you can make from file clearlogo.jpg.
 Copyright (C) 2010 - 2011 by Marcin Lawniczak <marcin.safmb@wp.pl> | <www.stw.net23.net>
+
+----------------------
+REQUIREMENTS
+----------------------
+-Apache webserver
+-PHP version 5.2.0 and newer
+-mbstring and PDO PHP extensions
+-MySQL or other PDO compatible database
+
 
 This software is using following scripts and graphics:
 - BBcode parser by wookieb: http://forum.php.pl/klasa_Zaawansowany_parser_bbcode_php5_t115269.html

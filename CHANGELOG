@@ -1,4 +1,8 @@
 ------------------------
+1.3 Beta
+------------------------
+[ENHANCEMENT]Now using PDO instead of mysql_* functions
+------------------------
 1.2 Beta
 ------------------------
 [FEATURE]Admin panel with login (Just login without functionality yet)
