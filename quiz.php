@@ -51,6 +51,7 @@ try {
 }
 catch (PDOException $e) {
     echo $LANG['db_connect_error'] . $e->getMessage();
+	exit;
 }
 //---------------------------
 // New player
@@ -67,7 +68,7 @@ If (!IsSet($_SESSION['actual_lvl'])) {
 function getmaxlevel(){
 try
    {
-   $stmt = $pdo -> query('SELECT MAX(ID_lvl) FROM `Levels`');
+   $stmt = $pdo->query('SELECT MAX(ID_lvl) FROM `Levels`');
 
           foreach($stmt as $row)
       {
