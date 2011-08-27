@@ -15,7 +15,7 @@
 ob_start();
 //start measuring time
 $mtime = microtime(); 
-$mtime = explode(" ",$mtime); 
+$mtime = explode(' ',$mtime); 
 $mtime = $mtime[1] + $mtime[0]; 
 $starttime = $mtime;
 //---------------------------
@@ -42,7 +42,7 @@ $PHP_SELF = getNameFile();
 //---------------------------
 // Reset button
 //---------------------------
-if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == "reset") {
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == 'reset') {
 session_unset(); 
 session_destroy();
 header('Location: index.php');
@@ -52,7 +52,7 @@ header('Location: index.php');
 //---------------------------
 try {
     $pdo = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password, array(
-        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+        PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
     ));
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 }
@@ -219,7 +219,7 @@ $message = '';
 }
 
 $mtime = microtime(); 
-$mtime = explode(" ",$mtime); 
+$mtime = explode(' ',$mtime); 
 $mtime = $mtime[1] + $mtime[0]; 
 $endtime = $mtime; 
 $totaltime = $endtime - $starttime; 

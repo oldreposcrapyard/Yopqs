@@ -52,7 +52,7 @@ class Alibaba {
             setcookie("alibaba_" . self::$app_name . "_username", $username, time() + 60 * 60 * 24 * self::$cookie_expiration, "/");
         } else {
             $logged_in = false;
-            setcookie("alibaba_" . self::$app_name . "_username", "", time() - 3600, "/");
+            setcookie("alibaba_" . self::$app_name . "_username", '', time() - 3600, "/");
         }
         self::db_close($db);
         return $logged_in;
@@ -79,16 +79,16 @@ class Alibaba {
     }
     private static function hashpass($password) {
         switch (self::$hash_function) {
-            case "md5":
+            case 'md5':
                 $password = md5($password);
                 break;
-            case "sha1":
+            case 'sha1':
                 $password = sha1($password);
                 break;
-            case "md5sha1":
+            case 'md5sha1':
                 $password = md5(sha1($password));
                 break;
-            case "sha1md5":
+            case 'sha1md5':
                 $password = sha1(md5($password));
                 break;
         }
@@ -97,15 +97,15 @@ class Alibaba {
     private static function db_connect() {
         $conn = mysql_connect(self::$database_host, self::$database_username, self::$database_password);
         if (!$conn) {
-            echo "Error connecting to database.\n";
+            echo 'Error connecting to database.\n';
         }
-        @mysql_select_db(self::$database_name, $conn) or die("Unable to select database.");
+        @mysql_select_db(self::$database_name, $conn) or die('Unable to select database.');
         return $conn;
     }
     private static function db_close($conn) {
         mysql_close($conn);
     }
 }
-Alibaba::AlibabaInit($db_name, $db_hostname, $db_username, $db_password, 'Users', 'Username', 'Password', 1, $HASH_FUNCTION, $LOGIN_PAGE_URL);
+Alibaba::AlibabaInit($db_name, $db_hostname, $db_username, $db_password, 'Users', 'Username', 'Password', 1, $HASH_FUNCTION, '../admin/login.php');
 
 ?>

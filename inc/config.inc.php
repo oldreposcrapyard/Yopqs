@@ -82,6 +82,5 @@ $db_name       = 'db_45b9cf5d';
 //
 // Included by alibaba.class.php
 
-$HASH_FUNCTION = "md5sha1";         // "sha1" or "md5sha1" or "sha1md5" or "md5"
-$LOGIN_PAGE_URL = "../admin/login.php";
+$HASH_FUNCTION = 'md5sha1';         // 'sha1' or 'md5sha1' or 'sha1md5' or 'md5'
 ?>

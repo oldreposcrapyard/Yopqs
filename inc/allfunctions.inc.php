@@ -16,7 +16,7 @@
 
 
 function getNameFile() {
-    $currentFile = $_SERVER["SCRIPT_NAME"];
+    $currentFile = $_SERVER['SCRIPT_NAME'];
     $parts       = Explode('/', $currentFile);
     $PHP_SELF    = $parts[count($parts) - 1];
     return $PHP_SELF;
@@ -41,15 +41,15 @@ function checkAnswer($array, $passwd_given) {
 
 // This function converts seconds into HH:MM:SS format.
 function sec2hms ($sec, $padHours = false){
-    $hms = "";
+    $hms = '';
     $hours = intval(intval($sec) / 3600); 
     $hms .= ($padHours) 
-          ? str_pad($hours, 2, "0", STR_PAD_LEFT). ":"
-          : $hours. ":";
+          ? str_pad($hours, 2, '0', STR_PAD_LEFT). ':'
+          : $hours. ':';
     $minutes = intval(($sec / 60) % 60); 
-    $hms .= str_pad($minutes, 2, "0", STR_PAD_LEFT). ":";
+    $hms .= str_pad($minutes, 2, '0', STR_PAD_LEFT). ':';
     $seconds = intval($sec % 60); 
-    $hms .= str_pad($seconds, 2, "0", STR_PAD_LEFT);
+    $hms .= str_pad($seconds, 2, '0', STR_PAD_LEFT);
     return $hms;   
 }
 
