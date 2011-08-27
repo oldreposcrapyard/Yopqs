@@ -42,7 +42,7 @@ $PHP_SELF = getNameFile();
 //---------------------------
 // Reset button
 //---------------------------
-if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == 'reset') {
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && isSet($_GET['action']) && $_GET['action'] == 'reset') {
 session_unset(); 
 session_destroy();
 header('Location: index.php');
