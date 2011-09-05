@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
 </head>
 <body>
+<div class="container">
 [onshow.message;ope=html;look]
 <p align="right"> [onshow.LANG.level] [onshow._SESSION.actual_lvl] [onshow.LANG.of] [onshow._SESSION.max_lvl] </p>
 <p>[onshow.question_display;ope=html;look]</p>
@@ -24,5 +25,6 @@ METHOD = "POST">
 <a href="http://www.ttg.webuda.com/mail.php"> Marcinl </a> 2010 - 2011
 <br>
 <p>Strona została wygenerowana w [onshow.totaltime] sekund.</p>
+</div>
 </body>
 </html>
