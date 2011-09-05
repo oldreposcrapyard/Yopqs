@@ -94,21 +94,27 @@ try
 //-------------
 //shall be moved to config or sth nothing but form uses it
 $FAIL        = <<<FAIL
-<link rel="Stylesheet" type="text/css" href="templates/$CONF[template]/style_frames.css" />
-<div id="redbox">
-<p>$LANG[badanswer]</p>
+<div class="alert-message error" id="redbox">
+    <a class="close" href="#" onClick="var disappear =
+    document.getElementById('redbox');
+    disappear.style.display='none';">×</a> 
+    <p>$LANG[badanswer]</p>
 </div>
 FAIL;
 $ANSWEREMPTY = <<<AE
-<link rel="Stylesheet" type="text/css" href="templates/$CONF[template]/style_frames.css" />
-<div id="redbox">
-<p>$LANG[emptyanswer]</p>
+<div class="alert-message error" id="redbox">
+    <a class="close" href="#" onClick="var disappear =
+    document.getElementById('redbox');
+    disappear.style.display='none';">×</a> 
+    <p>$LANG[emptyanswer]</p>
 </div>
 AE;
 $WON         = <<<WON
-<link rel="Stylesheet" type="text/css" href="templates/$CONF[template]/style_frames.css" />
-<div id="greenbox">
-<p>$LANG[goodanswer]</p>
+<div class="alert-message success" id="greenbox">
+    <a class="close" href="#" onClick="var disappear =
+    document.getElementById('greenbox');
+    disappear.style.display='none';">×</a> 
+    <p>$LANG[goodanswer]</p>
 </div>
 WON;
 $FOOT        = <<<FOOTER

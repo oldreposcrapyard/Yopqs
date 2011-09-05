@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>[onshow.CONF.quiz_name] - Marcinl's php quiz</title>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
 </head>
 <body>
 [onshow.message;ope=html;look]
