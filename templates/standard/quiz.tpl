@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
 </head>
 <body>
+<br>
 <div class="container">
 [onshow.message;ope=html;look]
 <p align="right"> [onshow.LANG.level] [onshow._SESSION.actual_lvl] [onshow.LANG.of] [onshow._SESSION.max_lvl] </p>
@@ -16,7 +17,7 @@ ACTION = "[onshow.PHP_SELF]"
 METHOD = "POST">
 <INPUT TYPE="text" NAME="haslo">
 <BR><BR>
-<INPUT TYPE="submit" VALUE="[onshow.LANG.ianswer]">
+<INPUT TYPE="submit" VALUE="[onshow.LANG.ianswer]" class="btn">
 </FORM>
 <hr />
 <a href="http://www.google.pl">Google</a> |
