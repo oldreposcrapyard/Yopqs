@@ -23,25 +23,16 @@
     </head>
     <body>
         <br>
-<div class="topbar"> 
-    <div class="topbar-inner"> 
-        <div class="container"> 
-            <h3><a href="index.php">YOPQS</a></h3> 
-            <ul class="nav"> 
-                <li class="active"><a href="#masthead">Overview</a></li> 
-                <li><a href="#about">About</a></li> 
-                <li><a href="#grid-system">Grid</a></li> 
-                <li><a href="#layouts">Layouts</a></li> 
-                <li><a href="#typography">Typography</a></li> 
-                <li><a href="#tables">Tables</a></li> 
-                <li><a href="#forms">Forms</a></li> 
-                <li><a href="#navigation">Navigation</a></li> 
-                <li><a href="#alerts">Alerts</a></li> 
-                <li><a href="logout.php">[onshow.username] - [onshow.LANG.logout]</a></li> 
-            </ul> 
-        </div> 
-    </div> 
-</div>         
+<div class="container"> 
+<ul class="tabs">
+  <li class="active"><a href="index.php">Home</a></li>
+  <li><a href="#">Profile</a></li>
+  <li><a href="#">Messages</a></li>
+  <li><a href="#">Settings</a></li>
+  <li><a href="logout.php">[onshow.LANG.logout]</a></li>
+</ul>
+
+    </div>
         <div class="container">
         <div id="fulltext">
         <h1>
