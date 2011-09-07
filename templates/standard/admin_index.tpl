@@ -12,11 +12,6 @@
             body {font-size:100%;
             padding-top: 40px;
             }
-            div#logintext {
-            text-align: right;
-            font-family:Tahoma, Geneva, sans-serif;
-            font-size:0.75em;
-            }
             div#menu{
             text-align: left;
             font-family:Tahoma, Geneva, sans-serif;
@@ -42,16 +37,12 @@
                 <li><a href="#forms">Forms</a></li> 
                 <li><a href="#navigation">Navigation</a></li> 
                 <li><a href="#alerts">Alerts</a></li> 
-                <li><a href="#popovers">Popovers</a></li> 
-                <li><a href="#less">Less</a></li> 
+                <li><a href="logout.php">[onshow.username] - [onshow.LANG.logout]</a></li> 
             </ul> 
         </div> 
     </div> 
 </div>         
         <div class="container">
-        <div id="logintext">
-            <p>[onshow.LANG.loggedinas]  [onshow.username] <a href="logout.php">[onshow.LANG.logout]</a></p>
-        </div>
         <div id="fulltext">
         <h1>
             There's nothing here, but something will be here shortly.
