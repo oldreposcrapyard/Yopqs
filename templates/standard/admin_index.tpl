@@ -23,18 +23,16 @@
     </head>
     <body>
         <br>
-<div class="container"> 
+
+        <div class="container">
 <ul class="tabs">
   <li class="active"><a href="index.php">Home</a></li>
   <li><a href="#">Profile</a></li>
   <li><a href="#">Messages</a></li>
   <li><a href="#">Settings</a></li>
   <li><a href="logout.php">[onshow.LANG.logout]</a></li>
-</ul>
-
-    </div>
-        <div class="container">
-        <div id="fulltext">
+</ul>        
+<div id="fulltext">
         <h1>
             There's nothing here, but something will be here shortly.
         </h1>
