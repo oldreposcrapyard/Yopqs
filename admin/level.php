@@ -11,7 +11,7 @@ Alibaba::forceAuthentication();
 
 if(isset($_GET['action']))
 {
-    switch($_GET['action']))
+    switch($_GET['action'])
     {
         /* possible actions for module */
 
