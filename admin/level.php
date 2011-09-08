@@ -13,7 +13,7 @@ if (isset($_GET['action'])) {
             /* code to delete*/
             break;
         default:
-            require 'inc/config.inc.php';
+            require '../inc/config.inc.php';
             try {
                 $pdo = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password, array(
                     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
