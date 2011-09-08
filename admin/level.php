@@ -21,8 +21,8 @@ echo 'x';
                 exit;
             }
             try {
-                $stmt = $pdo->query('SELECT * FROM players');
-                echo "<p><b>View All</b> | <a href='view-paginated.php?page=1'>View Paginated</a></p>";
+                $stmt = $pdo->query('SELECT * FROM Questions');
+echo 'x';
                 echo "<table border='1' cellpadding='10'>";
                 echo "<tr> <th>ID</th> <th>First Name</th> <th></th> <th></th></tr>";
                 while ($row = $stmt->fetch()) {
