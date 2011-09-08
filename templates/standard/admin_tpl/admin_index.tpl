@@ -33,7 +33,7 @@
     <ul class="pills">
       <li class="active"><a href="index.php">Home</a></li>
 
-      <li><a href="index.php?module=level">Level editing</a></li>
+      <li><a href="level.php">Level editing</a></li>
 
       <li><a href="#">Messages</a></li>
 
