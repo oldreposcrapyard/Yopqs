@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+echo 'x';
 require '../inc/config.inc.php';
 require '../inc/alibaba.class.php';
 require '../inc/allfunctions.inc.php';
@@ -13,6 +14,7 @@ Alibaba::forceAuthentication();
                     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
                 ));
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+echo 'x';
             }
             catch (PDOException $e) {
                 echo $LANG['db_connect_error'] . $e->getMessage();
