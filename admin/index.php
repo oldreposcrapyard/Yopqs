@@ -9,7 +9,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 Alibaba::forceAuthentication();
 if (isset($_GET['module'])) {
-switch($_GET['module'])
+switch($_GET['module']){
 case 'level':
     require '../inc/config.inc.php';
             try {
@@ -44,6 +44,7 @@ case 'level':
                 return $e->getMessage();
             }
 break;
+}
 } else {
     $TBS = new clsTinyButStrong;
     $TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_index.tpl");
