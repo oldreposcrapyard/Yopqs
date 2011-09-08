@@ -20,11 +20,12 @@ echo 'x';
                 echo $LANG['db_connect_error'] . $e->getMessage();
                 exit;
             }
-            try {
+                echo "<table border='1' cellpadding='10'>";
+                echo "<tr> <th>ID</th> <th>First Name</th> <th></th> <th></th></tr>";            
+try {
                 $stmt = $pdo->query('SELECT * FROM Questions');
 echo 'x';
-                echo "<table border='1' cellpadding='10'>";
-                echo "<tr> <th>ID</th> <th>First Name</th> <th></th> <th></th></tr>";
+
                 while ($row = $stmt->fetch()) {
                     // echo out the contents of each row into a table
                     echo "<tr>";
@@ -34,11 +35,12 @@ echo 'x';
                     echo '<td><a href="delete.php?id=' . $row['id'] . '">Delete</a></td>';
                     echo "</tr>";
                 }
-                // close table
-                echo "</table>";
+
                 $stmt->closeCursor();
             }
             catch (PDOException $e) {
                 return $e->getMessage();
             }
+                // close table
+                echo "</table>";
 ?>
