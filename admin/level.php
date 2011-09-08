@@ -34,4 +34,7 @@ while ($row = $stmt->fetch()) {
 catch (PDOException $e) {
     return $e->getMessage();
 }
+$TBS              = new clsTinyButStrong;
+$TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_level.tpl");
+$TBS->Show();
 ?>
