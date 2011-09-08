@@ -13,8 +13,6 @@
             Here will be styles for this page
             I am currently in process of learning CSS
             */
-            body {font-size:100%;
-            }
             div#menu{
             text-align: left;
             font-family:Tahoma, Geneva, sans-serif;
