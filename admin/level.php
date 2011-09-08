@@ -22,7 +22,7 @@ catch (PDOException $e) {
 echo "<table border='1' cellpadding='10'>";
 echo "<tr> <th>ID</th> <th>First Name</th> <th></th> <th></th></tr>";
 try {
-    $stmt = $pdo->query('SELECT * FROM Questions');
+    $stmt = $pdo->query('SELECT * FROM Levels');
     echo 'x';
     while ($row = $stmt->fetch()) {
         // echo out the contents of each row into a table
