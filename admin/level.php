@@ -13,6 +13,11 @@ if (isset($_GET['action'])) {
             /* code to delete*/
             break;
         default:
+
+            break;
+    }
+}
+if (!isset($_GET['action'])) {
             require '../inc/config.inc.php';
             try {
                 $pdo = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password, array(
@@ -45,7 +50,5 @@ if (isset($_GET['action'])) {
             catch (PDOException $e) {
                 return $e->getMessage();
             }
-            break;
-    }
 }
 ?>
