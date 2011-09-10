@@ -8,26 +8,31 @@
   "http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css" type=
   "text/css" />
 </head>
+
 <body>
-<br>  
-<div class="container">
+  <br />
+
+  <div class="container">
     <ul class="pills">
-      <li><a href="index.php">Home</a></li>
+      <li><a href="index.php">[LANG.mainpage]</a></li>
 
-      <li class="active"><a href="level.php">Level editing</a></li>
-
-      <li><a href="#">Messages</a></li>
-
-      <li><a href="#">Settings</a></li>
+      <li class="active"><a href="level.php">[LANG.levelediting]</a></li>
 
       <li><a href="logout.php">[onshow.LANG.logout]</a></li>
-    </ul>
+    </ul>[onshow.table_contents;ope=html;look]
 
-  
-<table border='1' cellpadding='10'>
-<tr> <th>ID</th> <th>First Name</th> <th></th> <th></th></tr>
-[onshow.table_contents;ope=html;look]
-</table>
-</div>
+    <table border='1' cellpadding='10'>
+      <tr>
+        <th>[LANG.level]</th>
+
+        <th>[LANG.question]</th>
+
+        <th></th>
+
+        <th></th>
+      </tr>
+    </table>
+  </div>
 </body>
-</html
+</html>
+

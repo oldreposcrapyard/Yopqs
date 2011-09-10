@@ -29,13 +29,9 @@
 
   <div class="container">
     <ul class="pills">
-      <li class="active"><a href="index.php">Home</a></li>
+      <li class="active"><a href="index.php">[LANG.mainpage]</a></li>
 
-      <li><a href="level.php">Level editing</a></li>
-
-      <li><a href="#">Messages</a></li>
-
-      <li><a href="#">Settings</a></li>
+      <li><a href="level.php">[LANG.levelediting]</a></li>
 
       <li><a href="logout.php">[onshow.LANG.logout]</a></li>
     </ul>
