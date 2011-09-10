@@ -61,5 +61,6 @@ $LANG['question']          = 'Pytanie';
 $LANG['edit']              = 'Edytuj';
 $LANG['mainpage']          = 'Strona Główna';
 $LANG['levelediting']      = 'Edycja poziomów';
+$LANG['delete']            = 'Usuń';
 //$LANG['example']         = 'Example message.';
 ?>
