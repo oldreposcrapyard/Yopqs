@@ -14,18 +14,18 @@
 
   <div class="container">
     <ul class="pills">
-      <li><a href="index.php">[LANG.mainpage]</a></li>
+      <li><a href="index.php">[onshow.LANG.mainpage]</a></li>
 
-      <li class="active"><a href="level.php">[LANG.levelediting]</a></li>
+      <li class="active"><a href="level.php">[onshow.LANG.levelediting]</a></li>
 
       <li><a href="logout.php">[onshow.LANG.logout]</a></li>
     </ul>[onshow.table_contents;ope=html;look]
 
     <table border='1' cellpadding='10'>
       <tr>
-        <th>[LANG.level]</th>
+        <th>[onshow.LANG.level]</th>
 
-        <th>[LANG.question]</th>
+        <th>[onshow.LANG.question]</th>
 
         <th></th>
 

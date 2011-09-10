@@ -25,8 +25,8 @@ while ($row = $stmt->fetch()) {
         $table_contents .= '<tr>';
         $table_contents .= '<td>' . $row['ID_lvl'] . '</td>';
         $table_contents .= '<td>' . $row['Question'] . '</td>';
-        $table_contents .= '<td><a href="edit.php?id=' . $row['ID_lvl'] . "\">$LANG['edit']</a></td>";
-        $table_contents .= '<td><a href="delete.php?id=' . $row['ID_lvl'] . "\">$LANG['delete']</a></td>";
+        $table_contents .= '<td><a href="edit.php?id=' . $row['ID_lvl'] . "\">$LANG[edit]</a></td>";
+        $table_contents .= '<td><a href="delete.php?id=' . $row['ID_lvl'] . "\">$LANG[delete]</a></td>";
         $table_contents .= '</tr>';
     }
     $stmt->closeCursor();

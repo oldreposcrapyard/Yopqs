@@ -29,9 +29,9 @@
 
   <div class="container">
     <ul class="pills">
-      <li class="active"><a href="index.php">[LANG.mainpage]</a></li>
+      <li class="active"><a href="index.php">[onshow.LANG.mainpage]</a></li>
 
-      <li><a href="level.php">[LANG.levelediting]</a></li>
+      <li><a href="level.php">[onshow.LANG.levelediting]</a></li>
 
       <li><a href="logout.php">[onshow.LANG.logout]</a></li>
     </ul>
