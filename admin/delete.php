@@ -29,6 +29,10 @@ try {
     $stmt->closeCursor();
     $stmt = $pdo->query("DELETE FROM Answers WHERE ID_lvl=$id");
     $stmt->closeCursor();
+    $stmt = $pdo->query("UPDATE `Levels` SET `ID_lvl`=`ID_lvl`-1 WHERE `ID_lvl` > $id");
+    $stmt->closeCursor();
+    $stmt = $pdo->query("UPDATE `Answers` SET `ID_lvl`=`ID_lvl`-1 WHERE `ID_lvl` > $id");
+    $stmt->closeCursor();
 }
 catch (PDOException $e) {
     return $e->getMessage();
