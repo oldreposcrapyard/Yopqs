@@ -18,12 +18,7 @@ I am currently in process of learning CSS
 <body>
 <div class="container">
 <br />
-<div class="alert-message error" id="redbox">
-    <a class="close" href="#" onClick="var disappear =
-    document.getElementById('redbox');
-    disappear.style.display='none';">×</a> 
-    <p>[onshow._GET.message;noerr]</p>
-</div>
+<p>[onshow._GET.message;noerr]</p>
 <center>
 <form name='Login' action='[onshow.PHP_SELF]' method='POST' enctype='application/x-www-form-urlencoded'>
 Username:
