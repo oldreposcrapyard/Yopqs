@@ -19,7 +19,7 @@
       <li class="active"><a href="level.php">[onshow.LANG.levelediting]</a></li>
 
       <li><a href="logout.php">[onshow.LANG.logout]</a></li>
-    </ul>[onshow.table_contents;ope=html;look]
+    </ul>
 
     <table border='1' cellpadding='10'>
       <tr>
@@ -31,6 +31,7 @@
 
         <th></th>
       </tr>
+[onshow.table_contents;ope=html;look]
     </table>
   </div>
 </body>
