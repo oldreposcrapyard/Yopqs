@@ -19,7 +19,7 @@ catch (PDOException $e) {
 }
 
 try {
-    $stmt = $pdo->query('SELECT * FROM Levels');
+    $stmt = $pdo->query('SELECT * FROM Levels ORDER BY ID_lvl');
 $table_contents = '';    
 while ($row = $stmt->fetch()) {
         $table_contents .= '<tr>';

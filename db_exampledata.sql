@@ -18,7 +18,7 @@ INSERT INTO `Levels` (`ID_lvl`, `Question`) VALUES
 (6, 'Ile grodzi wodoszczelnych miał RMS Titanic?\r\n[img]http://ttg.webuda.com/lvl6/tytanik.PNG[/img]\r\n'),
 (7, 'Jaką tablicę mają Tworzanice?(Chodzi o pierwsze trzy litery)\r\n[img]http://ttg.webuda.com/lvl7/tab.png[/img]\n'),
 (8, 'Jak [b]naprawdę[/b] nazywa się autor [i]Sztuki Wojennej[/i]?\r\n\r\n[youtube]http://www.youtube.com/watch?v=wtaja8lkEdk[/youtube]\r\n'),
-(9, 'Jaka litera jest na szczysie tzw."Tablicy Snellena"?\r\n\r\n[img]http://www.ttg.webuda.com/lvl10/snellen.PNG[/img]');
+(9, 'Jaka litera jest na szczycie tzw."Tablicy Snellena"?\r\n\r\n[img]http://www.ttg.webuda.com/lvl10/snellen.PNG[/img]');
 
 INSERT INTO `Users` (`Username`, `Password`) VALUES
 ('admin', '61050d95026bad07a9d54843779f0703');
