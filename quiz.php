@@ -87,6 +87,28 @@ try
    {
       return $e->getMessage();
    }
+// A small check that database is ok.
+try
+   {
+   $stmt = $pdo->query('SELECT COUNT(*) FROM `Levels`');
+
+          foreach($stmt as $row)
+      {
+          $level_count = $row[0];
+      }
+
+   $stmt -> closeCursor();
+   }
+   catch(PDOException $e)
+   {
+      return $e->getMessage();
+   }
+
+If($_SESSION['max_lvl'] != $level_count){
+echo 'Your database is corrupted. Please reinstall the script';
+exit;
+}
+
 //------------------
 // Variables for Game...
 //-------------
@@ -126,7 +148,7 @@ FOOTER;
 // Getting answers from database
 //-------------
 try {
-    $sql          = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl';
+    $sql          = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl LIMIT 1';
     $stmt_answers = $pdo->prepare($sql);
     $stmt_answers->execute(array(
         ':actual_lvl' => $_SESSION['actual_lvl']
