@@ -223,7 +223,7 @@ try
    $stmt_question ->execute(array(':actual_lvl'=>$_SESSION['actual_lvl']));
           foreach($stmt_question as $row)
       {
-          $query_question = $row['question'];
+          $query_question = $row['Question'];
       }
 
    $stmt_question -> closeCursor();
