@@ -72,7 +72,8 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         }
     }
     // once saved, redirect back to the view page
-    header("Location: level.php");
+echo 'DEBUGGG';    
+//header("Location: level.php");
 } else
 // if the form hasn't been submitted, display the form
     {
