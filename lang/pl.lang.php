@@ -62,5 +62,17 @@ $LANG['edit']              = 'Edytuj';
 $LANG['mainpage']          = 'Strona Główna';
 $LANG['levelediting']      = 'Edycja poziomów';
 $LANG['delete']            = 'Usuń';
+//Admin panel - BBcode editor
+$LANG['enterimg']          = 'Podaj adres obrazka:';
+$LANG['bold']              = 'Pogrubienie';
+$LANG['italic']            = 'Kursywa';
+$LANG['underline']         = 'Podkreślenie';
+$LANG['inserturl']         = 'Wstaw link';
+$LANG['insertimg']         = 'Wstaw obrazek';
+$LANG['insertquote']       = 'Wstaw cytat';
+$LANG['insertcode']        = 'Wstaw kod';
+$LANG['insertyt']          = 'Wstaw film z YouTube';
+$LANG['enterurl']          = 'Podaj adres strony';
+
 //$LANG['example']         = 'Example message.';
 ?>
