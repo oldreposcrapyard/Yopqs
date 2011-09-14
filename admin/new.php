@@ -46,22 +46,24 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
             if ($value != "") {
                 try {
                     $sql          = 'INSERT INTO Answers (ID_lvl, Answer) VALUES(:lvl_id, :answer)';
-                    $stmt_answers = $pdo->prepare($sql);
-                    $stmt_answers->execute(array(
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute(array(
                         ':lvl_id' => $lvl_id,
                         ':answer' => $answer
                     ));
+                    $stmt -> closeCursor();
                 }
                 catch (PDOException $e) {
                     echo $LANG['db_query_error'] . $e->getMessage();
                 }
                 try {
                     $sql          = 'INSERT INTO Levels (ID_lvl, Question) VALUES(:lvl_id, :question)';
-                    $stmt_answers = $pdo->prepare($sql);
-                    $stmt_answers->execute(array(
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute(array(
                         ':lvl_id' => $lvl_id,
                         ':question' => $question
                     ));
+                    $stmt -> closeCursor();
                 }
                 catch (PDOException $e) {
                     echo $LANG['db_query_error'] . $e->getMessage();
