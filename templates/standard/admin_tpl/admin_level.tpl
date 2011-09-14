@@ -33,6 +33,7 @@
       </tr>
 [onshow.table_contents;ope=html;look]
     </table>
+    <a href="new.php"> Nowy level</a>
   </div>
 </body>
 </html>
