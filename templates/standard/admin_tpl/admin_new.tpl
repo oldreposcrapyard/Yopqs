@@ -185,7 +185,7 @@ textarea = document.getElementById(obj);
 Lvl:<input type="text" name="lvl_id" /><br>
 Question:
 <br>
-<script>edToolbar('question'); </script>
+<script>edToolbar('question');</script>
 <textarea name="question" id="question" rows="8" cols="35" class="ed">
 </textarea>
 <br>
