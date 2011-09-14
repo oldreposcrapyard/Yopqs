@@ -56,7 +56,11 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
                 catch (PDOException $e) {
                     echo $LANG['db_query_error'] . $e->getMessage();
                 }
-                try {
+                
+            }
+
+        }
+try {
                     $sql          = 'INSERT INTO Levels (ID_lvl, Question) VALUES(:lvl_id, :question)';
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(array(
@@ -68,8 +72,6 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
                 catch (PDOException $e) {
                     echo $LANG['db_query_error'] . $e->getMessage();
                 }
-            }
-        }
     }
     // once saved, redirect back to the view page
 echo 'DEBUGGG';    
