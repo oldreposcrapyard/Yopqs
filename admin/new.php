@@ -46,11 +46,11 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         foreach ($answer as $value) {
             if ($value != "") {
                 try {
-                    $sql  = 'INSERT INTO Answers (ID_lvl, Answer) VALUES(:lvl_id, :answer)';
+                    $sql  = 'INSERT INTO Answers (ID_lvl, Answer) VALUES(:lvl_id, :value)';
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(array(
                         ':lvl_id' => $lvl_id,
-                        ':answer' => $answer
+                        ':value' => $value
                     ));
                     $stmt->closeCursor();
                 }
