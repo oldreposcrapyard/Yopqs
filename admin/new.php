@@ -37,7 +37,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         $errors = '<div style="padding:4px; border:1px solid red; color:red;">Please fill in all required fields!</div>';
         // if either field is blank, display the form again
         $TBS    = new clsTinyButStrong;
-        $TBS->LoadTemplate("templates/$CONF[template]/admin_tpl/admin_new.tpl");
+        $TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_new.tpl");
         $TBS->Show();
     } else {
         // save the data to the database
@@ -75,7 +75,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
 // if the form hasn't been submitted, display the form
     {
     $TBS = new clsTinyButStrong;
-    $TBS->LoadTemplate("templates/$CONF[template]/admin_tpl/admin_new.tpl");
+    $TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_new.tpl");
     $TBS->Show();
 }
 ?> 
