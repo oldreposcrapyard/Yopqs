@@ -28,9 +28,9 @@ catch (PDOException $e) {
 // check if the form has been submitted. If it has, start to process the form and save it to the database
 if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
     // get form data, making sure it is valid
-    $lvl_id   = mysql_real_escape_string(htmlspecialchars($_POST['lvl_id']));
-    $answer   = mysql_real_escape_string(htmlspecialchars($_POST['answer']));
-    $question = mysql_real_escape_string(htmlspecialchars($_POST['question']));
+    $lvl_id   = $_POST['lvl_id'];
+    $answer   = $_POST['answer'];
+    $question = $_POST['question'];
     // check to make sure both fields are entered
     if ($lvl_id = '' || $answer = '' || $question = '') {
         // generate error message
