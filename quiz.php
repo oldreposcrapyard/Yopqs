@@ -105,7 +105,7 @@ try
    }
 
 If($_SESSION['max_lvl'] != $level_count){
-echo 'Your database is corrupted. Please reinstall the script';
+echo 'Your database is corrupted. Please reinstall the script.';
 exit;
 }
 
@@ -148,7 +148,7 @@ FOOTER;
 // Getting answers from database
 //-------------
 try {
-    $sql          = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl LIMIT 1';
+    $sql          = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl';
     $stmt_answers = $pdo->prepare($sql);
     $stmt_answers->execute(array(
         ':actual_lvl' => $_SESSION['actual_lvl']
