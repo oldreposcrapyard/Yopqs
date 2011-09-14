@@ -218,7 +218,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
 //-----------------
 try
    {
-   $sql = 'SELECT question FROM `Levels` WHERE ID_lvl=:actual_lvl';
+   $sql = 'SELECT Question FROM `Levels` WHERE ID_lvl=:actual_lvl LIMIT 1';
    $stmt_question = $pdo -> prepare($sql);
    $stmt_question ->execute(array(':actual_lvl'=>$_SESSION['actual_lvl']));
           foreach($stmt_question as $row)
