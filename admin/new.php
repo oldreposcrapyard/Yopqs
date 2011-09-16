@@ -33,7 +33,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
     // check to make sure both fields are entered
     if ($lvl_id == '' || $answer == '' || $question == '') {
         // generate error message
-        $errors = '<div style="padding:4px; border:1px solid red; color:red;">Please fill in all required fields!</div>';
+        $errors = '<div class="alert-message error">Please fill in all required fields!</div>';
         // if either field is blank, display the form again
         $TBS    = new clsTinyButStrong;
         $TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_new.tpl");
@@ -73,8 +73,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         }
     }
     // once saved, redirect back to the view page
-    echo 'DEBUGGG';
-    //header("Location: level.php");
+    header("Location: level.php");
 } //IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes'
 else
 // if the form hasn't been submitted, display the form
