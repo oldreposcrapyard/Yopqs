@@ -176,7 +176,7 @@ textarea = document.getElementById(obj);
 <br>
 <div id="answers">
 [onshow.LANG.answers]:<br>
-[onshow.answerscode]
+[onshow.answerscode;ope=html;look]
 </div>
 <div>
   <input type="button" value="[onshow.LANG.addanswer]" onclick="addElement('answers');" class="btn" />
