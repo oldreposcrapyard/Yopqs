@@ -55,7 +55,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         }
         foreach ($answer as $value) {
             if ($value != "") {
-                $value = mb_strtolower(strip_tags($value));
+                $value = mb_strtolower($value);
                 try {
                     $sql  = 'INSERT INTO Answers (ID_lvl, Answer) VALUES(:lvl_id, :value)';
                     $stmt = $pdo->prepare($sql);
@@ -71,7 +71,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
             } //$value != ""
         } //$answer as $value
         try {
-            $question = mb_strtolower(strip_tags($question));
+            $question = strip_tags($question);
             $sql  = 'INSERT INTO Levels (ID_lvl, Question) VALUES(:lvl_id, :question)';
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
