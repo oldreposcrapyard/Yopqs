@@ -30,7 +30,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
     $lvl_id   = $_POST['lvl_id'];
     $answer   = $_POST['answer'];
     $question = $_POST['question'];
-    // check to make sure both fields are entered
+    // check to make sure all fields are entered
     if ($lvl_id == '' || $answer == '' || $question == '') {
         // generate error message
         $errors = '<div class="alert-message error">Please fill in all required fields!</div>';
@@ -43,6 +43,15 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
     else {
         // save the data to the database
         //processing answers
+        try {
+            $stmt = $pdo->query("UPDATE `Levels` SET `ID_lvl`=`ID_lvl`+1 WHERE `ID_lvl` >= $lvl_id");
+            $stmt->closeCursor();
+            $stmt = $pdo->query("UPDATE `Answers` SET `ID_lvl`=`ID_lvl`+1 WHERE `ID_lvl` >= $lvl_id");
+            $stmt->closeCursor();
+        }
+        catch (PDOException $e) {
+            return $e->getMessage();
+        }
         foreach ($answer as $value) {
             if ($value != "") {
                 try {
@@ -70,15 +79,6 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         }
         catch (PDOException $e) {
             echo $LANG['db_query_error'] . $e->getMessage();
-        }
-        try {
-            $stmt = $pdo->query("UPDATE `Levels` SET `ID_lvl`=`ID_lvl`+1 WHERE `ID_lvl` > $lvl_id");
-            $stmt->closeCursor();
-            $stmt = $pdo->query("UPDATE `Answers` SET `ID_lvl`=`ID_lvl`+1 WHERE `ID_lvl` > $lvl_id");
-            $stmt->closeCursor();
-        }
-        catch (PDOException $e) {
-            return $e->getMessage();
         }
     }
     // once saved, redirect back to the view page
