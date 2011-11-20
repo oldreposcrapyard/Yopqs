@@ -72,7 +72,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
             } //$value != ""
         } //$answer as $value
         try {
-            //$question = strip_tags($question);
+            $question = strip_tags($question);
             $sql  = 'INSERT INTO Levels (ID_lvl, Question) VALUES(:lvl_id, :question)';
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
