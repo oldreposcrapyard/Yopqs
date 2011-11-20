@@ -96,7 +96,7 @@ else
         $sql         = "SELECT `Answer` FROM `Answers` WHERE `ID_lvl` = $id";
         foreach ($pdo->query($sql) as $row) {
             $answerscode .= <<<CODE
-<input type="text" name="answer[]" class="input" value="$row['Answer']"/> <br>
+<input type="text" name="answer[]" class="input" value="$row[Answer]"/> <br>
 CODE;
         }
         
