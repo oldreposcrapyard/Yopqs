@@ -166,7 +166,7 @@ textarea = document.getElementById(obj);
 
 <form action="[onshow.PHP_SELF]" method="post">
 [onshow.errors;ope=html;look;noerr]<br>
-[onshow.LANG.level]:<input type="text" name="lvl_id" value="[onshow._GET.id]" disabled="disabled"/><br>
+[onshow.LANG.level]:<input type="text" name="lvl_id" value="[onshow._GET.id]" disabled="disabled"/><br />
 [onshow.LANG.question]:
 <br>
 <script>edToolbar('question');</script>
