@@ -15,7 +15,7 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 //************************
-//Polish - PL Language file for Yopqs 1.0 Beta on github.com
+//Polish - PL Language file for Yopqs
 //************************
 
 $LANG                      = array();
@@ -31,17 +31,6 @@ $LANG['level']             = 'Poziom';
 $LANG['mainpageuppercase'] = 'STRONA GŁÓWNA';
 $LANG['welcomequizpage']   = 'Witaj na stronie quizu';
 $LANG['startquiz']         = 'Zacznij Quiz!';
-//BBcode editor language
-$LANG['bold']              = 'Pogrubienie';
-$LANG['italic']            = 'Kursywa';
-$LANG['underline']         = 'Podkreślenie';
-$LANG['inserturl']         = 'Wstaw URL';
-$LANG['insertimg']         = 'Wstaw obrazek';
-$LANG['insertquote']       = 'Wstaw cytat';
-$LANG['insertcode']        = 'Wstaw kod';
-$LANG['insertyt']          = 'Wstaw filmik z YouTube';
-$LANG['enterurl']          = 'Podaj adres strony:';
-$LANG['enterimg']          = 'Podaj adres obrazka:';
 //Final page language
 $LANG['youhavesolved']     = 'Rozwiązałeś';
 $LANG['ittookyou']         = 'Zajęło ci to';
@@ -62,6 +51,9 @@ $LANG['edit']              = 'Edytuj';
 $LANG['mainpage']          = 'Strona Główna';
 $LANG['levelediting']      = 'Edycja poziomów';
 $LANG['delete']            = 'Usuń';
+$LANG['answers']           = 'Odpowiedzi';
+$LANG['send']              = 'Wyślij';
+$LANG['addanswer']         = 'Dodaj odpowiedź';
 //Admin panel - BBcode editor
 $LANG['enterimg']          = 'Podaj adres obrazka:';
 $LANG['bold']              = 'Pogrubienie';

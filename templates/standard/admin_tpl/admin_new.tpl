@@ -9,13 +9,13 @@
   "text/css" />
 <script type="text/javascript">
 <!--
-function dodaj_element(kontener){
-  var znacznik = document.createElement('input');
-  znacznik.setAttribute('type', 'text');
-  znacznik.setAttribute('name', 'answer[]');
-  znacznik.className = 'input';
-  var kontener = document.getElementById(kontener);
-  kontener.appendChild(znacznik);
+function addElement(kontener){
+  var tag = document.createElement('input');
+  tag.setAttribute('type', 'text');
+  tag.setAttribute('name', 'answer[]');
+  tag.className = 'input';
+  var container = document.getElementById(kontener);
+  container.appendChild(znacznik);
 }
 //-->
 </script>
@@ -104,9 +104,6 @@ if (url != '' && url != null) {
 					} else {
 					sel.text = '[url=' + url + ']' + sel.text + '[/url]';
 					}			
-
-				//alert(sel.text);
-				
 			}
    else 
     {
@@ -121,12 +118,8 @@ if (url != '' && url != null) {
 				} else
 				{
 				var rep = '[url=' + url + ']' + sel + '[/url]';
-				}
-	    //alert(sel);
-		
-        textarea.value =  textarea.value.substring(0,start) + rep + textarea.value.substring(end,len);
-		
-			
+				}	
+        textarea.value =  textarea.value.substring(0,start) + rep + textarea.value.substring(end,len);			
 		textarea.scrollTop = scrollTop;
 		textarea.scrollLeft = scrollLeft;
 	}
@@ -141,7 +134,6 @@ textarea = document.getElementById(obj);
 			{
 				textarea.focus();
 				var sel = document.selection.createRange();
-				//alert(sel.text);
 				sel.text = tag1 + sel.text + tag2;
 			}
    else 
@@ -149,21 +141,13 @@ textarea = document.getElementById(obj);
 		var len = textarea.value.length;
 	    var start = textarea.selectionStart;
 		var end = textarea.selectionEnd;
-		
-		
 		var scrollTop = textarea.scrollTop;
-		var scrollLeft = textarea.scrollLeft;
-
-		
+		var scrollLeft = textarea.scrollLeft;	
         var sel = textarea.value.substring(start, end);
-	    //alert(sel);
 		var rep = tag1 + sel + tag2;
         textarea.value =  textarea.value.substring(0,start) + rep + textarea.value.substring(end,len);
-		
 		textarea.scrollTop = scrollTop;
 		textarea.scrollLeft = scrollLeft;
-		
-		
 	}
 }
 </script>  
@@ -182,21 +166,21 @@ textarea = document.getElementById(obj);
 
 <form action="[onshow.PHP_SELF]" method="post">
 [onshow.errors;ope=html;look;noerr]<br>
-Lvl:<input type="text" name="lvl_id" /><br>
-Question:
+[onshow.LANG.level]:<input type="text" name="lvl_id" /><br>
+[onshow.LANG.question]:
 <br>
 <script>edToolbar('question');</script>
 <textarea name="question" id="question" rows="8" cols="35" class="ed">
 </textarea>
 <br>
 <div id="answers">
-Answers:<br><input type="text" name="answer[]" class="input"/>
+[onshow.LANG.answers]:<br><input type="text" name="answer[]" class="input"/>
 </div>
 <div>
-  <input type="button" value="Dodaj odpowiedź" onclick="dodaj_element('answers');" class="btn" />
+  <input type="button" value="[onshow.LANG.addanswer]" onclick="addElement('answers');" class="btn" />
 </div>
 <input type="hidden" name="IsSent" value="Yes" />
-<button type="submit" class="btn">Wyślij</button>
+<button type="submit" class="btn">[onshow.LANG.send]</button>
 </form>
 </body>
 </html>
