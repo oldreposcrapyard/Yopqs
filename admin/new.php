@@ -55,7 +55,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         }
         foreach ($answer as $value) {
             if ($value != "") {
-                $value = mb_strtolower($value);
+                //$value = mb_strtolower($value);
                 try {
                     $sql  = 'INSERT INTO Answers (ID_lvl, Answer) VALUES(:lvl_id, :value)';
                     $stmt = $pdo->prepare($sql);

@@ -47,7 +47,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         try {
             $stmt = $pdo->query("DELETE FROM Levels WHERE ID_lvl=$lvl_id LIMIT 1");
             $stmt->closeCursor();
-            $stmt = $pdo->query("DELETE FROM Answers WHERE ID_lvl=$lvl_id LIMIT 1");
+            $stmt = $pdo->query("DELETE FROM Answers WHERE ID_lvl=$lvl_id");
             $stmt->closeCursor();
         }
         catch (PDOException $e) {
@@ -56,7 +56,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         //insert new ones
         foreach ($answer as $value) {
             if ($value != "") {
-                $value = mb_strtolower($value);
+                //$value = mb_strtolower($value);
                 try {
                     $sql  = 'INSERT INTO Answers (ID_lvl, Answer) VALUES(:lvl_id, :value)';
                     $stmt = $pdo->prepare($sql);
@@ -72,7 +72,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
             } //$value != ""
         } //$answer as $value
         try {
-            $question = strip_tags($question);
+            //$question = strip_tags($question);
             $sql  = 'INSERT INTO Levels (ID_lvl, Question) VALUES(:lvl_id, :question)';
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
@@ -97,6 +97,7 @@ else
         $answerscode = '';
         $sql         = "SELECT `Answer` FROM `Answers` WHERE `ID_lvl` = $id";
         foreach ($pdo->query($sql) as $row) {
+            $row['answer'] = strip_tags($row['answer']);
             $answerscode .= <<<CODE
 <input type="text" name="answer[]" class="input" value="$row[Answer]"/> <br />
 CODE;
