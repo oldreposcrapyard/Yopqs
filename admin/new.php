@@ -1,7 +1,7 @@
 <?php
 /* 
- NEW.PHP
- Allows user to create a new entry in the database
+NEW.PHP
+Allows user to create a new entry in the database
 */
 require '../inc/config.inc.php';
 require '../inc/alibaba.class.php';
@@ -70,6 +70,15 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         }
         catch (PDOException $e) {
             echo $LANG['db_query_error'] . $e->getMessage();
+        }
+        try {
+            $stmt = $pdo->query("UPDATE `Levels` SET `ID_lvl`=`ID_lvl`+1 WHERE `ID_lvl` > $lvl_id");
+            $stmt->closeCursor();
+            $stmt = $pdo->query("UPDATE `Answers` SET `ID_lvl`=`ID_lvl`+1 WHERE `ID_lvl` > $lvl_id");
+            $stmt->closeCursor();
+        }
+        catch (PDOException $e) {
+            return $e->getMessage();
         }
     }
     // once saved, redirect back to the view page
