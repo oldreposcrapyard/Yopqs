@@ -97,7 +97,7 @@ else
         $answerscode = '';
         $sql         = "SELECT `Answer` FROM `Answers` WHERE `ID_lvl` = $id";
         foreach ($pdo->query($sql) as $row) {
-            $row['answer'] = strip_tags($row['answer']);
+            $row['Answer'] = strip_tags($row['Answer']);
             $answerscode .= <<<CODE
 <input type="text" name="answer[]" class="input" value="$row[Answer]"/> <br />
 CODE;
