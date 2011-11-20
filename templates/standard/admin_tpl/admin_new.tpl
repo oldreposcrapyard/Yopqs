@@ -15,7 +15,7 @@ function addElement(kontener){
   tag.setAttribute('name', 'answer[]');
   tag.className = 'input';
   var container = document.getElementById(kontener);
-  container.appendChild(znacznik);
+  container.appendChild(tag);
 }
 //-->
 </script>
