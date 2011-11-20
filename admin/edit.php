@@ -1,7 +1,7 @@
 <?php
 /* 
-NEW.PHP
-Allows user to create a new entry in the database
+EDIT.PHP
+Allows user to edit an entry in the database
 */
 require '../inc/config.inc.php';
 require '../inc/alibaba.class.php';
@@ -36,23 +36,24 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         $errors = '<div class="alert-message error">Please fill in all required fields!</div>';
         // if either field is blank, display the form again
         $TBS    = new clsTinyButStrong;
-        $TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_new.tpl");
+        $TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_edit.tpl");
         $TBS->Show();
         exit;
     } //$lvl_id == '' || $answer == '' || $question == ''
     else {
         // save the data to the database
         //processing answers
+        //delete old answers
         try {
-            $stmt = $pdo->query("UPDATE `Levels` SET `ID_lvl`=`ID_lvl`+1 WHERE `ID_lvl` >= $lvl_id");
+            $stmt = $pdo->query("DELETE FROM Levels WHERE ID_lvl=$lvl_id LIMIT 1");
             $stmt->closeCursor();
-            $stmt = $pdo->query("UPDATE `Answers` SET `ID_lvl`=`ID_lvl`+1 WHERE `ID_lvl` >= $lvl_id");
+            $stmt = $pdo->query("DELETE FROM Answers WHERE ID_lvl=$lvl_id LIMIT 1");
             $stmt->closeCursor();
         }
         catch (PDOException $e) {
-            echo $LANG['db_connect_error'] . $e->getMessage();
-            exit;
+            return $e->getMessage();
         }
+        //insert new ones
         foreach ($answer as $value) {
             if ($value != "") {
                 try {
@@ -86,10 +87,36 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
     header("Location: level.php");
 } //IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes'
 else
-// if the form hasn't been submitted, display the form
+// if the form hasn't been submitted, display the form with the data filled in
     {
+    $id = $_GET['id'];
+    //getting answers and packing them in code
+    try {
+        $answerscode = '';
+        $sql         = "SELECT `Answer` FROM `Answers` WHERE `ID_lvl` = $id";
+        foreach ($pdo->query($sql) as $row) {
+            $answerscode .= <<<CODE
+<input type="text" name="answer[]" class="input" value="$row['Answer']"/> <br>
+CODE;
+        }
+        
+    }
+    catch (PDOException $e) {
+        echo $LANG['db_query_error'] . $e->getMessage();
+    }
+    //getting question
+    try {
+        $sql = "SELECT `Question` FROM `Levels` WHERE `ID_lvl` = $id";
+        foreach ($pdo->query($sql) as $row) {
+            $question = $row['Question'];
+        }
+        
+    }
+    catch (PDOException $e) {
+        echo $LANG['db_query_error'] . $e->getMessage();
+    }
     $TBS = new clsTinyButStrong;
-    $TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_new.tpl");
+    $TBS->LoadTemplate("../templates/$CONF[template]/admin_tpl/admin_edit.tpl");
     $TBS->Show();
 }
 ?>
