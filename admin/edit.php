@@ -56,6 +56,7 @@ if (IsSet($_POST['IsSent']) && $_POST['IsSent'] == 'Yes') {
         //insert new ones
         foreach ($answer as $value) {
             if ($value != "") {
+                $value = lowercase($value);
                 try {
                     $sql  = 'INSERT INTO Answers (ID_lvl, Answer) VALUES(:lvl_id, :value)';
                     $stmt = $pdo->prepare($sql);
@@ -108,7 +109,7 @@ CODE;
     try {
         $sql = "SELECT `Question` FROM `Levels` WHERE `ID_lvl` = $id";
         foreach ($pdo->query($sql) as $row) {
-            $question = $row['Question'];
+            $question =  strip_tags($row[Question]);
         }
         
     }

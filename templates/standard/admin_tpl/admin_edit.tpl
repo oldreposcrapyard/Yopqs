@@ -175,7 +175,7 @@ textarea = document.getElementById(obj);
 </textarea>
 <br>
 <div id="answers">
-[onshow.LANG.answers]:<br>
+[onshow.LANG.answers]:<br />
 [onshow.answerscode;ope=html;look]
 </div>
 <div>
