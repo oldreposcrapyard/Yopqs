@@ -109,9 +109,7 @@ CODE;
     }
     //getting question
     try {
-        $sql = "SELECT `Question` FROM `Levels` WHERE `ID_lvl` = $id";
-        foreach ($pdo->query($sql) as $row) {
-            $question =  strip_tags($row['Question']);
+            $question = $dbh->query("SELECT `Question` FROM `Levels` WHERE `ID_lvl` = $id")->fetch();
         }
         
     }
