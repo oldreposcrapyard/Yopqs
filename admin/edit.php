@@ -109,7 +109,7 @@ CODE;
     }
     //getting question
     try {
-            $question = $dbh->query("SELECT `Question` FROM `Levels` WHERE `ID_lvl` = $id")->fetch();
+            $question = $pdo->query("SELECT `Question` FROM `Levels` WHERE `ID_lvl` = $id")->fetch();
     }
     catch (PDOException $e) {
         echo $LANG['db_query_error'] . $e->getMessage();
