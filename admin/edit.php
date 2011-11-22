@@ -109,7 +109,11 @@ CODE;
     }
     //getting question
     try {
-            $question = $pdo->query("SELECT `Question` FROM `Levels` WHERE `ID_lvl` = $id")->fetch();
+        $sql = "SELECT `Question` FROM `Levels` WHERE `ID_lvl` = $id";
+        foreach ($pdo->query($sql) as $row) {
+            $question =  preg_replace(array('/\n/','/\r/') , '' ,$row['Question'] );
+        }
+        
     }
     catch (PDOException $e) {
         echo $LANG['db_query_error'] . $e->getMessage();
