@@ -70,7 +70,7 @@ $CONF['measure_time'] = 'TRUE';
 //orchestra.io database
 $db_username = 'user_45b9cf5d';
 $db_password = '9bvP;cJjT)IJI^';
-$db_hostname = '10.194.111.8'; 
+$db_hostname = 'a.db.shared.orchestra.io'; 
 $db_name       = 'db_45b9cf5d'; 
 
 //$db_username = 'your_username';
