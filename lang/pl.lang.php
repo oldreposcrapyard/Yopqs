@@ -38,7 +38,7 @@ $LANG['thatis']            = 'czyli';
 $LANG['hours']             = 'Godzin';
 $LANG['minutes']           = 'Minut';
 $LANG['seconds']           = 'Sekund';
-$LANG['place']             = 'Miejsce';
+$LANG['place']             = 'Miejsce:';
 $LANG['besttime']          = 'Najlepszy czas:';
 //Database language
 $LANG['db_connect_error']  = 'Nie można połączyć się z bazą danych!';
