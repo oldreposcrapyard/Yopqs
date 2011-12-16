@@ -199,8 +199,9 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
                 $_SESSION['end_time'] = time();
             }
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
-            $normal_time      = sec2hms($time_solved_quiz, true);
+            //---------------------------------
             //template display
+            $normal_time      = sec2hms($time_solved_quiz, true);
             $TBS              = new clsTinyButStrong;
             $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
             $TBS->Show();
