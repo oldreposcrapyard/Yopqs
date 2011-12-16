@@ -199,6 +199,12 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
                 $_SESSION['end_time'] = time();
             }
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
+            // query to insert time
+            $sql = "INSERT INTO Scores (Timestamp,Time) VALUES (:timestamp,:time)";
+            $q = $pdo->prepare($sql);
+            $q->execute(array(':timestamp'=>'NULL',
+                  ':time'=>$time_solved_quiz));
+
             //---------------------------------
             //template display
             $normal_time      = sec2hms($time_solved_quiz, true);
