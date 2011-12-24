@@ -164,46 +164,47 @@ catch (PDOException $e) {
 //-----------------
 // Checking answer
 //-----------------
-if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
-    if (checkAnswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $_SESSION['max_lvl']) { //jezeli dobra odpowiedz na ostatni level
+if (isSet($_POST['haslo'])) { //If the answer is set
+    if (checkAnswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $_SESSION['max_lvl']) { //If the answer for the last level is ok
         $_SESSION['last_level_passed'] = 'TRUE';
-        if ($CONF['measure_time']) { //jezeli mierzyc czas
+        if ($CONF['measure_time']) { //If the script should measure time
             if (!IsSet($_SESSION['end_time'])) {
                 $_SESSION['end_time'] = time();
             }
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             $normal_time      = sec2hms($time_solved_quiz, true);
-            //template display
-            $TBS              = new clsTinyButStrong;
-            $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
-            $TBS->Show();
-            exit();
-        } else { //jezeli nie mierzyc czasu
-            echo $CONF['won_page_content'];
-            include_once 'inc/foot.inc.php';
-            exit;
-        }
-    }
-    if (checkAnswer($result, $_POST['haslo'])) { //jezeli dobra odpowiedz na level inny niz ostatni
-        $message = $WON;
-        ++$_SESSION['actual_lvl'];
-    } elseif ($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo'])) { //jezeli odpowiedz pusta
-        $message = $ANSWEREMPTY;
-    } elseif (!checkAnswer($result, $_POST['haslo'])) { //odpowiedz zla
-        $message = $FAIL;
-    }
-} elseif (!isSet($_POST['haslo'])) { //jezeli nie wysłana odpowiedz
-    if (isSet($_SESSION['last_level_passed'])) {
-        if ($CONF['measure_time']) { //jezeli mierzyc czas
-            if (!IsSet($_SESSION['end_time'])) {
-                $_SESSION['end_time'] = time();
-            }
-            $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             // query to insert time
             $sql = "INSERT INTO Scores (Timestamp,Time) VALUES (:timestamp,:time)";
             $q = $pdo->prepare($sql);
             $q->execute(array(':timestamp'=>'NULL',
                   ':time'=>$time_solved_quiz));
+
+            //template display
+            $TBS              = new clsTinyButStrong;
+            $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
+            $TBS->Show();
+            exit();
+        } else { //If the script shouldn't measure time
+            echo $CONF['won_page_content'];
+            include_once 'inc/foot.inc.php';
+            exit;
+        }
+    }
+    if (checkAnswer($result, $_POST['haslo'])) { //If good answer for level other than the last one
+        $message = $WON;
+        ++$_SESSION['actual_lvl'];
+    } elseif ($_POST['haslo'] == '' || preg_match('/^\s*$/', $_POST['haslo'])) { //If the answer is empty
+        $message = $ANSWEREMPTY;
+    } elseif (!checkAnswer($result, $_POST['haslo'])) { //If the answer is bad
+        $message = $FAIL;
+    }
+} elseif (!isSet($_POST['haslo'])) { //If the answer wasnt sent
+    if (isSet($_SESSION['last_level_passed'])) {
+        if ($CONF['measure_time']) { //If the script should measure time
+            if (!IsSet($_SESSION['end_time'])) {
+                $_SESSION['end_time'] = time();
+            }
+            $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
 
             //---------------------------------
             //template display
@@ -212,7 +213,7 @@ if (isSet($_POST['haslo'])) { //jezeli odpowiedz ustawiona
             $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
             $TBS->Show();
             exit;
-        } else { //jezeli nie mierzyc czasu
+        } else { //If the script shouldnt measure time
             echo $CONF['won_page_content'];
             echo $FOOT;
             exit;
