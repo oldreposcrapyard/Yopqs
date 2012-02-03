@@ -11,7 +11,7 @@ I am currently in process of learning CSS
 */
 </style>
   <link rel="stylesheet" href=
-  "../bootstrap/assets/css/bootstrap.min.css" type=
+  "../templates/standard/bootstrap/assets/css/bootstrap.min.css" type=
   "text/css" />
 
 </head>
