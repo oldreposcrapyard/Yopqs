@@ -5,7 +5,7 @@
 <head>
   <title>[onshow.CONF.quiz_name] - Marcinl's php quiz</title>
   <link rel="stylesheet" href=
-  "../templates/standard/bootstrap/assets/css/bootstrap.min.css" type=
+  "http://twitter.github.com/bootstrap/assets/css/bootstrap.css" type=
   "text/css" />
 <script type="text/javascript">
 <!--

@@ -11,7 +11,7 @@ I am currently in process of learning CSS
 */
 </style>
   <link rel="stylesheet" href=
-  "../templates/standard/bootstrap/assets/css/bootstrap.min.css" type=
+  "http://twitter.github.com/bootstrap/assets/css/bootstrap.css" type=
   "text/css" />
 
 </head>
