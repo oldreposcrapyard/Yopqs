@@ -13,7 +13,7 @@
   <br />
 
   <div class="container">
-    <ul class="pills">
+    <ul class="nav nav-pills">
       <li><a href="index.php">[onshow.LANG.mainpage]</a></li>
 
       <li class="active"><a href="level.php">[onshow.LANG.levelediting]</a></li>

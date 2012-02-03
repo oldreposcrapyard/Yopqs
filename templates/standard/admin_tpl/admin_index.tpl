@@ -28,7 +28,7 @@
   <br />
 
   <div class="container">
-    <ul class="pills">
+    <ul class="nav nav-pills">
       <li class="active"><a href="index.php">[onshow.LANG.mainpage]</a></li>
 
       <li><a href="level.php">[onshow.LANG.levelediting]</a></li>
