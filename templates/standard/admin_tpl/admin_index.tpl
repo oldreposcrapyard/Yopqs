@@ -5,7 +5,7 @@
 <head>
   <title>[onshow.CONF.quiz_name] - Marcinl's php quiz</title>
   <link rel="stylesheet" href=
-  "http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css" type=
+  "../bootstrap/assets/css/bootstrap.min.css" type=
   "text/css" />
   <style type="text/css">
 /*<![CDATA[*/
