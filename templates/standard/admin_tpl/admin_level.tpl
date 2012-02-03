@@ -21,7 +21,7 @@
       <li><a href="logout.php">[onshow.LANG.logout]</a></li>
     </ul>
 
-    <table border='1' cellpadding='10'>
+    <table border='1' cellpadding='10' class='table'>
       <tr>
         <th>[onshow.LANG.level]</th>
 
@@ -33,7 +33,7 @@
       </tr>
 [onshow.table_contents;ope=html;look]
     </table>
-    <a href="new.php"> Nowy level</a>
+    <a href="new.php" class="btn"> Nowy level</a>
   </div>
 </body>
 </html>
