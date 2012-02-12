@@ -69,6 +69,9 @@ If (!IsSet($_SESSION['start_time']) && $CONF['measure_time']) {
 If (!IsSet($_SESSION['actual_lvl'])) {
     $_SESSION['actual_lvl'] = 1;
 }
+If (!IsSet($_SESSION['time_written'])) {
+    $_SESSION['time_written'] = FALSE;
+}
 //------------------
 // Maximum level
 //------------------
