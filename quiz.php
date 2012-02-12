@@ -108,7 +108,7 @@ If ($_SESSION['max_lvl'] != $level_count) {
 //-------------
 //shall be moved to config or sth nothing but form uses it
 $FAIL = <<<FAIL
-<div class="alert-message error" id="redbox">
+<div class="alert alert-error" id="redbox">
     <a class="close" href="#" onClick="var disappear =
     document.getElementById('redbox');
     disappear.style.display='none';">×</a> 
@@ -116,7 +116,7 @@ $FAIL = <<<FAIL
 </div>
 FAIL;
 $ANSWEREMPTY = <<<AE
-<div class="alert-message error" id="redbox">
+<div class="alert alert-error" id="redbox">
     <a class="close" href="#" onClick="var disappear =
     document.getElementById('redbox');
     disappear.style.display='none';">×</a> 
@@ -124,7 +124,7 @@ $ANSWEREMPTY = <<<AE
 </div>
 AE;
 $WON = <<<WON
-<div class="alert-message success" id="greenbox">
+<div class="alert alert-success" id="greenbox">
     <a class="close" href="#" onClick="var disappear =
     document.getElementById('greenbox');
     disappear.style.display='none';">×</a> 
