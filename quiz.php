@@ -168,13 +168,13 @@ if (isSet($_POST['haslo'])) { //If the answer is set
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             $normal_time = sec2hms($time_solved_quiz, true);
             // query to insert time
-            if(!$_SESSION['time_written'] || $_SESSION['time_written'] == FALSE){
+            if($_SESSION['time_written'] != 'TRUE'){ //database spamming protection
 			$sql = 'INSERT INTO Scores (Timestamp,Time) VALUES (NULL,:time)';
             $q = $pdo->prepare($sql);
             $q->execute(array(
                 ':time' => $time_solved_quiz
             )); //':timestamp'=>'NULL',
-			$_SESSION['time_written'] = TRUE;
+			$_SESSION['time_written'] = 'TRUE';
 			}
             // getting the quatity of scores better than current one
             $sql = "SELECT COUNT( * ) FROM Scores WHERE TIME <= $time_solved_quiz";
