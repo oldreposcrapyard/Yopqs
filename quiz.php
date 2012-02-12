@@ -179,9 +179,8 @@ if (isSet($_POST['haslo'])) { //If the answer is set
             $q->execute(array(':time'=>$time_solved_quiz)); //':timestamp'=>'NULL',
 			// getting the quatity of scores better than current one
 				$sql = "SELECT COUNT( * ) FROM Scores WHERE TIME >= $time_solved_quiz";
-if ($res = $pdo->query($sql)) {
-    $score_count = $res->fetchColumn()
-}
+                $res = $pdo->query($sql);
+                $score_count = $res->fetchColumn();
 
             //template display
             $TBS              = new clsTinyButStrong;
