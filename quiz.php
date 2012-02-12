@@ -160,7 +160,7 @@ catch (PDOException $e) {
 //-----------------
 if (isSet($_POST['haslo'])) { //If the answer is set
     if (checkAnswer($result, $_POST['haslo']) && $_SESSION['actual_lvl'] >= $_SESSION['max_lvl']) { //If the answer for the last level is ok
-        $_SESSION['last_level_passed'] = 'TRUE';
+        $_SESSION['last_level_passed'] = TRUE;
         if ($CONF['measure_time']) { //If the script should measure time
             if (!IsSet($_SESSION['end_time'])) {
                 $_SESSION['end_time'] = time();
@@ -168,11 +168,14 @@ if (isSet($_POST['haslo'])) { //If the answer is set
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             $normal_time = sec2hms($time_solved_quiz, true);
             // query to insert time
-            $sql = 'INSERT INTO Scores (Timestamp,Time) VALUES (NULL,:time)';
+            if(!$_SESSION['time_written'] || $_SESSION['time_written'] == FALSE){
+			$sql = 'INSERT INTO Scores (Timestamp,Time) VALUES (NULL,:time)';
             $q = $pdo->prepare($sql);
             $q->execute(array(
                 ':time' => $time_solved_quiz
             )); //':timestamp'=>'NULL',
+			$_SESSION['time_written'] = TRUE;
+			}
             // getting the quatity of scores better than current one
             $sql = "SELECT COUNT( * ) FROM Scores WHERE TIME <= $time_solved_quiz";
             $res = $pdo->query($sql);
