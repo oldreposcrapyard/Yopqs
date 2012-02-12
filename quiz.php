@@ -14,9 +14,9 @@
 
 ob_start();
 //start measuring time
-$mtime = microtime(); 
-$mtime = explode(' ',$mtime); 
-$mtime = $mtime[1] + $mtime[0]; 
+$mtime = microtime();
+$mtime = explode(' ', $mtime);
+$mtime = $mtime[1] + $mtime[0];
 $starttime = $mtime;
 //---------------------------
 // Page encoding
@@ -43,9 +43,9 @@ $PHP_SELF = getNameFile();
 // Reset button
 //---------------------------
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isSet($_GET['action']) && $_GET['action'] == 'reset') {
-session_unset(); 
-session_destroy();
-header('Location: index.php');
+    session_unset();
+    session_destroy();
+    header('Location: index.php');
 }
 //---------------------------
 // Database connection
@@ -54,11 +54,11 @@ try {
     $pdo = new PDO("mysql:host=$db_hostname;dbname=$db_name;charset=utf8", $db_username, $db_password, array(
         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
     ));
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
     echo $LANG['db_connect_error'] . $e->getMessage();
-	exit;
+    exit;
 }
 //---------------------------
 // New player
@@ -72,48 +72,42 @@ If (!IsSet($_SESSION['actual_lvl'])) {
 //------------------
 // Maximum level
 //------------------
-try
-   {
-   $stmt = $pdo->query('SELECT MAX(ID_lvl) FROM `Levels`');
-
-          foreach($stmt as $row)
-      {
-          $_SESSION['max_lvl'] = $row[0];
-      }
-
-   $stmt -> closeCursor();
-   }
-   catch(PDOException $e)
-   {
-      return $e->getMessage();
-   }
+try {
+    $stmt = $pdo->query('SELECT MAX(ID_lvl) FROM `Levels`');
+    
+    foreach ($stmt as $row) {
+        $_SESSION['max_lvl'] = $row[0];
+    }
+    
+    $stmt->closeCursor();
+}
+catch (PDOException $e) {
+    return $e->getMessage();
+}
 // A small check that database is ok.
-try
-   {
-   $stmt = $pdo->query('SELECT COUNT(*) FROM `Levels`');
+try {
+    $stmt = $pdo->query('SELECT COUNT(*) FROM `Levels`');
+    
+    foreach ($stmt as $row) {
+        $level_count = $row[0];
+    }
+    
+    $stmt->closeCursor();
+}
+catch (PDOException $e) {
+    return $e->getMessage();
+}
 
-          foreach($stmt as $row)
-      {
-          $level_count = $row[0];
-      }
-
-   $stmt -> closeCursor();
-   }
-   catch(PDOException $e)
-   {
-      return $e->getMessage();
-   }
-
-If($_SESSION['max_lvl'] != $level_count){
-echo 'Your database is corrupted. Please reinstall the script.';
-exit;
+If ($_SESSION['max_lvl'] != $level_count) {
+    echo 'Your database is corrupted. Please reinstall the script.';
+    exit;
 }
 
 //------------------
 // Variables for Game...
 //-------------
 //shall be moved to config or sth nothing but form uses it
-$FAIL        = <<<FAIL
+$FAIL = <<<FAIL
 <div class="alert-message error" id="redbox">
     <a class="close" href="#" onClick="var disappear =
     document.getElementById('redbox');
@@ -129,7 +123,7 @@ $ANSWEREMPTY = <<<AE
     <p>$LANG[emptyanswer]</p>
 </div>
 AE;
-$WON         = <<<WON
+$WON = <<<WON
 <div class="alert-message success" id="greenbox">
     <a class="close" href="#" onClick="var disappear =
     document.getElementById('greenbox');
@@ -137,7 +131,7 @@ $WON         = <<<WON
     <p>$LANG[goodanswer]</p>
 </div>
 WON;
-$FOOT        = <<<FOOTER
+$FOOT = <<<FOOTER
 <hr />
 <a href="http://www.google.pl">Google</a> |
 <a href="http://www.pl.wikipedia.org">Wikipedia</a> |
@@ -148,7 +142,7 @@ FOOTER;
 // Getting answers from database
 //-------------
 try {
-    $sql          = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl';
+    $sql = 'SELECT Answer FROM `Answers` WHERE ID_lvl=:actual_lvl';
     $stmt_answers = $pdo->prepare($sql);
     $stmt_answers->execute(array(
         ':actual_lvl' => $_SESSION['actual_lvl']
@@ -172,18 +166,19 @@ if (isSet($_POST['haslo'])) { //If the answer is set
                 $_SESSION['end_time'] = time();
             }
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
-            $normal_time      = sec2hms($time_solved_quiz, true);
+            $normal_time = sec2hms($time_solved_quiz, true);
             // query to insert time
             $sql = 'INSERT INTO Scores (Timestamp,Time) VALUES (NULL,:time)';
             $q = $pdo->prepare($sql);
-            $q->execute(array(':time'=>$time_solved_quiz)); //':timestamp'=>'NULL',
-			// getting the quatity of scores better than current one
-				$sql = "SELECT COUNT( * ) FROM Scores WHERE TIME >= $time_solved_quiz";
-                $res = $pdo->query($sql);
-                $score_count = $res->fetchColumn();
-
+            $q->execute(array(
+                ':time' => $time_solved_quiz
+            )); //':timestamp'=>'NULL',
+            // getting the quatity of scores better than current one
+            $sql = "SELECT COUNT( * ) FROM Scores WHERE TIME >= $time_solved_quiz";
+            $res = $pdo->query($sql);
+            $score_count = $res->fetchColumn();
             //template display
-            $TBS              = new clsTinyButStrong;
+            $TBS = new clsTinyButStrong;
             $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
             $TBS->Show();
             exit();
@@ -208,11 +203,11 @@ if (isSet($_POST['haslo'])) { //If the answer is set
                 $_SESSION['end_time'] = time();
             }
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
-
+            
             //---------------------------------
             //template display
-            $normal_time      = sec2hms($time_solved_quiz, true);
-            $TBS              = new clsTinyButStrong;
+            $normal_time = sec2hms($time_solved_quiz, true);
+            $TBS = new clsTinyButStrong;
             $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
             $TBS->Show();
             exit;
@@ -227,23 +222,22 @@ if (isSet($_POST['haslo'])) { //If the answer is set
 //-----------------
 // Form data
 //-----------------
-try
-   {
-   $sql = 'SELECT Question FROM `Levels` WHERE ID_lvl=:actual_lvl LIMIT 1';
-   $stmt_question = $pdo -> prepare($sql);
-   $stmt_question ->execute(array(':actual_lvl'=>$_SESSION['actual_lvl']));
-          foreach($stmt_question as $row)
-      {
-          $query_question = $row['Question'];
-      }
-
-   $stmt_question -> closeCursor();
-
-   }
-   catch(PDOException $e)
-   {
-      echo $LANG['db_query_error'] . $e->getMessage();
-   }
+try {
+    $sql = 'SELECT Question FROM `Levels` WHERE ID_lvl=:actual_lvl LIMIT 1';
+    $stmt_question = $pdo->prepare($sql);
+    $stmt_question->execute(array(
+        ':actual_lvl' => $_SESSION['actual_lvl']
+    ));
+    foreach ($stmt_question as $row) {
+        $query_question = $row['Question'];
+    }
+    
+    $stmt_question->closeCursor();
+    
+}
+catch (PDOException $e) {
+    echo $LANG['db_query_error'] . $e->getMessage();
+}
 
 //-----------------
 // Parsing BBcode
@@ -251,17 +245,17 @@ try
 $bb = new BbCode();
 $bb->parse($query_question, false);
 $question_display = $bb->getHtml();
-if (!isSet($message)){
-$message = '';
+if (!isSet($message)) {
+    $message = '';
 }
 
-$mtime = microtime(); 
-$mtime = explode(' ',$mtime); 
-$mtime = $mtime[1] + $mtime[0]; 
-$endtime = $mtime; 
-$totaltime = $endtime - $starttime; 
+$mtime = microtime();
+$mtime = explode(' ', $mtime);
+$mtime = $mtime[1] + $mtime[0];
+$endtime = $mtime;
+$totaltime = $endtime - $starttime;
 //template display
-$TBS              = new clsTinyButStrong;
+$TBS = new clsTinyButStrong;
 $TBS->LoadTemplate("templates/$CONF[template]/quiz.tpl");
 $TBS->Show();
 ob_end_flush();
