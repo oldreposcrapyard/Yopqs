@@ -178,19 +178,10 @@ if (isSet($_POST['haslo'])) { //If the answer is set
             $q = $pdo->prepare($sql);
             $q->execute(array(':time'=>$time_solved_quiz)); //':timestamp'=>'NULL',
 			// getting the quatity of scores better than current one
-			    $sql = 'SELECT COUNT( * ) FROM Scores WHERE TIME >= :time';
-            $q = $pdo->prepare($sql);
-            $q->execute(array(':time'=>$time_solved_quiz));
-            foreach ($q as $row) {
-                $score_count[] = $row['Time'];
-            }
-            $q->closeCursor();
-            }
-            catch (PDOException $e) {
-                echo $LANG['db_query_error'] . $e->getMessage();
-            }
-
-
+				$sql = "SELECT COUNT( * ) FROM Scores WHERE TIME >= $time_solved_quiz";
+if ($res = $pdo->query($sql)) {
+    $score_count = $res->fetchColumn()
+}
 
             //template display
             $TBS              = new clsTinyButStrong;
