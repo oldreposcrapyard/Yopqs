@@ -34,12 +34,14 @@ $LANG['startquiz']         = 'Zacznij Quiz!';
 //Final page language
 $LANG['youhavesolved']     = 'Rozwiązałeś';
 $LANG['ittookyou']         = 'Zajęło ci to';
-$LANG['thatis']            = 'czyli';
+$LANG['thatis']            = 'Jest to';
 $LANG['hours']             = 'Godzin';
 $LANG['minutes']           = 'Minut';
 $LANG['seconds']           = 'Sekund';
 $LANG['place']             = 'Miejsce:';
 $LANG['besttime']          = 'Najlepszy czas:';
+$LANG['time']              = 'czas';
+$LANG['archieved']         = 'Uzyskany:';
 //Database language
 $LANG['db_connect_error']  = 'Nie można połączyć się z bazą danych!';
 $LANG['db_select_error']   = 'Nie można wybrać bazy danych!';

@@ -174,9 +174,24 @@ if (isSet($_POST['haslo'])) { //If the answer is set
             $time_solved_quiz = $_SESSION['end_time'] - $_SESSION['start_time'];
             $normal_time      = sec2hms($time_solved_quiz, true);
             // query to insert time
-            $sql = "INSERT INTO Scores (Timestamp,Time) VALUES (NULL,:time)";
+            $sql = 'INSERT INTO Scores (Timestamp,Time) VALUES (NULL,:time)';
             $q = $pdo->prepare($sql);
             $q->execute(array(':time'=>$time_solved_quiz)); //':timestamp'=>'NULL',
+			// getting the quatity of scores better than current one
+			try {
+                $sql = 'SELECT COUNT( * ) FROM Scores WHERE TIME >= :time';
+            $stmt_scores = $pdo -> prepare($sql);
+            $q = $pdo->prepare($sql);
+            $q->execute(array(':time'=>$time_solved_quiz));
+            foreach ($stmt_scores as $row) {
+                $score_count[] = $row['Time'];
+            }
+            $stmt_scores->closeCursor();
+            }
+            catch (PDOException $e) {
+                echo $LANG['db_query_error'] . $e->getMessage();
+            }
+
 
             //template display
             $TBS              = new clsTinyButStrong;
