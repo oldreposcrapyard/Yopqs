@@ -184,7 +184,7 @@ if (isSet($_POST['haslo'])) { //If the answer is set
             $q = $pdo->prepare($sql);
             $q->execute(array(':time'=>$time_solved_quiz));
             foreach ($stmt_scores as $row) {
-                $score_count[] = $row['Time'];
+                $score_count = $row['Time'];
             }
             $stmt_scores->closeCursor();
             }
