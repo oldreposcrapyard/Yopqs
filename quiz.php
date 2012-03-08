@@ -188,9 +188,9 @@ if (isSet($_POST['haslo'])) { //If the answer is set
             $res = $pdo->query($sql);
             $best_score = $res->fetchColumn();
 			// getting the timestamp of the best score
-            $sql = 'SELECT Timestamp FROM Scores WHERE Time == MIN(Time)';
-            $res = $pdo->query($sql);
-            $best_score = $res->fetchColumn();
+            // here is the error $sql = 'SELECT Timestamp FROM Scores WHERE Time == MIN(Time)';
+            //$res = $pdo->query($sql);
+            //$best_score_timestamp = $res->fetchColumn();
             //template display
             $TBS = new clsTinyButStrong;
             $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
