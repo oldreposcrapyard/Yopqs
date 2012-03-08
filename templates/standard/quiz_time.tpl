@@ -85,9 +85,9 @@ A.menu:hover,A.trzy{color:#FFF;text-decoration:none;font-size:11px;}
           <div class="c3">
             <h1>
             [onshow.LANG.ittookyou]  
-            [onshow.time_solved_quiz] [onshow.LANG.seconds], [onshow.LANG.thatis]<br>[onshow.LANG.hours]:[onshow.LANG.minutes]:[onshow.LANG.seconds]
-			<br>[onshow.normal_time]
-			[onshow.LANG.thatis] [onshow.score_count] [onshow.LANG.time] [onshow.LANG.besttime] [czas]s, [onshow.LANG.archieved] [timestamp]. 
+            [onshow.time_solved_quiz] [onshow.LANG.seconds], [onshow.LANG.thatis]<br>[onshow.LANG.hours]:[onshow.LANG.minutes]:[onshow.LANG.seconds] 
+			<br>[onshow.normal_time] <br>
+			[onshow.LANG.thatis] [onshow.score_count] [onshow.LANG.time] [onshow.LANG.besttime] [onshoe.best_score]s, [onshow.LANG.archieved] [timestamp]. 
             </h1>
             <a href="quiz.php?action=reset">Reset</a>
 		  </div>

@@ -183,6 +183,10 @@ if (isSet($_POST['haslo'])) { //If the answer is set
             $sql = "SELECT COUNT( * ) FROM Scores WHERE TIME <= $time_solved_quiz";
             $res = $pdo->query($sql);
             $score_count = $res->fetchColumn();
+			// getting the best score
+            $sql = 'SELECT MIN(Time) FROM Scores';
+            $res = $pdo->query($sql);
+            $best_score = $res->fetchColumn();
             //template display
             $TBS = new clsTinyButStrong;
             $TBS->LoadTemplate("templates/$CONF[template]/quiz_time.tpl");
