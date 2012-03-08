@@ -180,11 +180,15 @@ if (isSet($_POST['haslo'])) { //If the answer is set
 			$_SESSION['time_written'] = 'TRUE';
 			}
             // getting the quatity of scores better than current one
-            $sql = "SELECT COUNT( * ) FROM Scores WHERE TIME <= $time_solved_quiz";
+            $sql = "SELECT COUNT( * ) FROM Scores WHERE Time <= $time_solved_quiz";
             $res = $pdo->query($sql);
             $score_count = $res->fetchColumn();
 			// getting the best score
             $sql = 'SELECT MIN(Time) FROM Scores';
+            $res = $pdo->query($sql);
+            $best_score = $res->fetchColumn();
+			// getting the timestamp of the best score
+            $sql = 'SELECT Timestamp FROM Scores WHERE Time == MIN(Time)';
             $res = $pdo->query($sql);
             $best_score = $res->fetchColumn();
             //template display

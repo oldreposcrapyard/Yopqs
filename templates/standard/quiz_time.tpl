@@ -87,7 +87,7 @@ A.menu:hover,A.trzy{color:#FFF;text-decoration:none;font-size:11px;}
             [onshow.LANG.ittookyou]  
             [onshow.time_solved_quiz] [onshow.LANG.seconds], [onshow.LANG.thatis]<br>[onshow.LANG.hours]:[onshow.LANG.minutes]:[onshow.LANG.seconds] 
 			<br>[onshow.normal_time] <br>
-			[onshow.LANG.thatis] [onshow.score_count] [onshow.LANG.time] [onshow.LANG.besttime] [onshow.best_score]s, [onshow.LANG.archieved] [timestamp]. 
+			[onshow.LANG.thatis] [onshow.score_count] [onshow.LANG.time] <br> [onshow.LANG.besttime] [onshow.best_score]s, [onshow.LANG.archieved] [onshow.best_score_timestamp]. 
             </h1>
             <a href="quiz.php?action=reset">Reset</a>
 		  </div>
